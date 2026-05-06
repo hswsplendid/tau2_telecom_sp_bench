@@ -1,0 +1,12 @@
+{
+  "sample_id": "mobile_data_issue_airplane_mode_on_bad_network_preference_data_mode_off_data_sa_3ce8cb6d6a",
+  "task_id": "[mobile_data_issue]airplane_mode_on|bad_network_preference|data_mode_off|data_saver_mode_on|user_abroad_roaming_disabled_off[PERSONA:Hard]",
+  "mode": "compressed",
+  "completed": true,
+  "total_turns": 0,
+  "total_steps": 0,
+  "tool_calls": 0,
+  "compressions": 0,
+  "reference_context_tokens": 24081,
+  "turns": []
+}

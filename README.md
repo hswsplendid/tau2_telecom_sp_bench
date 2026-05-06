@@ -8,7 +8,7 @@
 - 默认样本选择：`evaluation_criteria.actions >= 6`
 - 默认压缩参数：`cw=32000`，`reserve=2000`，阈值 `thr=30000`
 - C1 最近保留段：默认 `2800` tokens，目标范围 `2000-3000`，允许诊断中看到 `>3000`
-- 目标触发率：单样本内部压缩触发次数 / agent LLM 调用步数 `P <= 1/5` 或 `P <= 1/6`
+- 目标触发率：默认同时报告三种口径：`compressions / agent LLM steps`、`compressions / dialogue messages`、`compressions / tau2 messages`。真实 tau2 turn 口径优先看后两者，目标 `P <= 1/5` 或 `P <= 1/6`。
 - 输出：完整 prompt、trace、timing、checkpoint、压缩前后 ABC 段和逐 message token 记录
 
 ## 目录结构
@@ -47,6 +47,8 @@ cd /root/tau2_telecom_sp_bench
 
 如果 0 改造样本在 `cw32000/thr30000` 下触发率太低，可以使用 runner 的 `--initial-context-mode reference`。它只向 agent 内部历史注入中性的 telecom 背景参考消息，不改 task JSON，也不暴露给 user simulator。这个模式用于制造接近真实长上下文 agent workload 的可压缩 B1 段。
 
+注意 tau2 默认 `telecom` 的 `base` split 只有 114 个任务；actions>=6 筛选文件来自完整 `tasks.json`。运行筛选样本时通常需要加 `--task-split full`，否则不在 `base` split 的任务会被 tau2 runner 拒绝。
+
 ## Python 运行环境
 
 本目录不要替换系统 `/usr/bin/python3`。tau2 的 `pyproject.toml` 声明需要 Python `>=3.12,<3.14`，所以这里提供本地 wrapper：
@@ -78,6 +80,16 @@ cd /root/vllm
 ```bash
 /usr/bin/python3 -m vllm_tool_proxy.vllm_tool_proxy.server \
   --backend-url http://10.10.111.43:8005 \
+  --port 6003 \
+  --tool-parser auto \
+  --native-template
+```
+
+本机已验证可用的代理入口也可以写成：
+
+```bash
+/usr/bin/python3 -m vllm_tool_proxy.server \
+  --backend-url http://127.0.0.1:8005 \
   --port 6003 \
   --tool-parser auto \
   --native-template
@@ -119,6 +131,7 @@ cd /root/tau2_telecom_sp_bench
 ./run_tau2.sh run \
   --mode compressed \
   --model Llama-3.3-70B-Instruct \
+  --task-split full \
   --limit 3 \
   --initial-context-mode reference \
   --target-initial-tokens 26000 \
@@ -182,8 +195,10 @@ cd /root/tau2_telecom_sp_bench
 - 工具调用次数
 - 总上下文长度分布
 - context churn ratio
-- 压缩触发次数与 `P = compressions / steps`
-- C1 长度分布和 `P<=1/5` / `P<=1/6` 计数
+- 压缩触发次数与 `P_compress_per_step = compressions / agent LLM steps`
+- `P_compress_per_dialogue_message = compressions / (assistant + user messages)`
+- `P_compress_per_tau2_message = compressions / all tau2 messages`
+- C1 长度分布和各 P 口径下的 `P<=1/5` / `P<=1/6` 计数
 - semi-prefill 次数和每次 token 长度
 - tau2 benchmark `avg_reward` 与 `pass_hat_1`
 

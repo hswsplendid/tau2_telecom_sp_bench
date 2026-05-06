@@ -1,0 +1,109 @@
+{
+  "sample_id": "service_issue_overdue_bill_suspension_PERSONA_Easy_eebd80ec63",
+  "task_id": "[service_issue]overdue_bill_suspension[PERSONA:Easy]",
+  "mode": "compressed",
+  "completed": true,
+  "total_turns": 2,
+  "total_steps": 5,
+  "tool_calls": 4,
+  "compressions": 1,
+  "reference_context_tokens": 23220,
+  "turns": [
+    {
+      "sample_id": "service_issue_overdue_bill_suspension_PERSONA_Easy_eebd80ec63",
+      "task_id": "[service_issue]overdue_bill_suspension[PERSONA:Easy]",
+      "turn": 1,
+      "step": 1,
+      "prompt_tokens": 30129,
+      "output_tokens": 32,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_0490292326dc4892b9d54240",
+          "name": "get_customer_by_phone",
+          "arguments": {
+            "phone_number": "555-123-2002"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "service_issue_overdue_bill_suspension_PERSONA_Easy_eebd80ec63",
+      "task_id": "[service_issue]overdue_bill_suspension[PERSONA:Easy]",
+      "turn": 1,
+      "step": 2,
+      "prompt_tokens": 30325,
+      "output_tokens": 37,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [],
+      "assistant_content_preview": "Your account is active, and you have three lines associated with your account. I will now check the status of each of these lines to identify the one that matches your phone number."
+    },
+    {
+      "sample_id": "service_issue_overdue_bill_suspension_PERSONA_Easy_eebd80ec63",
+      "task_id": "[service_issue]overdue_bill_suspension[PERSONA:Easy]",
+      "turn": 2,
+      "step": 3,
+      "prompt_tokens": 30425,
+      "output_tokens": 12,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_052f5a9323577bc17d9cfeaa",
+          "name": "get_details_by_id",
+          "arguments": {
+            "id": "L1001"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "service_issue_overdue_bill_suspension_PERSONA_Easy_eebd80ec63",
+      "task_id": "[service_issue]overdue_bill_suspension[PERSONA:Easy]",
+      "turn": 2,
+      "step": 4,
+      "prompt_tokens": 30550,
+      "output_tokens": 21,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_3565f40b140c4654a5243a20",
+          "name": "get_details_by_id",
+          "arguments": {
+            "id": "L1002"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "service_issue_overdue_bill_suspension_PERSONA_Easy_eebd80ec63",
+      "task_id": "[service_issue]overdue_bill_suspension[PERSONA:Easy]",
+      "turn": 2,
+      "step": 5,
+      "prompt_tokens": 30680,
+      "output_tokens": 21,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_ebb82b1da3004c89a50c6f52",
+          "name": "get_details_by_id",
+          "arguments": {
+            "id": "L1003"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    }
+  ]
+}

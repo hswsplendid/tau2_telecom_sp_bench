@@ -1,0 +1,230 @@
+{
+  "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_bad_wifi_calling_data_usage_e_5720a6dd27",
+  "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|data_usage_exceeded[PERSONA:Easy]",
+  "mode": "baseline",
+  "completed": false,
+  "total_turns": 5,
+  "total_steps": 12,
+  "tool_calls": 8,
+  "compressions": 0,
+  "reference_context_tokens": 24081,
+  "turns": [
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_bad_wifi_calling_data_usage_e_5720a6dd27",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|data_usage_exceeded[PERSONA:Easy]",
+      "turn": 1,
+      "step": 1,
+      "prompt_tokens": 30513,
+      "output_tokens": 32,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_329d7165dc1e4a11be5ee2f6",
+          "name": "get_customer_by_phone",
+          "arguments": {
+            "phone_number": "555-123-2002"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_bad_wifi_calling_data_usage_e_5720a6dd27",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|data_usage_exceeded[PERSONA:Easy]",
+      "turn": 1,
+      "step": 2,
+      "prompt_tokens": 30706,
+      "output_tokens": 28,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_9b2f82c707264a35869f7fc3",
+          "name": "get_details_by_id",
+          "arguments": {
+            "id": "L1001"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_bad_wifi_calling_data_usage_e_5720a6dd27",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|data_usage_exceeded[PERSONA:Easy]",
+      "turn": 1,
+      "step": 3,
+      "prompt_tokens": 30831,
+      "output_tokens": 21,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_71a03c6ffe954c6dae73fdf4",
+          "name": "get_details_by_id",
+          "arguments": {
+            "id": "L1002"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_bad_wifi_calling_data_usage_e_5720a6dd27",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|data_usage_exceeded[PERSONA:Easy]",
+      "turn": 1,
+      "step": 4,
+      "prompt_tokens": 30958,
+      "output_tokens": 31,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_513cc484aab94f87b174616d",
+          "name": "can_send_mms",
+          "arguments": {
+            "phone_number": "555-123-2002"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_bad_wifi_calling_data_usage_e_5720a6dd27",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|data_usage_exceeded[PERSONA:Easy]",
+      "turn": 1,
+      "step": 5,
+      "prompt_tokens": 31012,
+      "output_tokens": 18,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [],
+      "assistant_content_preview": "I will use the run_speed_test tool to check for potential issues with mobile data."
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_bad_wifi_calling_data_usage_e_5720a6dd27",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|data_usage_exceeded[PERSONA:Easy]",
+      "turn": 2,
+      "step": 6,
+      "prompt_tokens": 31063,
+      "output_tokens": 29,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_b0c81680f8294999b19f0e28",
+          "name": "toggle_data",
+          "arguments": {
+            "phone_number": "555-123-2002"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_bad_wifi_calling_data_usage_e_5720a6dd27",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|data_usage_exceeded[PERSONA:Easy]",
+      "turn": 2,
+      "step": 7,
+      "prompt_tokens": 31116,
+      "output_tokens": 23,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [],
+      "assistant_content_preview": "I will use the check_network_status tool to check your phone's connection status to cellular networks and Wi-Fi."
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_bad_wifi_calling_data_usage_e_5720a6dd27",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|data_usage_exceeded[PERSONA:Easy]",
+      "turn": 3,
+      "step": 8,
+      "prompt_tokens": 31188,
+      "output_tokens": 25,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_d07e5aa10e4041a58391e1f9",
+          "name": "toggle_airplane_mode",
+          "arguments": {
+            "phone_number": "555-123-2002"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_bad_wifi_calling_data_usage_e_5720a6dd27",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|data_usage_exceeded[PERSONA:Easy]",
+      "turn": 3,
+      "step": 9,
+      "prompt_tokens": 31248,
+      "output_tokens": 19,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [],
+      "assistant_content_preview": "I will use the check_network_mode_preference tool to check your phone's network mode preference."
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_bad_wifi_calling_data_usage_e_5720a6dd27",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|data_usage_exceeded[PERSONA:Easy]",
+      "turn": 4,
+      "step": 10,
+      "prompt_tokens": 31308,
+      "output_tokens": 37,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_99220e3ad5c943729b9386eb",
+          "name": "set_network_mode_preference",
+          "arguments": {
+            "phone_number": "555-123-2002",
+            "mode": "4g_5g_preferred"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_bad_wifi_calling_data_usage_e_5720a6dd27",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|data_usage_exceeded[PERSONA:Easy]",
+      "turn": 4,
+      "step": 11,
+      "prompt_tokens": 31381,
+      "output_tokens": 18,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [],
+      "assistant_content_preview": "I will use the check_sim_status tool to check the status of your SIM card."
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_bad_wifi_calling_data_usage_e_5720a6dd27",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|data_usage_exceeded[PERSONA:Easy]",
+      "turn": 5,
+      "step": 12,
+      "prompt_tokens": 31440,
+      "output_tokens": 25,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_081e5c65c7054c0cb43e608d",
+          "name": "reset_apn_settings",
+          "arguments": {
+            "phone_number": "555-123-2002"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    }
+  ]
+}

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import ast
 import hashlib
 import json
 import os
@@ -22,7 +23,7 @@ for import_path in (CFG.TAU2_SRC, CFG.COMPRESSOR_ROOT, CFG.BENCH_ROOT):
 from compressor import ContextCompressor, estimate_tokens, should_compact  # noqa: E402
 from tau2.agent.base_agent import ValidAgentInputMessage  # noqa: E402
 from tau2.agent.llm_agent import LLMAgent, LLMAgentState  # noqa: E402
-from tau2.data_model.message import AssistantMessage, MultiToolMessage, SystemMessage, UserMessage  # noqa: E402
+from tau2.data_model.message import AssistantMessage, MultiToolMessage, SystemMessage, ToolCall, UserMessage  # noqa: E402
 from tau2.environment.tool import Tool  # noqa: E402
 from tau2.utils.llm_utils import generate, to_litellm_messages, to_tau2_messages  # noqa: E402
 
@@ -47,6 +48,32 @@ def message_token_rows(messages: list[dict]) -> list[dict]:
             }
         )
     return rows
+
+
+CUSTOMER_DEVICE_TOOL_NAMES = {
+    "can_send_mms",
+    "check_apn_settings",
+    "check_app_permissions",
+    "check_data_restriction_status",
+    "check_network_mode_preference",
+    "check_network_status",
+    "check_sim_status",
+    "check_status_bar",
+    "check_vpn_status",
+    "check_wifi_calling_status",
+    "disconnect_vpn",
+    "grant_app_permission",
+    "reboot_device",
+    "reseat_sim_card",
+    "reset_apn_settings",
+    "run_speed_test",
+    "set_network_mode_preference",
+    "toggle_airplane_mode",
+    "toggle_data",
+    "toggle_data_saver_mode",
+    "toggle_roaming",
+    "toggle_wifi_calling",
+}
 
 
 class TelecomSPAgentState(LLMAgentState):
@@ -83,11 +110,17 @@ class TelecomSPAgent(LLMAgent):
         reserve_tokens: int,
         keep_recent_tokens: int,
         summary_max_tokens: int,
+        include_task_ticket: bool,
+        task_ticket: str | None,
+        stepwise_tech_support: bool,
     ):
         super().__init__(tools=tools, domain_policy=domain_policy, llm=llm, llm_args=llm_args)
         self.compress_enabled = compress_enabled
         self.model_key = model_key
         self.task_id = task_id
+        self.include_task_ticket = include_task_ticket
+        self.task_ticket = task_ticket
+        self.stepwise_tech_support = stepwise_tech_support
         self.sample_id = safe_sample_id(task_id or "unknown_task")
         self.mode_label = mode_label
         self.initial_context_mode = initial_context_mode
@@ -96,6 +129,12 @@ class TelecomSPAgent(LLMAgent):
         self.reserve_tokens = reserve_tokens
         self.keep_recent_tokens = keep_recent_tokens
         self.summary_max_tokens = summary_max_tokens
+        self.available_tool_names = {
+            name
+            for tool in tools
+            for name in [getattr(tool, "name", None), getattr(getattr(tool, "function", None), "name", None)]
+            if name
+        }
 
         self.run_root = Path(run_root)
         self.prompt_log_dir = self.run_root / "prompt_logs"
@@ -122,6 +161,42 @@ class TelecomSPAgent(LLMAgent):
                 use_structured_instructions=CFG.USE_STRUCTURED_INSTRUCTIONS,
                 preserved_recent_turns=CFG.PRESERVED_RECENT_TURNS,
             )
+
+    @property
+    def system_prompt(self) -> str:
+        prompt = super().system_prompt
+        if getattr(self, "stepwise_tech_support", False):
+            prompt = (
+                f"{prompt}\n"
+                "<workflow_guidance>\n"
+                "When facts can be checked with available telecom tools, make the tool call instead of telling the user you will check it. "
+                "Do not say that you are checking account, line, usage, roaming, billing, or device state unless you are making the corresponding tool call in that turn.\n"
+                "Never invent tool names. Only call tools that are present in the provided tool schema. In particular, do not call get_lines_for_customer; after get_customer_by_phone returns line_ids, inspect candidate lines with get_details_by_id using those IDs until the phone_number matches the ticket or user phone number.\n"
+                "Customer-device troubleshooting actions and diagnostics are not agent tools. Never call or output customer-side function names as tool calls, including check_network_status, check_status_bar, check_sim_status, check_network_mode_preference, check_apn_settings, check_app_permissions, check_data_restriction_status, check_vpn_status, check_wifi_calling_status, can_send_mms, run_speed_test, toggle_airplane_mode, toggle_data, toggle_data_saver_mode, toggle_roaming, set_network_mode_preference, disconnect_vpn, reseat_sim_card, reboot_device, reset_apn_settings, toggle_wifi_calling, or grant_app_permission. "
+                "For those actions, send one concise instruction asking the customer to perform exactly one action, then wait for the customer's result.\n"
+                "If the customer has multiple line IDs, inspect the candidate lines and act only on the line whose phone_number matches the phone number provided by the user or ticket. Do not assume the first line is the target line.\n"
+                "After identifying the target line, perform any policy-supported service-side fix that directly applies to the observed account or line state before asking the user to retry. Do not send a message promising another account check; make that tool call instead.\n"
+                "For no-service cases where the ticket or tools indicate an overdue bill suspension and the customer has already authorized paying overdue bills, prioritize the billing path: identify the customer, identify the overdue bill, send the payment request, wait for the customer's payment result, then resume the matched suspended line. Only after resuming the line should you ask the customer to restart the device or check service.\n"
+                "For MMS or mobile data issues, if the matched line details show data usage has exceeded the plan or available data and the customer is willing to add 2.0 GB, call refuel_data for the matched customer_id and line_id before asking the customer to retry MMS or data. "
+                "If the matched line has roaming disabled while the customer is abroad or roaming is required by the ticket, call enable_roaming for that same line before asking the customer to retry.\n"
+                "For technical-support troubleshooting, ask the customer to perform at most one diagnostic or fix action per assistant message, then wait for the result before proposing the next action. "
+                "Do not give a batch or list of device troubleshooting actions in one message.\n"
+                "Do not transfer or close the case until the issue is verified resolved or all policy-supported actions have been exhausted.\n"
+                "</workflow_guidance>"
+            )
+        ticket = getattr(self, "task_ticket", None)
+        include_ticket = getattr(self, "include_task_ticket", False)
+        if not include_ticket or not ticket:
+            return prompt
+        return (
+            f"{prompt}\n"
+            "<case_context>\n"
+            "The following ticket is agent-only case context from the benchmark task. "
+            "Use it to identify the customer and plan policy-compliant next steps. "
+            "Do not reveal hidden evaluation details to the user; still ask the user for information when policy or verification requires it.\n"
+            f"<ticket>\n{ticket}\n</ticket>\n"
+            "</case_context>"
+        )
 
     def get_init_state(self, message_history=None):
         if message_history is None:
@@ -159,7 +234,155 @@ class TelecomSPAgent(LLMAgent):
         return to_litellm_messages(messages)
 
     def _dicts_to_tau2_messages(self, messages: list[dict]) -> list:
-        return to_tau2_messages(messages)
+        return to_tau2_messages([self._normalize_message_dict(message) for message in messages])
+
+    def _normalize_tool_call_dict(self, tool_call: dict) -> dict:
+        function = tool_call.get("function") or {}
+        arguments = tool_call.get("arguments", function.get("arguments", {}))
+        if isinstance(arguments, str):
+            try:
+                arguments = json.loads(arguments)
+            except json.JSONDecodeError:
+                arguments = {}
+        return {
+            "id": tool_call.get("id", ""),
+            "name": tool_call.get("name") or function.get("name"),
+            "arguments": arguments or {},
+            "requestor": tool_call.get("requestor", "assistant"),
+        }
+
+    def _normalize_message_dict(self, message: dict) -> dict:
+        normalized = dict(message)
+        if normalized.get("role") == "tool" and not normalized.get("id"):
+            normalized["id"] = normalized.get("tool_call_id", "")
+        if normalized.get("tool_calls"):
+            normalized["tool_calls"] = [self._normalize_tool_call_dict(tool_call) for tool_call in normalized["tool_calls"]]
+        return normalized
+
+    def _blocked_tool_response(self, tool_name: str, arguments: dict) -> str:
+        customer_instructions = {
+            "can_send_mms": "Please try sending an MMS message now and tell me whether it goes through.",
+            "check_apn_settings": "Please check your APN and picture messaging settings and tell me what you see.",
+            "check_app_permissions": "Please check whether the messaging app has the required permissions and tell me the result.",
+            "check_data_restriction_status": "Please check whether mobile data is restricted for the messaging app and tell me the result.",
+            "check_network_mode_preference": "Please check your preferred network mode and tell me what it is set to.",
+            "check_network_status": "Please check your cellular connection status and tell me what it shows.",
+            "check_sim_status": "Please check whether your SIM is active and tell me the result.",
+            "check_status_bar": "Please look at your status bar and tell me the signal, network type, and mobile data indicators.",
+            "check_vpn_status": "Please check whether a VPN is connected and tell me the result.",
+            "check_wifi_calling_status": "Please check whether Wi-Fi calling is enabled and tell me the result.",
+            "disconnect_vpn": "Please disconnect your VPN, then tell me when that is done.",
+            "grant_app_permission": "Please grant the messaging app the requested permission, then tell me when that is done.",
+            "reboot_device": "Please restart your device, then tell me when it is back on.",
+            "reseat_sim_card": "Please reseat your SIM card, then tell me when that is done.",
+            "reset_apn_settings": "Please reset your APN settings, then tell me when that is done.",
+            "run_speed_test": "Please run a speed test and tell me the result.",
+            "set_network_mode_preference": "Please set your preferred network mode to 4G or 5G preferred, then tell me when that is done.",
+            "toggle_airplane_mode": "Please turn airplane mode off, then tell me when that is done.",
+            "toggle_data": "Please turn mobile data on, then tell me when that is done.",
+            "toggle_data_saver_mode": "Please turn data saver off, then tell me when that is done.",
+            "toggle_roaming": "Please turn data roaming on, then tell me when that is done.",
+            "toggle_wifi_calling": "Please turn Wi-Fi calling off, then tell me when that is done.",
+        }
+        if tool_name in customer_instructions:
+            return customer_instructions[tool_name]
+        if tool_name == "get_lines_for_customer":
+            return "I found multiple lines on the account. I will check the listed line IDs one at a time to match your phone number."
+        return "I need to continue using the available account tools and one customer step at a time."
+
+    def _text_tool_call_dict(self, content: str | None) -> dict | None:
+        candidate = (content or "").strip()
+        if not candidate:
+            return None
+        if candidate.startswith("`") and candidate.endswith("`"):
+            candidate = candidate.strip("`").strip()
+        try:
+            parsed = ast.parse(candidate, mode="eval")
+        except SyntaxError:
+            return None
+        call = parsed.body
+        if not isinstance(call, ast.Call) or not isinstance(call.func, ast.Name):
+            return None
+        tool_name = call.func.id
+        arguments = {}
+        if len(call.args) == 1 and isinstance(call.args[0], ast.Dict):
+            try:
+                arguments.update(ast.literal_eval(call.args[0]))
+            except (ValueError, SyntaxError):
+                return None
+        elif call.args:
+            return None
+        for keyword in call.keywords:
+            if keyword.arg is None:
+                return None
+            try:
+                arguments[keyword.arg] = ast.literal_eval(keyword.value)
+            except (ValueError, SyntaxError):
+                return None
+        digest = hashlib.sha1(f"{candidate}:{time.time()}".encode("utf-8")).hexdigest()[:24]
+        return {"id": f"call_{digest}", "name": tool_name, "arguments": arguments, "requestor": "assistant"}
+
+    def _normalize_assistant_message(self, message: AssistantMessage) -> AssistantMessage:
+        if not message.tool_calls:
+            text_tool_call = self._text_tool_call_dict(message.content)
+            if text_tool_call is None:
+                return message
+            if text_tool_call["name"] in CUSTOMER_DEVICE_TOOL_NAMES or (
+                self.available_tool_names and text_tool_call["name"] not in self.available_tool_names
+            ):
+                return AssistantMessage(
+                    role="assistant",
+                    content=self._blocked_tool_response(text_tool_call["name"], text_tool_call["arguments"]),
+                    is_audio=message.is_audio,
+                    turn_idx=message.turn_idx,
+                    cost=message.cost,
+                    usage=message.usage,
+                    raw_data=message.raw_data,
+                    generation_time_seconds=message.generation_time_seconds,
+                )
+            return AssistantMessage(
+                role="assistant",
+                content=None,
+                tool_calls=[ToolCall(**text_tool_call)],
+                is_audio=message.is_audio,
+                turn_idx=message.turn_idx,
+                cost=message.cost,
+                usage=message.usage,
+                raw_data=message.raw_data,
+                generation_time_seconds=message.generation_time_seconds,
+            )
+        normalized_tool_calls = [self._normalize_tool_call_dict(tool_call.model_dump()) for tool_call in message.tool_calls]
+        blocked_tool_call = next(
+            (
+                tool_call
+                for tool_call in normalized_tool_calls
+                if tool_call["name"] in CUSTOMER_DEVICE_TOOL_NAMES
+                or (self.available_tool_names and tool_call["name"] not in self.available_tool_names)
+            ),
+            None,
+        )
+        if blocked_tool_call is not None:
+            return AssistantMessage(
+                role="assistant",
+                content=self._blocked_tool_response(blocked_tool_call["name"], blocked_tool_call["arguments"]),
+                is_audio=message.is_audio,
+                turn_idx=message.turn_idx,
+                cost=message.cost,
+                usage=message.usage,
+                raw_data=message.raw_data,
+                generation_time_seconds=message.generation_time_seconds,
+            )
+        return AssistantMessage(
+            role="assistant",
+            content=message.content,
+            tool_calls=[ToolCall(**tool_call) for tool_call in normalized_tool_calls],
+            is_audio=message.is_audio,
+            turn_idx=message.turn_idx,
+            cost=message.cost,
+            usage=message.usage,
+            raw_data=message.raw_data,
+            generation_time_seconds=message.generation_time_seconds,
+        )
 
     def _build_reference_context(self, system_messages: list, message_history: list) -> list:
         seed = (
@@ -274,6 +497,8 @@ class TelecomSPAgent(LLMAgent):
     def _maybe_compress(self, state: TelecomSPAgentState) -> dict | None:
         if not self.compress_enabled or self.compressor is None:
             return None
+        if state.step_count < 5:
+            return None
         all_messages = state.system_messages + state.messages
         message_dicts = self._messages_to_dicts(all_messages)
         total_tokens = estimate_tokens(message_dicts)
@@ -346,6 +571,7 @@ class TelecomSPAgent(LLMAgent):
             call_name="agent_response",
             **self.llm_args,
         )
+        assistant_message = self._normalize_assistant_message(assistant_message)
         elapsed_s = time.perf_counter() - started
 
         usage = assistant_message.usage or {}
@@ -478,8 +704,11 @@ def _agent_kwargs(tools, domain_policy, kwargs: dict, mode_label: str) -> dict:
     reserve_tokens = int(llm_args.pop("reserve_tokens", CFG.RESERVE_TOKENS))
     keep_recent_tokens = int(llm_args.pop("keep_recent_tokens", CFG.KEEP_RECENT_TOKENS))
     summary_max_tokens = int(llm_args.pop("summary_max_tokens", CFG.SUMMARY_MAX_TOKENS))
+    include_task_ticket = bool(llm_args.pop("include_task_ticket", CFG.INCLUDE_TASK_TICKET))
+    stepwise_tech_support = bool(llm_args.pop("stepwise_tech_support", CFG.STEPWISE_TECH_SUPPORT))
     task = kwargs.get("task")
     task_id = task.id if task is not None else "unknown_task"
+    task_ticket = task.ticket if task is not None else None
     return {
         "tools": tools,
         "domain_policy": domain_policy,
@@ -495,6 +724,9 @@ def _agent_kwargs(tools, domain_policy, kwargs: dict, mode_label: str) -> dict:
         "reserve_tokens": reserve_tokens,
         "keep_recent_tokens": keep_recent_tokens,
         "summary_max_tokens": summary_max_tokens,
+        "include_task_ticket": include_task_ticket,
+        "task_ticket": task_ticket,
+        "stepwise_tech_support": stepwise_tech_support,
     }
 
 

@@ -75,6 +75,8 @@ DATASET_SUMMARY_FILE = DATA_DIR / "telecom_actions_ge6_summary.json"
 INITIAL_CONTEXT_MODE = os.environ.get("TAU2_INITIAL_CONTEXT_MODE", "zero-rewrite")
 TARGET_INITIAL_TOKENS = int(os.environ.get("TAU2_TARGET_INITIAL_TOKENS", "26000"))
 REFERENCE_CHUNK_TOKENS = 900
+INCLUDE_TASK_TICKET = os.environ.get("TAU2_INCLUDE_TASK_TICKET", "1") not in {"0", "false", "False"}
+STEPWISE_TECH_SUPPORT = os.environ.get("TAU2_STEPWISE_TECH_SUPPORT", "1") not in {"0", "false", "False"}
 
 
 DEFAULT_MAX_STEPS = 40

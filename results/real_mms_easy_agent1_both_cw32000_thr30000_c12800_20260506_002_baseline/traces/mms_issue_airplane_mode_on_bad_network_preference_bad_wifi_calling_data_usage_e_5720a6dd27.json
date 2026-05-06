@@ -1,0 +1,158 @@
+{
+  "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_bad_wifi_calling_data_usage_e_5720a6dd27",
+  "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|data_usage_exceeded[PERSONA:Easy]",
+  "mode": "baseline",
+  "completed": false,
+  "total_turns": 6,
+  "total_steps": 9,
+  "tool_calls": 4,
+  "compressions": 0,
+  "reference_context_tokens": 24081,
+  "turns": [
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_bad_wifi_calling_data_usage_e_5720a6dd27",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|data_usage_exceeded[PERSONA:Easy]",
+      "turn": 1,
+      "step": 1,
+      "prompt_tokens": 30624,
+      "output_tokens": 93,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [],
+      "assistant_content_preview": "I'd be happy to help you troubleshoot the issue with sending MMS messages. To get started, I'll need to verify your identity and check the status of your account. Can you please confirm your name and the phone number associated with your account? Additionally, I'll make a note of your phone number, 555-123-2002, to look into this issue further. \n\nNext, I will look up your account using your phone number."
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_bad_wifi_calling_data_usage_e_5720a6dd27",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|data_usage_exceeded[PERSONA:Easy]",
+      "turn": 2,
+      "step": 2,
+      "prompt_tokens": 30792,
+      "output_tokens": 31,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_3ab19891a5ce46a28d39df21",
+          "name": "get_customer_by_phone",
+          "arguments": {
+            "phone_number": "555-123-2002"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_bad_wifi_calling_data_usage_e_5720a6dd27",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|data_usage_exceeded[PERSONA:Easy]",
+      "turn": 2,
+      "step": 3,
+      "prompt_tokens": 30985,
+      "output_tokens": 51,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [],
+      "assistant_content_preview": "I have retrieved your customer information. Now, I need to check the status of your line to ensure it is active and able to send MMS messages. I will check the line associated with your phone number, 555-123-2002."
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_bad_wifi_calling_data_usage_e_5720a6dd27",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|data_usage_exceeded[PERSONA:Easy]",
+      "turn": 3,
+      "step": 4,
+      "prompt_tokens": 31069,
+      "output_tokens": 27,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_2371e873a97c487e8f4fdb9f",
+          "name": "get_details_by_id",
+          "arguments": {
+            "id": "L1001"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_bad_wifi_calling_data_usage_e_5720a6dd27",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|data_usage_exceeded[PERSONA:Easy]",
+      "turn": 3,
+      "step": 5,
+      "prompt_tokens": 31194,
+      "output_tokens": 21,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [],
+      "assistant_content_preview": "The line associated with your phone number is not L1001, so I will try another line."
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_bad_wifi_calling_data_usage_e_5720a6dd27",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|data_usage_exceeded[PERSONA:Easy]",
+      "turn": 4,
+      "step": 6,
+      "prompt_tokens": 31324,
+      "output_tokens": 138,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [],
+      "assistant_content_preview": "I think there may be a misunderstanding. According to the information I have, your network status shows that Airplane Mode is currently off, not on. Additionally, I don't have the ability to directly turn off Airplane Mode on your device. However, I can guide you through the process. To troubleshoot the issue with sending MMS messages, can you please try turning off Airplane Mode if it's actually on, and then check if you have cellular service and a signal? If you're still having trouble, we can explore other potential causes. \n\nAlso, I will check another line to find the one associated with your phone number, 555-123-2002."
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_bad_wifi_calling_data_usage_e_5720a6dd27",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|data_usage_exceeded[PERSONA:Easy]",
+      "turn": 5,
+      "step": 7,
+      "prompt_tokens": 31552,
+      "output_tokens": 27,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_70a4dbc7fdd1476da6af0df8",
+          "name": "get_details_by_id",
+          "arguments": {
+            "id": "L1002"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_bad_wifi_calling_data_usage_e_5720a6dd27",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|data_usage_exceeded[PERSONA:Easy]",
+      "turn": 5,
+      "step": 8,
+      "prompt_tokens": 31679,
+      "output_tokens": 52,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [],
+      "assistant_content_preview": "I have found the line associated with your phone number, 555-123-2002. It is line L1002 and it is active. \n\nNow, let's check your APN settings to see if they are correctly configured for MMS."
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_bad_wifi_calling_data_usage_e_5720a6dd27",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|data_usage_exceeded[PERSONA:Easy]",
+      "turn": 6,
+      "step": 9,
+      "prompt_tokens": 31785,
+      "output_tokens": 47,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_9a65596852b840748822a07d",
+          "name": "check_apn_settings",
+          "arguments": {
+            "apn_name": "internet",
+            "mmsc_url": "http://mms.carrier.com/mms/wapenc"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    }
+  ]
+}

@@ -45,13 +45,30 @@ def list_sample_ids(run_dir: Path) -> list[str]:
     return sorted(path.stem for path in timing_dir.glob("*.json"))
 
 
+def simulation_metrics_by_task_id(run_dir: Path) -> dict:
+    results = load_json(run_dir / "tau2_results" / "results.json", {})
+    metrics = {}
+    for simulation in results.get("simulations", []):
+        messages = simulation.get("messages") or []
+        dialogue_messages = [message for message in messages if message.get("role") in {"assistant", "user"}]
+        metrics[simulation.get("task_id")] = {
+            "tau2_message_count": len(messages),
+            "dialogue_message_count": len(dialogue_messages),
+            "tau2_termination_reason": simulation.get("termination_reason"),
+        }
+    return metrics
+
+
 def load_samples(run_dir: Path) -> dict:
     samples = {}
+    simulation_metrics = simulation_metrics_by_task_id(run_dir)
     for sample_id in list_sample_ids(run_dir):
+        trace = load_json(run_dir / "traces" / f"{sample_id}.json", {})
         samples[sample_id] = {
             "timing": load_json(run_dir / "timing" / f"{sample_id}.json", []),
-            "trace": load_json(run_dir / "traces" / f"{sample_id}.json", {}),
+            "trace": trace,
             "abc": load_json(run_dir / "abc_segments" / f"{sample_id}.json", []),
+            "simulation": simulation_metrics.get(trace.get("task_id"), {}),
         }
     return samples
 
@@ -104,6 +121,7 @@ def analyze_workload(samples: dict) -> dict:
         timing = payload["timing"]
         trace = payload["trace"]
         abc_events = payload["abc"]
+        simulation = payload.get("simulation") or {}
         if not timing:
             continue
 
@@ -128,6 +146,10 @@ def analyze_workload(samples: dict) -> dict:
         compressions = len(abc_events)
         steps = len(timing)
         compression_rate = compressions / max(steps, 1)
+        dialogue_messages = simulation.get("dialogue_message_count", 0)
+        tau2_messages = simulation.get("tau2_message_count", 0)
+        dialogue_rate = compressions / max(dialogue_messages, 1)
+        tau2_message_rate = compressions / max(tau2_messages, 1)
 
         per_sample.append(
             {
@@ -135,11 +157,19 @@ def analyze_workload(samples: dict) -> dict:
                 "task_id": trace.get("task_id"),
                 "turns": trace.get("total_turns", 0),
                 "steps": steps,
+                "tau2_messages": tau2_messages,
+                "dialogue_messages": dialogue_messages,
                 "tool_calls": trace.get("tool_calls", 0),
                 "compressions": compressions,
                 "P_compress_per_step": round(compression_rate, 6),
                 "P_le_1_5": 0 < compression_rate <= CFG.P_TARGET_1_5,
                 "P_le_1_6": 0 < compression_rate <= CFG.P_TARGET_1_6,
+                "P_compress_per_dialogue_message": round(dialogue_rate, 6),
+                "P_dialogue_le_1_5": 0 < dialogue_rate <= CFG.P_TARGET_1_5,
+                "P_dialogue_le_1_6": 0 < dialogue_rate <= CFG.P_TARGET_1_6,
+                "P_compress_per_tau2_message": round(tau2_message_rate, 6),
+                "P_tau2_message_le_1_5": 0 < tau2_message_rate <= CFG.P_TARGET_1_5,
+                "P_tau2_message_le_1_6": 0 < tau2_message_rate <= CFG.P_TARGET_1_6,
                 "max_prompt_tokens": max(prompt_tokens) if prompt_tokens else 0,
                 "mean_new_tokens_per_step": round(stats.mean(output_tokens), 4) if output_tokens else 0,
                 "context_churn_ratio_mean": round(stats.mean(churn), 6) if churn else None,
@@ -156,11 +186,19 @@ def analyze_workload(samples: dict) -> dict:
             "n_samples_with_timing": len(per_sample),
             "turns_per_task": describe([row["turns"] for row in per_sample]),
             "steps_per_task": describe([row["steps"] for row in per_sample]),
+            "tau2_messages_per_task": describe([row["tau2_messages"] for row in per_sample]),
+            "dialogue_messages_per_task": describe([row["dialogue_messages"] for row in per_sample]),
             "tool_calls_per_task": describe([row["tool_calls"] for row in per_sample]),
             "compressions_per_task": describe([row["compressions"] for row in per_sample]),
             "compression_rate_P": describe([row["P_compress_per_step"] for row in per_sample]),
             "samples_P_le_1_5": sum(1 for row in per_sample if row["P_le_1_5"]),
             "samples_P_le_1_6": sum(1 for row in per_sample if row["P_le_1_6"]),
+            "compression_rate_P_dialogue_message": describe([row["P_compress_per_dialogue_message"] for row in per_sample]),
+            "samples_P_dialogue_le_1_5": sum(1 for row in per_sample if row["P_dialogue_le_1_5"]),
+            "samples_P_dialogue_le_1_6": sum(1 for row in per_sample if row["P_dialogue_le_1_6"]),
+            "compression_rate_P_tau2_message": describe([row["P_compress_per_tau2_message"] for row in per_sample]),
+            "samples_P_tau2_message_le_1_5": sum(1 for row in per_sample if row["P_tau2_message_le_1_5"]),
+            "samples_P_tau2_message_le_1_6": sum(1 for row in per_sample if row["P_tau2_message_le_1_6"]),
             "samples_P_zero": sum(1 for row in per_sample if row["P_compress_per_step"] == 0),
             "context_length_distribution": describe(all_prompt_tokens),
             "context_delta_distribution": describe(all_context_deltas),

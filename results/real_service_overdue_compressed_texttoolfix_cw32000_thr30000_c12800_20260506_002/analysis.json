@@ -1,0 +1,189 @@
+{
+  "run_dir": "/root/tau2_telecom_sp_bench/results/real_service_overdue_compressed_texttoolfix_cw32000_thr30000_c12800_20260506_002",
+  "scores": {
+    "results_path": "/root/tau2_telecom_sp_bench/results/real_service_overdue_compressed_texttoolfix_cw32000_thr30000_c12800_20260506_002/tau2_results/results.json",
+    "num_simulations": 1,
+    "avg_reward": null,
+    "pass_hat_1": 0.0,
+    "termination_reasons": {
+      "infrastructure_error": 1
+    },
+    "per_simulation": [
+      {
+        "simulation_id": "e7b81b37-e4db-4271-8fc9-f5cbc70a7efd",
+        "task_id": "[service_issue]overdue_bill_suspension[PERSONA:Easy]",
+        "reward": null,
+        "success": false,
+        "termination_reason": "infrastructure_error",
+        "duration_s": 0.0
+      }
+    ]
+  },
+  "workload": {
+    "summary": {
+      "n_samples_with_timing": 1,
+      "turns_per_task": {
+        "min": 2,
+        "max": 2,
+        "mean": 2,
+        "median": 2
+      },
+      "steps_per_task": {
+        "min": 5,
+        "max": 5,
+        "mean": 5,
+        "median": 5
+      },
+      "tau2_messages_per_task": {
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "median": 0
+      },
+      "dialogue_messages_per_task": {
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "median": 0
+      },
+      "tool_calls_per_task": {
+        "min": 4,
+        "max": 4,
+        "mean": 4,
+        "median": 4
+      },
+      "compressions_per_task": {
+        "min": 1,
+        "max": 1,
+        "mean": 1,
+        "median": 1
+      },
+      "compression_rate_P": {
+        "min": 0.2,
+        "max": 0.2,
+        "mean": 0.2,
+        "median": 0.2
+      },
+      "samples_P_le_1_5": 1,
+      "samples_P_le_1_6": 0,
+      "compression_rate_P_dialogue_message": {
+        "min": 1.0,
+        "max": 1.0,
+        "mean": 1.0,
+        "median": 1.0
+      },
+      "samples_P_dialogue_le_1_5": 0,
+      "samples_P_dialogue_le_1_6": 0,
+      "compression_rate_P_tau2_message": {
+        "min": 1.0,
+        "max": 1.0,
+        "mean": 1.0,
+        "median": 1.0
+      },
+      "samples_P_tau2_message_le_1_5": 0,
+      "samples_P_tau2_message_le_1_6": 0,
+      "samples_P_zero": 0,
+      "context_length_distribution": {
+        "min": 30129,
+        "max": 30680,
+        "mean": 30421.8,
+        "median": 30425,
+        "p25": 30227.0,
+        "p75": 30615.0
+      },
+      "context_delta_distribution": {
+        "min": 100,
+        "max": 196,
+        "mean": 137.75,
+        "median": 127.5,
+        "p25": 106.25,
+        "p75": 179.5
+      },
+      "new_tokens_per_step": {
+        "min": 12,
+        "max": 37,
+        "mean": 24.6,
+        "median": 21,
+        "p25": 16.5,
+        "p75": 34.5
+      },
+      "context_churn_ratio": {
+        "min": 0.6610945209036614,
+        "max": 0.6610945209036614,
+        "mean": 0.6611,
+        "median": 0.6611
+      },
+      "semi_prefill_lengths": {},
+      "semi_prefill_events": 0,
+      "samples_C1_lte_2000": 0,
+      "samples_C1_gt_3000_diagnostic": 1
+    },
+    "per_sample": [
+      {
+        "sample_id": "service_issue_overdue_bill_suspension_PERSONA_Easy_eebd80ec63",
+        "task_id": "[service_issue]overdue_bill_suspension[PERSONA:Easy]",
+        "turns": 2,
+        "steps": 5,
+        "tau2_messages": 0,
+        "dialogue_messages": 0,
+        "tool_calls": 4,
+        "compressions": 1,
+        "P_compress_per_step": 0.2,
+        "P_le_1_5": true,
+        "P_le_1_6": false,
+        "P_compress_per_dialogue_message": 1.0,
+        "P_dialogue_le_1_5": false,
+        "P_dialogue_le_1_6": false,
+        "P_compress_per_tau2_message": 1.0,
+        "P_tau2_message_le_1_5": false,
+        "P_tau2_message_le_1_6": false,
+        "max_prompt_tokens": 30680,
+        "mean_new_tokens_per_step": 24.6,
+        "context_churn_ratio_mean": 0.661095,
+        "semi_prefill_count": 0,
+        "semi_prefill_lengths": [],
+        "min_c1": 3311,
+        "max_c1": 3311,
+        "reference_context_tokens": 23220
+      }
+    ]
+  },
+  "time_breakdown": {
+    "aggregate": {
+      "prefill_ms": 19829.462,
+      "semi_prefill_ms": 0.0,
+      "summary_generation_ms": 3174.0,
+      "incremental_ms": 77987.585,
+      "decode_ms_est": 0.0,
+      "total_ms": 100991.047,
+      "pct": {
+        "prefill": 19.6349,
+        "semi_prefill": 3.1429,
+        "semi_prefill_request": 0.0,
+        "summary_generation": 3.1429,
+        "incremental": 77.2223,
+        "decode_est": 0.0
+      },
+      "timing_method": "Agent request latency is measured by non-streaming litellm total time. decode_ms_est uses --decode-ms-per-token; set it from server-side telemetry for paper-grade split."
+    },
+    "per_sample": [
+      {
+        "sample_id": "service_issue_overdue_bill_suspension_PERSONA_Easy_eebd80ec63",
+        "prefill_ms": 19829.462,
+        "semi_prefill_ms": 0.0,
+        "summary_generation_ms": 3174.0,
+        "incremental_ms": 77987.585,
+        "decode_ms_est": 0.0,
+        "total_ms": 100991.047,
+        "pct": {
+          "prefill": 19.6349,
+          "semi_prefill": 3.1429,
+          "semi_prefill_request": 0.0,
+          "summary_generation": 3.1429,
+          "incremental": 77.2223,
+          "decode_est": 0.0
+        }
+      }
+    ]
+  }
+}

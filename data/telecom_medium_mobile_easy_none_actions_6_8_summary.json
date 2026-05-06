@@ -1,0 +1,63 @@
+{
+  "source_tasks_file": "/root/tau2-bench/data/tau2/domains/telecom/tasks.json",
+  "transformation": "zero_rewrite_id_filter_only",
+  "min_actions": 6,
+  "filters": {
+    "max_actions": 8,
+    "min_user_actions": 4,
+    "min_assistant_actions": 1,
+    "families": [
+      "mobile_data_issue"
+    ],
+    "exclude_families": null,
+    "personas": [
+      "Easy",
+      "None"
+    ],
+    "exclude_personas": null,
+    "require_ticket_phone": true,
+    "sort_by_actions_desc": false,
+    "sort_by_actions_asc": true,
+    "limit_per_family": 10,
+    "limit": null
+  },
+  "total_tasks": 2285,
+  "selected_tasks": 10,
+  "action_count_histogram": {
+    "1": 45,
+    "2": 61,
+    "3": 168,
+    "4": 312,
+    "5": 424,
+    "6": 449,
+    "7": 382,
+    "8": 257,
+    "9": 130,
+    "10": 46,
+    "11": 10,
+    "12": 1
+  },
+  "selected_action_count_histogram": {
+    "6": 10
+  },
+  "selected_family_histogram": {
+    "mobile_data_issue": 10
+  },
+  "selected_persona_histogram": {
+    "Easy": 4,
+    "None": 6
+  },
+  "first_selected_ids": [
+    "[mobile_data_issue]airplane_mode_on|bad_network_preference|bad_vpn|data_mode_off|data_usage_exceeded|user_abroad_roaming_disabled_on[PERSONA:Easy]",
+    "[mobile_data_issue]airplane_mode_on|bad_network_preference|bad_vpn|data_mode_off|data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:Easy]",
+    "[mobile_data_issue]airplane_mode_on|bad_network_preference|bad_vpn|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:None]",
+    "[mobile_data_issue]airplane_mode_on|bad_network_preference|bad_vpn|data_saver_mode_on|data_usage_exceeded|user_abroad_roaming_disabled_on[PERSONA:None]",
+    "[mobile_data_issue]airplane_mode_on|bad_network_preference|bad_vpn|data_saver_mode_on|data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:None]",
+    "[mobile_data_issue]airplane_mode_on|bad_network_preference|bad_vpn|data_usage_exceeded|user_abroad_roaming_disabled_off[PERSONA:Easy]",
+    "[mobile_data_issue]airplane_mode_on|bad_network_preference|data_mode_off|data_saver_mode_on|data_usage_exceeded|user_abroad_roaming_disabled_on[PERSONA:None]",
+    "[mobile_data_issue]airplane_mode_on|bad_network_preference|data_mode_off|data_saver_mode_on|data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:None]",
+    "[mobile_data_issue]airplane_mode_on|bad_network_preference|data_mode_off|data_usage_exceeded|user_abroad_roaming_disabled_off[PERSONA:Easy]",
+    "[mobile_data_issue]airplane_mode_on|bad_network_preference|data_saver_mode_on|data_usage_exceeded|user_abroad_roaming_disabled_off[PERSONA:None]"
+  ],
+  "note": "The task JSON is not modified. tau2-bench still loads the original telecom dataset; this file only records task IDs with enough expected actions."
+}

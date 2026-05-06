@@ -1,0 +1,73 @@
+{
+  "source_tasks_file": "/root/tau2-bench/data/tau2/domains/telecom/tasks.json",
+  "transformation": "zero_rewrite_id_filter_only",
+  "min_actions": 4,
+  "filters": {
+    "max_actions": 6,
+    "min_user_actions": 3,
+    "min_assistant_actions": 0,
+    "families": [
+      "mms_issue"
+    ],
+    "exclude_families": null,
+    "personas": [
+      "Easy",
+      "None"
+    ],
+    "exclude_personas": null,
+    "require_ticket_phone": true,
+    "sort_by_actions_desc": false,
+    "sort_by_actions_asc": true,
+    "limit_per_family": 20,
+    "limit": null
+  },
+  "total_tasks": 2285,
+  "selected_tasks": 20,
+  "action_count_histogram": {
+    "1": 45,
+    "2": 61,
+    "3": 168,
+    "4": 312,
+    "5": 424,
+    "6": 449,
+    "7": 382,
+    "8": 257,
+    "9": 130,
+    "10": 46,
+    "11": 10,
+    "12": 1
+  },
+  "selected_action_count_histogram": {
+    "4": 20
+  },
+  "selected_family_histogram": {
+    "mms_issue": 20
+  },
+  "selected_persona_histogram": {
+    "Easy": 14,
+    "None": 6
+  },
+  "first_selected_ids": [
+    "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_app_storage_permission[PERSONA:None]",
+    "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|data_mode_off[PERSONA:Easy]",
+    "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|data_usage_exceeded[PERSONA:Easy]",
+    "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|unseat_sim_card[PERSONA:Easy]",
+    "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|user_abroad_roaming_disabled_on[PERSONA:Easy]",
+    "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|user_abroad_roaming_enabled_off[PERSONA:Easy]",
+    "[mms_issue]airplane_mode_on|bad_network_preference|break_apn_mms_setting[PERSONA:Easy]",
+    "[mms_issue]airplane_mode_on|bad_network_preference|break_app_both_permissions[PERSONA:Easy]",
+    "[mms_issue]airplane_mode_on|bad_network_preference|break_app_sms_permission|data_mode_off[PERSONA:None]",
+    "[mms_issue]airplane_mode_on|bad_network_preference|break_app_sms_permission|data_usage_exceeded[PERSONA:None]",
+    "[mms_issue]airplane_mode_on|bad_network_preference|break_app_sms_permission|unseat_sim_card[PERSONA:None]",
+    "[mms_issue]airplane_mode_on|bad_network_preference|break_app_sms_permission|user_abroad_roaming_disabled_on[PERSONA:None]",
+    "[mms_issue]airplane_mode_on|bad_network_preference|break_app_sms_permission|user_abroad_roaming_enabled_off[PERSONA:None]",
+    "[mms_issue]airplane_mode_on|bad_network_preference|break_app_storage_permission|data_mode_off[PERSONA:Easy]",
+    "[mms_issue]airplane_mode_on|bad_network_preference|break_app_storage_permission|data_usage_exceeded[PERSONA:Easy]",
+    "[mms_issue]airplane_mode_on|bad_network_preference|break_app_storage_permission|unseat_sim_card[PERSONA:Easy]",
+    "[mms_issue]airplane_mode_on|bad_network_preference|break_app_storage_permission|user_abroad_roaming_disabled_on[PERSONA:Easy]",
+    "[mms_issue]airplane_mode_on|bad_network_preference|break_app_storage_permission|user_abroad_roaming_enabled_off[PERSONA:Easy]",
+    "[mms_issue]airplane_mode_on|bad_network_preference|data_mode_off|data_usage_exceeded[PERSONA:Easy]",
+    "[mms_issue]airplane_mode_on|bad_network_preference|data_mode_off|unseat_sim_card[PERSONA:Easy]"
+  ],
+  "note": "The task JSON is not modified. tau2-bench still loads the original telecom dataset; this file only records task IDs with enough expected actions."
+}

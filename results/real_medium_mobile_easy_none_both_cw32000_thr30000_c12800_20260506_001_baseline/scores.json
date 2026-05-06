@@ -1,0 +1,19 @@
+{
+  "results_path": "/root/tau2_telecom_sp_bench/results/real_medium_mobile_easy_none_both_cw32000_thr30000_c12800_20260506_001_baseline/tau2_results/results.json",
+  "num_simulations": 1,
+  "avg_reward": 0.0,
+  "pass_hat_1": 0.0,
+  "termination_reasons": {
+    "user_stop": 1
+  },
+  "per_simulation": [
+    {
+      "simulation_id": "eaea8e47-5d02-4279-a8b2-edc5a67dd95f",
+      "task_id": "[mobile_data_issue]airplane_mode_on|bad_network_preference|bad_vpn|data_mode_off|data_usage_exceeded|user_abroad_roaming_disabled_on[PERSONA:Easy]",
+      "reward": 0.0,
+      "success": false,
+      "termination_reason": "user_stop",
+      "duration_s": 172.4498385929037
+    }
+  ]
+}

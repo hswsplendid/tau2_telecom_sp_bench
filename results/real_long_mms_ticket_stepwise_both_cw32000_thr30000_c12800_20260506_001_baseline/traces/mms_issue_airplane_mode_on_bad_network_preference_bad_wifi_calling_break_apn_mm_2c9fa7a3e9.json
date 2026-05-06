@@ -1,0 +1,164 @@
+{
+  "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_bad_wifi_calling_break_apn_mm_2c9fa7a3e9",
+  "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_apn_mms_setting|break_app_both_permissions|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_off[PERSONA:Hard]",
+  "mode": "baseline",
+  "completed": false,
+  "total_turns": 2,
+  "total_steps": 8,
+  "tool_calls": 6,
+  "compressions": 0,
+  "reference_context_tokens": 24081,
+  "turns": [
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_bad_wifi_calling_break_apn_mm_2c9fa7a3e9",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_apn_mms_setting|break_app_both_permissions|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_off[PERSONA:Hard]",
+      "turn": 1,
+      "step": 1,
+      "prompt_tokens": 30371,
+      "output_tokens": 32,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_c50f80abfe0543ddb6f1b9f1",
+          "name": "get_customer_by_phone",
+          "arguments": {
+            "phone_number": "555-123-2002"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_bad_wifi_calling_break_apn_mm_2c9fa7a3e9",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_apn_mms_setting|break_app_both_permissions|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_off[PERSONA:Hard]",
+      "turn": 1,
+      "step": 2,
+      "prompt_tokens": 30564,
+      "output_tokens": 28,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_1286f84c7e2a4661b88f8e0e",
+          "name": "get_details_by_id",
+          "arguments": {
+            "id": "L1001"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_bad_wifi_calling_break_apn_mm_2c9fa7a3e9",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_apn_mms_setting|break_app_both_permissions|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_off[PERSONA:Hard]",
+      "turn": 1,
+      "step": 3,
+      "prompt_tokens": 30689,
+      "output_tokens": 36,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_f2cf3aab66914018a8b7b554",
+          "name": "enable_roaming",
+          "arguments": {
+            "customer_id": "C1001",
+            "line_id": "L1001"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_bad_wifi_calling_break_apn_mm_2c9fa7a3e9",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_apn_mms_setting|break_app_both_permissions|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_off[PERSONA:Hard]",
+      "turn": 1,
+      "step": 4,
+      "prompt_tokens": 30745,
+      "output_tokens": 21,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_bfd70d63c713416e8c540cff",
+          "name": "get_details_by_id",
+          "arguments": {
+            "id": "L1001"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_bad_wifi_calling_break_apn_mm_2c9fa7a3e9",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_apn_mms_setting|break_app_both_permissions|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_off[PERSONA:Hard]",
+      "turn": 1,
+      "step": 5,
+      "prompt_tokens": 30870,
+      "output_tokens": 57,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [],
+      "assistant_content_preview": "Your line should now be able to send MMS messages while you're abroad in France. Please try sending an MMS message again to see if it works. If you're still having trouble, feel free to let me know and I'll do my best to help you further."
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_bad_wifi_calling_break_apn_mm_2c9fa7a3e9",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_apn_mms_setting|break_app_both_permissions|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_off[PERSONA:Hard]",
+      "turn": 2,
+      "step": 6,
+      "prompt_tokens": 30969,
+      "output_tokens": 25,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_a2b58ef9d4ee4c4094efd907",
+          "name": "check_apn_settings",
+          "arguments": {
+            "phone_number": "555-123-2002"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_bad_wifi_calling_break_apn_mm_2c9fa7a3e9",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_apn_mms_setting|break_app_both_permissions|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_off[PERSONA:Hard]",
+      "turn": 2,
+      "step": 7,
+      "prompt_tokens": 31027,
+      "output_tokens": 27,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_891646b2e6564f5097dae2d2",
+          "name": "get_details_by_id",
+          "arguments": {
+            "id": "L1001"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_bad_wifi_calling_break_apn_mm_2c9fa7a3e9",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_apn_mms_setting|break_app_both_permissions|data_mode_off|data_usage_exceeded|unseat_sim_card|user_abroad_roaming_disabled_off[PERSONA:Hard]",
+      "turn": 2,
+      "step": 8,
+      "prompt_tokens": 31152,
+      "output_tokens": 36,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [],
+      "assistant_content_preview": "I apologize, but I was unable to check your APN settings. However, I can try to reset them to their default values. Would you like me to do that?"
+    }
+  ]
+}

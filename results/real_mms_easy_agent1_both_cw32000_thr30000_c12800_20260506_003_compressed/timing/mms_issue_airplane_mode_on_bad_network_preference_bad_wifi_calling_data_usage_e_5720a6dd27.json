@@ -1,0 +1,18 @@
+[
+  {
+    "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_bad_wifi_calling_data_usage_e_5720a6dd27",
+    "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|data_usage_exceeded[PERSONA:Easy]",
+    "turn": 1,
+    "step": 1,
+    "classification": "full_prefill",
+    "prompt_tokens": 29950,
+    "output_tokens": 32,
+    "total_ms": 19813.421,
+    "ttft_ms": null,
+    "decode_ms": null,
+    "timing_note": "litellm non-streaming total latency; TTFT/decode split requires streaming or server metrics",
+    "compressed_this_step": false,
+    "semi_prefill_tokens": 0,
+    "tool_calls_in_response": 1
+  }
+]

@@ -1,0 +1,184 @@
+{
+  "run_dir": "/root/tau2_telecom_sp_bench/results/real_mms_easy_agent1_both_cw32000_thr30000_c12800_20260506_004_baseline",
+  "scores": {
+    "results_path": "/root/tau2_telecom_sp_bench/results/real_mms_easy_agent1_both_cw32000_thr30000_c12800_20260506_004_baseline/tau2_results/results.json",
+    "num_simulations": 1,
+    "avg_reward": 0.0,
+    "pass_hat_1": 0.0,
+    "termination_reasons": {
+      "max_steps": 1
+    },
+    "per_simulation": [
+      {
+        "simulation_id": "ded8d1a2-6b60-44a2-ab40-3b0e3767f434",
+        "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|data_usage_exceeded[PERSONA:Easy]",
+        "reward": 0.0,
+        "success": false,
+        "termination_reason": "max_steps",
+        "duration_s": 159.41523072612472
+      }
+    ]
+  },
+  "workload": {
+    "summary": {
+      "n_samples_with_timing": 1,
+      "turns_per_task": {
+        "min": 1,
+        "max": 1,
+        "mean": 1,
+        "median": 1
+      },
+      "steps_per_task": {
+        "min": 5,
+        "max": 5,
+        "mean": 5,
+        "median": 5
+      },
+      "tau2_messages_per_task": {
+        "min": 37,
+        "max": 37,
+        "mean": 37,
+        "median": 37
+      },
+      "dialogue_messages_per_task": {
+        "min": 20,
+        "max": 20,
+        "mean": 20,
+        "median": 20
+      },
+      "tool_calls_per_task": {
+        "min": 4,
+        "max": 4,
+        "mean": 4,
+        "median": 4
+      },
+      "compressions_per_task": {
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "median": 0
+      },
+      "compression_rate_P": {
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0
+      },
+      "samples_P_le_1_5": 0,
+      "samples_P_le_1_6": 0,
+      "compression_rate_P_dialogue_message": {
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0
+      },
+      "samples_P_dialogue_le_1_5": 0,
+      "samples_P_dialogue_le_1_6": 0,
+      "compression_rate_P_tau2_message": {
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0
+      },
+      "samples_P_tau2_message_le_1_5": 0,
+      "samples_P_tau2_message_le_1_6": 0,
+      "samples_P_zero": 1,
+      "context_length_distribution": {
+        "min": 30028,
+        "max": 30601,
+        "mean": 30333.8,
+        "median": 30346,
+        "p25": 30124.5,
+        "p75": 30537.0
+      },
+      "context_delta_distribution": {
+        "min": 125,
+        "max": 193,
+        "mean": 143.25,
+        "median": 127.5,
+        "p25": 125.5,
+        "p75": 176.75
+      },
+      "new_tokens_per_step": {
+        "min": 21,
+        "max": 35,
+        "mean": 27.4,
+        "median": 28,
+        "p25": 21.0,
+        "p75": 33.5
+      },
+      "context_churn_ratio": {},
+      "semi_prefill_lengths": {},
+      "semi_prefill_events": 0,
+      "samples_C1_lte_2000": 0,
+      "samples_C1_gt_3000_diagnostic": 0
+    },
+    "per_sample": [
+      {
+        "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_bad_wifi_calling_data_usage_e_5720a6dd27",
+        "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|data_usage_exceeded[PERSONA:Easy]",
+        "turns": 1,
+        "steps": 5,
+        "tau2_messages": 37,
+        "dialogue_messages": 20,
+        "tool_calls": 4,
+        "compressions": 0,
+        "P_compress_per_step": 0.0,
+        "P_le_1_5": false,
+        "P_le_1_6": false,
+        "P_compress_per_dialogue_message": 0.0,
+        "P_dialogue_le_1_5": false,
+        "P_dialogue_le_1_6": false,
+        "P_compress_per_tau2_message": 0.0,
+        "P_tau2_message_le_1_5": false,
+        "P_tau2_message_le_1_6": false,
+        "max_prompt_tokens": 30601,
+        "mean_new_tokens_per_step": 27.4,
+        "context_churn_ratio_mean": null,
+        "semi_prefill_count": 0,
+        "semi_prefill_lengths": [],
+        "min_c1": null,
+        "max_c1": null,
+        "reference_context_tokens": 23220
+      }
+    ]
+  },
+  "time_breakdown": {
+    "aggregate": {
+      "prefill_ms": 25656.673,
+      "semi_prefill_ms": 0.0,
+      "summary_generation_ms": 0.0,
+      "incremental_ms": 78436.60800000001,
+      "decode_ms_est": 0.0,
+      "total_ms": 104093.281,
+      "pct": {
+        "prefill": 24.6478,
+        "semi_prefill": 0.0,
+        "semi_prefill_request": 0.0,
+        "summary_generation": 0.0,
+        "incremental": 75.3522,
+        "decode_est": 0.0
+      },
+      "timing_method": "Agent request latency is measured by non-streaming litellm total time. decode_ms_est uses --decode-ms-per-token; set it from server-side telemetry for paper-grade split."
+    },
+    "per_sample": [
+      {
+        "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_bad_wifi_calling_data_usage_e_5720a6dd27",
+        "prefill_ms": 25656.673,
+        "semi_prefill_ms": 0.0,
+        "summary_generation_ms": 0,
+        "incremental_ms": 78436.608,
+        "decode_ms_est": 0.0,
+        "total_ms": 104093.281,
+        "pct": {
+          "prefill": 24.6478,
+          "semi_prefill": 0.0,
+          "semi_prefill_request": 0.0,
+          "summary_generation": 0.0,
+          "incremental": 75.3522,
+          "decode_est": 0.0
+        }
+      }
+    ]
+  }
+}

@@ -52,6 +52,14 @@ def agent_llm_name(model_key: str) -> str:
     return f"openai/{model_path(model_key)}"
 
 
+def user_llm_args(user_llm: str) -> dict:
+    llm_args = dict(CFG.USER_LLM_ARGS)
+    if user_llm.startswith("openai//"):
+        llm_args.setdefault("api_base", CFG.PROXY_URL)
+        llm_args.setdefault("api_key", CFG.API_KEY)
+    return llm_args
+
+
 def load_sample_ids(path: Path) -> list[str]:
     with open(path, "r", encoding="utf-8") as handle:
         return json.load(handle)
@@ -106,6 +114,7 @@ def write_run_meta(run_name: str, args, sample_ids: list[str]) -> None:
         "vllm_backend_url": CFG.VLLM_BACKEND_URL,
         "sample_ids_file": str(args.sample_ids_file),
         "num_sample_ids": len(sample_ids),
+        "task_split_name": args.task_split,
         "context": {
             "context_window": args.context_window,
             "reserve_tokens": args.reserve_tokens,
@@ -114,6 +123,8 @@ def write_run_meta(run_name: str, args, sample_ids: list[str]) -> None:
             "summary_max_tokens": args.summary_max_tokens,
             "initial_context_mode": args.initial_context_mode,
             "target_initial_tokens": args.target_initial_tokens,
+            "include_task_ticket": args.include_task_ticket,
+            "stepwise_tech_support": args.stepwise_tech_support,
         },
         "targets": {
             "P_max_1_5": CFG.P_TARGET_1_5,
@@ -147,14 +158,17 @@ def run_mode(run_name: str, mode: str, args, sample_ids: list[str]):
         "reserve_tokens": args.reserve_tokens,
         "keep_recent_tokens": args.keep_recent_tokens,
         "summary_max_tokens": args.summary_max_tokens,
+        "include_task_ticket": args.include_task_ticket,
+        "stepwise_tech_support": args.stepwise_tech_support,
     }
     run_config = TextRunConfig(
         domain="telecom",
+        task_split_name=args.task_split,
         agent=agent_name,
         llm_agent=agent_llm_name(args.model),
         llm_args_agent=llm_args_agent,
         llm_user=args.user_llm,
-        llm_args_user=CFG.USER_LLM_ARGS,
+        llm_args_user=user_llm_args(args.user_llm),
         num_tasks=None,
         task_ids=sample_ids[: args.limit] if args.limit else sample_ids,
         num_trials=args.num_trials,
@@ -179,7 +193,22 @@ def cmd_prepare(args) -> None:
         output=args.output,
         summary_out=args.summary_out,
         min_actions=args.min_actions,
+        max_actions=args.max_actions,
         limit=args.limit,
+        min_user_actions=args.min_user_actions,
+        min_assistant_actions=args.min_assistant_actions,
+        families=set(args.families) if args.families else None,
+        exclude_families=set(args.exclude_families) if args.exclude_families else None,
+        personas=set(args.personas) if args.personas else None,
+        exclude_personas=set(args.exclude_personas) if args.exclude_personas else None,
+        include_actions=set(args.include_actions) if args.include_actions else None,
+        exclude_actions=set(args.exclude_actions) if args.exclude_actions else None,
+        include_id_terms=set(args.include_id_terms) if args.include_id_terms else None,
+        exclude_id_terms=set(args.exclude_id_terms) if args.exclude_id_terms else None,
+        require_ticket_phone=args.require_ticket_phone,
+        sort_by_actions_desc=args.sort_by_actions_desc,
+        sort_by_actions_asc=args.sort_by_actions_asc,
+        limit_per_family=args.limit_per_family,
     )
     print(json.dumps(report, indent=2, ensure_ascii=False))
 
@@ -230,6 +259,7 @@ def add_run_args(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--mode", choices=["baseline", "compressed", "both"], default="compressed")
     parser.add_argument("--model", choices=list(CFG.MODEL_REGISTRY.keys()), default=CFG.DEFAULT_MODEL)
     parser.add_argument("--sample-ids-file", type=Path, default=CFG.DEFAULT_SAMPLE_IDS_FILE)
+    parser.add_argument("--task-split", default="base")
     parser.add_argument("--ids", nargs="+", default=None)
     parser.add_argument("--limit", type=int, default=None)
     parser.add_argument("--min-actions", type=int, default=CFG.MIN_ACTIONS)
@@ -244,6 +274,8 @@ def add_run_args(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--reserve-tokens", type=int, default=CFG.RESERVE_TOKENS)
     parser.add_argument("--keep-recent-tokens", type=int, default=CFG.KEEP_RECENT_TOKENS)
     parser.add_argument("--summary-max-tokens", type=int, default=CFG.SUMMARY_MAX_TOKENS)
+    parser.add_argument("--include-task-ticket", action=argparse.BooleanOptionalAction, default=CFG.INCLUDE_TASK_TICKET)
+    parser.add_argument("--stepwise-tech-support", action=argparse.BooleanOptionalAction, default=CFG.STEPWISE_TECH_SUPPORT)
     parser.add_argument("--initial-context-mode", choices=["zero-rewrite", "reference"], default=CFG.INITIAL_CONTEXT_MODE)
     parser.add_argument("--target-initial-tokens", type=int, default=CFG.TARGET_INITIAL_TOKENS)
     parser.add_argument("--auto-resume", action="store_true")
@@ -264,7 +296,22 @@ def main() -> None:
 
     prepare = subparsers.add_parser("prepare-data", help="write actions>=N zero-rewrite sample IDs")
     prepare.add_argument("--min-actions", type=int, default=CFG.MIN_ACTIONS)
+    prepare.add_argument("--max-actions", type=int, default=None)
     prepare.add_argument("--limit", type=int, default=None)
+    prepare.add_argument("--min-user-actions", type=int, default=0)
+    prepare.add_argument("--min-assistant-actions", type=int, default=0)
+    prepare.add_argument("--families", nargs="+", default=None)
+    prepare.add_argument("--exclude-families", nargs="+", default=None)
+    prepare.add_argument("--personas", nargs="+", default=None)
+    prepare.add_argument("--exclude-personas", nargs="+", default=None)
+    prepare.add_argument("--include-actions", nargs="+", default=None)
+    prepare.add_argument("--exclude-actions", nargs="+", default=None)
+    prepare.add_argument("--include-id-terms", nargs="+", default=None)
+    prepare.add_argument("--exclude-id-terms", nargs="+", default=None)
+    prepare.add_argument("--require-ticket-phone", action="store_true")
+    prepare.add_argument("--sort-by-actions-desc", action="store_true")
+    prepare.add_argument("--sort-by-actions-asc", action="store_true")
+    prepare.add_argument("--limit-per-family", type=int, default=None)
     prepare.add_argument("--output", type=Path, default=CFG.DEFAULT_SAMPLE_IDS_FILE)
     prepare.add_argument("--summary-out", type=Path, default=CFG.DATASET_SUMMARY_FILE)
     prepare.set_defaults(func=cmd_prepare)

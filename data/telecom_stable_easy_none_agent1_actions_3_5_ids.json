@@ -1,0 +1,12 @@
+[
+  "[mms_issue]bad_network_preference|user_abroad_roaming_disabled_off[PERSONA:None]",
+  "[mobile_data_issue]data_mode_off|user_abroad_roaming_disabled_off[PERSONA:None]",
+  "[mms_issue]airplane_mode_on|bad_network_preference|user_abroad_roaming_disabled_off[PERSONA:None]",
+  "[mms_issue]bad_network_preference|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:None]",
+  "[mobile_data_issue]airplane_mode_on|bad_network_preference|user_abroad_roaming_disabled_off[PERSONA:Easy]",
+  "[mobile_data_issue]bad_network_preference|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:None]",
+  "[service_issue]overdue_bill_suspension[PERSONA:Easy]",
+  "[mms_issue]airplane_mode_on|bad_network_preference|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:Easy]",
+  "[mobile_data_issue]airplane_mode_on|bad_network_preference|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:Easy]",
+  "[service_issue]airplane_mode_on|overdue_bill_suspension[PERSONA:None]"
+]

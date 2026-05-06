@@ -1,0 +1,19 @@
+{
+  "results_path": "/root/tau2_telecom_sp_bench/results/real_medium_ticket_stepwise_both_cw32000_thr30000_c12800_20260506_001_compressed/tau2_results/results.json",
+  "num_simulations": 1,
+  "avg_reward": 0.0,
+  "pass_hat_1": 0.0,
+  "termination_reasons": {
+    "user_stop": 1
+  },
+  "per_simulation": [
+    {
+      "simulation_id": "053299a0-1937-412c-9c03-3a150cfa716f",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|break_apn_mms_setting|data_usage_exceeded[PERSONA:Hard]",
+      "reward": 0.0,
+      "success": false,
+      "termination_reason": "user_stop",
+      "duration_s": 94.23354559997097
+    }
+  ]
+}

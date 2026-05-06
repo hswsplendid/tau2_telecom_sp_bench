@@ -1,0 +1,19 @@
+{
+  "results_path": "/root/tau2_telecom_sp_bench/results/real_smoke_compressed_reference_cw32000_thr30000_c12800_20260506_002/tau2_results/results.json",
+  "num_simulations": 1,
+  "avg_reward": 0.0,
+  "pass_hat_1": 0.0,
+  "termination_reasons": {
+    "max_steps": 1
+  },
+  "per_simulation": [
+    {
+      "simulation_id": "f98a1375-1702-4a4c-b3a1-44c8dc9b553c",
+      "task_id": "[mobile_data_issue]airplane_mode_on|bad_network_preference|data_mode_off|data_saver_mode_on|user_abroad_roaming_disabled_off[PERSONA:Hard]",
+      "reward": 0.0,
+      "success": false,
+      "termination_reason": "max_steps",
+      "duration_s": 24.36372777703218
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "results_path": "/root/tau2_telecom_sp_bench/results/real_service_overdue_compressed_texttoolfix_cw32000_thr30000_c12800_20260506_002/tau2_results/results.json",
+  "num_simulations": 1,
+  "avg_reward": null,
+  "pass_hat_1": 0.0,
+  "termination_reasons": {
+    "infrastructure_error": 1
+  },
+  "per_simulation": [
+    {
+      "simulation_id": "e7b81b37-e4db-4271-8fc9-f5cbc70a7efd",
+      "task_id": "[service_issue]overdue_bill_suspension[PERSONA:Easy]",
+      "reward": null,
+      "success": false,
+      "termination_reason": "infrastructure_error",
+      "duration_s": 0.0
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "results_path": "/root/tau2_telecom_sp_bench/results/real_mms_easy_agent1_both_cw32000_thr30000_c12800_20260506_003_compressed/tau2_results/results.json",
+  "num_simulations": 1,
+  "avg_reward": null,
+  "pass_hat_1": 0.0,
+  "termination_reasons": {
+    "infrastructure_error": 1
+  },
+  "per_simulation": [
+    {
+      "simulation_id": "74d3590e-d3b6-4d15-8c3e-a81eaf6d632e",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|data_usage_exceeded[PERSONA:Easy]",
+      "reward": null,
+      "success": false,
+      "termination_reason": "infrastructure_error",
+      "duration_s": 0.0
+    }
+  ]
+}

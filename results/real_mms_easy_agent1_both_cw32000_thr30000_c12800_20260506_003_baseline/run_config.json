@@ -1,0 +1,47 @@
+{
+  "run_name": "real_mms_easy_agent1_both_cw32000_thr30000_c12800_20260506_003_baseline",
+  "created_at": "2026-05-06T15:53:31.699446",
+  "domain": "telecom",
+  "mode": "both",
+  "model": "Llama-3.3-70B-Instruct",
+  "model_path": "/root/share/models/Llama-3.3-70B-Instruct",
+  "proxy_url": "http://localhost:6003/v1",
+  "vllm_backend_url": "http://10.10.111.43:8005",
+  "sample_ids_file": "data/telecom_mms_easy_none_user3_agent1_actions_4_6_ids.json",
+  "num_sample_ids": 1,
+  "task_split_name": "full",
+  "context": {
+    "context_window": 32000,
+    "reserve_tokens": 2000,
+    "threshold_tokens": 30000,
+    "keep_recent_tokens": 2800,
+    "summary_max_tokens": 1024,
+    "initial_context_mode": "reference",
+    "target_initial_tokens": 29800,
+    "include_task_ticket": true,
+    "stepwise_tech_support": true
+  },
+  "targets": {
+    "P_max_1_5": 0.2,
+    "P_max_1_6": 0.16666666666666666,
+    "C1_min_tokens": 2000,
+    "C1_diagnostic_max_tokens": 3000
+  },
+  "health_at_start": {
+    "proxy": true,
+    "swap": {
+      "total_mb": 8191,
+      "used_mb": 7692,
+      "free_mb": 499
+    },
+    "python": {
+      "executable": "/root/tau2-bench/.venv/bin/python",
+      "version": "3.12.12",
+      "ok": true,
+      "missing_packages": []
+    },
+    "models": [
+      "/root/share/models/Llama-3.3-70B-Instruct"
+    ]
+  }
+}
