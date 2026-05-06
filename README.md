@@ -37,7 +37,7 @@ actions >= 6: 1275
 
 ```bash
 cd /root/tau2_telecom_sp_bench
-/usr/bin/python3 dataset_rewrite.py --min-actions 6
+./run_tau2.sh prepare-data --min-actions 6
 ```
 
 这会写入：
@@ -46,6 +46,23 @@ cd /root/tau2_telecom_sp_bench
 - `data/telecom_actions_ge6_summary.json`
 
 如果 0 改造样本在 `cw32000/thr30000` 下触发率太低，可以使用 runner 的 `--initial-context-mode reference`。它只向 agent 内部历史注入中性的 telecom 背景参考消息，不改 task JSON，也不暴露给 user simulator。这个模式用于制造接近真实长上下文 agent workload 的可压缩 B1 段。
+
+## Python 运行环境
+
+本目录不要替换系统 `/usr/bin/python3`。tau2 的 `pyproject.toml` 声明需要 Python `>=3.12,<3.14`，所以这里提供本地 wrapper：
+
+```bash
+cd /root/tau2_telecom_sp_bench
+./run_tau2.sh --help
+```
+
+`run_tau2.sh` 默认使用已有的 `/root/tau2-bench/.venv/bin/python`，该解释器当前是 Python 3.12.12。需要临时切换时可以设置：
+
+```bash
+TAU2_PYTHON=/path/to/python3.12 ./run_tau2.sh run --help
+```
+
+这只影响 `/root/tau2_telecom_sp_bench` 的运行方式，不修改 `/usr/bin/python3`，也不改变 `/root/bfcl_long_context_sp_bench` 和 `/root/agentbench_semi_prefill_bench` 的现有命令。
 
 ## 启动模型服务
 
@@ -86,8 +103,8 @@ cd /root/vllm
 
 ```bash
 cd /root/tau2_telecom_sp_bench
-/usr/bin/python3 run.py prepare-data --min-actions 6
-/usr/bin/python3 run.py run \
+./run_tau2.sh prepare-data --min-actions 6
+./run_tau2.sh run \
   --mode compressed \
   --model Llama-3.3-70B-Instruct \
   --limit 1 \
@@ -99,7 +116,7 @@ cd /root/tau2_telecom_sp_bench
 如果需要让样本更稳定地进入 `thr=30000` 附近，使用 reference 初始上下文：
 
 ```bash
-/usr/bin/python3 run.py run \
+./run_tau2.sh run \
   --mode compressed \
   --model Llama-3.3-70B-Instruct \
   --limit 3 \
@@ -155,7 +172,7 @@ ABC 保存字段：
 
 ```bash
 cd /root/tau2_telecom_sp_bench
-/usr/bin/python3 run.py analyze results/telecom_llama_reference_turn40_smoke
+./run_tau2.sh analyze results/telecom_llama_reference_turn40_smoke
 ```
 
 分析输出包括：

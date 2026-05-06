@@ -3,8 +3,10 @@
 from __future__ import annotations
 
 import argparse
+import importlib.util
 import json
 import os
+import platform
 import subprocess
 import sys
 from datetime import datetime
@@ -17,6 +19,29 @@ for import_path in (CFG.TAU2_SRC, CFG.COMPRESSOR_ROOT, CFG.BENCH_ROOT):
         sys.path.insert(0, str(import_path))
 
 from dataset_rewrite import write_selection  # noqa: E402
+
+
+REQUIRED_RUNTIME_MODULES = {
+    "rich": "rich",
+    "tabulate": "tabulate",
+    "fastapi": "fastapi",
+    "uvicorn": "uvicorn",
+    "pandas": "pandas",
+    "psutil": "psutil",
+    "loguru": "loguru>=0.7.3",
+    "docstring_parser": "docstring-parser>=0.16",
+    "litellm": "litellm>=1.80.15,<1.82.7",
+    "tenacity": "tenacity>=9.0.0",
+    "deepdiff": "deepdiff>=8.4.2",
+    "addict": "addict>=2.4.0",
+    "yaml": "PyYAML>=6.0.2",
+    "toml": "toml>=0.10.2",
+    "dotenv": "python-dotenv>=1.0.0",
+    "typer": "typer>=0.12.5",
+    "requests": "requests>=2.31.0",
+    "numpy": "numpy>=1.24.0",
+    "httpx": "httpx>=0.24.0",
+}
 
 
 def model_path(model_key: str) -> str:
@@ -32,8 +57,21 @@ def load_sample_ids(path: Path) -> list[str]:
         return json.load(handle)
 
 
+def check_python_runtime() -> dict:
+    missing = [package for module, package in REQUIRED_RUNTIME_MODULES.items() if importlib.util.find_spec(module) is None]
+    version_info = {
+        "executable": sys.executable,
+        "version": platform.python_version(),
+        "ok": not missing,
+        "missing_packages": missing,
+    }
+    if sys.version_info < (3, 12):
+        version_info["version_warning"] = "tau2 pyproject declares requires-python >=3.12,<3.14; imports were validated here, but full benchmark runs should watch for syntax/runtime drift."
+    return version_info
+
+
 def check_health() -> dict:
-    report = {"proxy": False, "swap": None}
+    report = {"proxy": False, "swap": None, "python": check_python_runtime()}
     try:
         import urllib.request
 
@@ -147,6 +185,11 @@ def cmd_prepare(args) -> None:
 
 
 def cmd_run(args) -> None:
+    runtime = check_python_runtime()
+    if runtime["missing_packages"]:
+        install_hint = f" {sys.executable} -m pip install " + " ".join(f"'{package}'" for package in runtime["missing_packages"])
+        raise RuntimeError(f"Missing Python packages for the active interpreter: {runtime['missing_packages']}. Install with:{install_hint}")
+
     from agent import register_agents
     from analyze import analyze_run
 
