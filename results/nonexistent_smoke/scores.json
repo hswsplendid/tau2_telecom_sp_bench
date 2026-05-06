@@ -1,0 +1,8 @@
+{
+  "results_path": "/root/tau2_telecom_sp_bench/results/nonexistent_smoke/tau2_results/results.json",
+  "num_simulations": 0,
+  "avg_reward": null,
+  "pass_hat_1": null,
+  "termination_reasons": {},
+  "per_simulation": []
+}

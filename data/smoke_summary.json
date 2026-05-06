@@ -1,0 +1,29 @@
+{
+  "source_tasks_file": "/root/tau2-bench/data/tau2/domains/telecom/tasks.json",
+  "transformation": "zero_rewrite_id_filter_only",
+  "min_actions": 6,
+  "total_tasks": 2285,
+  "selected_tasks": 2,
+  "action_count_histogram": {
+    "1": 45,
+    "2": 61,
+    "3": 168,
+    "4": 312,
+    "5": 424,
+    "6": 449,
+    "7": 382,
+    "8": 257,
+    "9": 130,
+    "10": 46,
+    "11": 10,
+    "12": 1
+  },
+  "selected_action_count_histogram": {
+    "6": 2
+  },
+  "first_selected_ids": [
+    "[mobile_data_issue]airplane_mode_on|bad_network_preference|data_mode_off|data_saver_mode_on|user_abroad_roaming_disabled_off[PERSONA:Hard]",
+    "[mobile_data_issue]airplane_mode_on|bad_vpn|data_mode_off|data_saver_mode_on|user_abroad_roaming_disabled_off[PERSONA:None]"
+  ],
+  "note": "The task JSON is not modified. tau2-bench still loads the original telecom dataset; this file only records task IDs with enough expected actions."
+}
