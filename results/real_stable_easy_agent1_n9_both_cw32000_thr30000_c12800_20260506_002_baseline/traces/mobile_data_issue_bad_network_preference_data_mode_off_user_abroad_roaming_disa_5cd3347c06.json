@@ -1,0 +1,12 @@
+{
+  "sample_id": "mobile_data_issue_bad_network_preference_data_mode_off_user_abroad_roaming_disa_5cd3347c06",
+  "task_id": "[mobile_data_issue]bad_network_preference|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:None]",
+  "mode": "baseline",
+  "completed": true,
+  "total_turns": 0,
+  "total_steps": 0,
+  "tool_calls": 0,
+  "compressions": 0,
+  "reference_context_tokens": 23220,
+  "turns": []
+}

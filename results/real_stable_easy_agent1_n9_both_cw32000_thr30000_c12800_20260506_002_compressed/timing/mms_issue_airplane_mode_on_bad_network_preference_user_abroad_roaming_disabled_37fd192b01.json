@@ -1,0 +1,50 @@
+[
+  {
+    "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_user_abroad_roaming_disabled_37fd192b01",
+    "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|user_abroad_roaming_disabled_off[PERSONA:None]",
+    "turn": 1,
+    "step": 1,
+    "classification": "full_prefill",
+    "prompt_tokens": 30112,
+    "output_tokens": 32,
+    "total_ms": 20285.635,
+    "ttft_ms": null,
+    "decode_ms": null,
+    "timing_note": "litellm non-streaming total latency; TTFT/decode split requires streaming or server metrics",
+    "compressed_this_step": false,
+    "semi_prefill_tokens": 0,
+    "tool_calls_in_response": 1
+  },
+  {
+    "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_user_abroad_roaming_disabled_37fd192b01",
+    "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|user_abroad_roaming_disabled_off[PERSONA:None]",
+    "turn": 1,
+    "step": 2,
+    "classification": "incremental",
+    "prompt_tokens": 30305,
+    "output_tokens": 28,
+    "total_ms": 20215.297,
+    "ttft_ms": null,
+    "decode_ms": null,
+    "timing_note": "litellm non-streaming total latency; TTFT/decode split requires streaming or server metrics",
+    "compressed_this_step": false,
+    "semi_prefill_tokens": 0,
+    "tool_calls_in_response": 1
+  },
+  {
+    "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_user_abroad_roaming_disabled_37fd192b01",
+    "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|user_abroad_roaming_disabled_off[PERSONA:None]",
+    "turn": 1,
+    "step": 3,
+    "classification": "incremental",
+    "prompt_tokens": 30430,
+    "output_tokens": 21,
+    "total_ms": 19730.017,
+    "ttft_ms": null,
+    "decode_ms": null,
+    "timing_note": "litellm non-streaming total latency; TTFT/decode split requires streaming or server metrics",
+    "compressed_this_step": false,
+    "semi_prefill_tokens": 0,
+    "tool_calls_in_response": 1
+  }
+]

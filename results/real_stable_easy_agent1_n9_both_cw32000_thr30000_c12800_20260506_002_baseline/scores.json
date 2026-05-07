@@ -1,0 +1,84 @@
+{
+  "results_path": "/root/tau2_telecom_sp_bench/results/real_stable_easy_agent1_n9_both_cw32000_thr30000_c12800_20260506_002_baseline/tau2_results/results.json",
+  "num_simulations": 9,
+  "avg_reward": 0.0,
+  "pass_hat_1": 0.0,
+  "termination_reasons": {
+    "max_steps": 7,
+    "user_stop": 2
+  },
+  "per_simulation": [
+    {
+      "simulation_id": "c7364b4c-34f1-4d32-9ff2-0062a27a85f8",
+      "task_id": "[mobile_data_issue]data_mode_off|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "reward": 0.0,
+      "success": false,
+      "termination_reason": "max_steps",
+      "duration_s": 67.38740457780659
+    },
+    {
+      "simulation_id": "96f8d284-8d89-408d-b3e5-0af14bb8017c",
+      "task_id": "[mobile_data_issue]airplane_mode_on|bad_network_preference|user_abroad_roaming_disabled_off[PERSONA:Easy]",
+      "reward": 0.0,
+      "success": false,
+      "termination_reason": "user_stop",
+      "duration_s": 33.88740985514596
+    },
+    {
+      "simulation_id": "29ba5467-9466-4c24-b2af-ec740c10834a",
+      "task_id": "[mobile_data_issue]bad_network_preference|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "reward": 0.0,
+      "success": false,
+      "termination_reason": "max_steps",
+      "duration_s": 67.64203281700611
+    },
+    {
+      "simulation_id": "dc8e4b60-13a8-4222-b492-122d771d6304",
+      "task_id": "[mobile_data_issue]airplane_mode_on|bad_network_preference|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:Easy]",
+      "reward": 0.0,
+      "success": false,
+      "termination_reason": "max_steps",
+      "duration_s": 69.52646705787629
+    },
+    {
+      "simulation_id": "53a657cb-e7e1-4512-893f-11a3524714ec",
+      "task_id": "[service_issue]overdue_bill_suspension[PERSONA:Easy]",
+      "reward": 0.0,
+      "success": false,
+      "termination_reason": "max_steps",
+      "duration_s": 238.87826331984252
+    },
+    {
+      "simulation_id": "848be936-9c9e-4ca3-a9d5-4a8fbab67c03",
+      "task_id": "[mms_issue]bad_network_preference|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "reward": 0.0,
+      "success": false,
+      "termination_reason": "max_steps",
+      "duration_s": 287.11075459979475
+    },
+    {
+      "simulation_id": "04b34649-2148-4893-9ea5-231debf5ce03",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "reward": 0.0,
+      "success": false,
+      "termination_reason": "max_steps",
+      "duration_s": 287.3666489899624
+    },
+    {
+      "simulation_id": "5ee305bf-74e1-4340-8659-d7e9b9d43d3a",
+      "task_id": "[mms_issue]bad_network_preference|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "reward": 0.0,
+      "success": false,
+      "termination_reason": "max_steps",
+      "duration_s": 298.60939450282604
+    },
+    {
+      "simulation_id": "e997db64-33c3-40f0-afc4-c2af0e6ddd63",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:Easy]",
+      "reward": 0.0,
+      "success": false,
+      "termination_reason": "user_stop",
+      "duration_s": 29.1266778500285
+    }
+  ]
+}

@@ -1,0 +1,230 @@
+{
+  "sample_id": "mms_issue_bad_network_preference_data_mode_off_user_abroad_roaming_disabled_off_28bbe837f4",
+  "task_id": "[mms_issue]bad_network_preference|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:None]",
+  "mode": "baseline",
+  "completed": true,
+  "total_turns": 4,
+  "total_steps": 12,
+  "tool_calls": 8,
+  "compressions": 0,
+  "reference_context_tokens": 23220,
+  "turns": [
+    {
+      "sample_id": "mms_issue_bad_network_preference_data_mode_off_user_abroad_roaming_disabled_off_28bbe837f4",
+      "task_id": "[mms_issue]bad_network_preference|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "turn": 1,
+      "step": 1,
+      "prompt_tokens": 30112,
+      "output_tokens": 32,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_a2d331cb4701477c817a88e8",
+          "name": "get_customer_by_phone",
+          "arguments": {
+            "phone_number": "555-123-2002"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_bad_network_preference_data_mode_off_user_abroad_roaming_disabled_off_28bbe837f4",
+      "task_id": "[mms_issue]bad_network_preference|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "turn": 1,
+      "step": 2,
+      "prompt_tokens": 30305,
+      "output_tokens": 28,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_59186ea0e0fd4b499a6f7367",
+          "name": "get_details_by_id",
+          "arguments": {
+            "id": "L1001"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_bad_network_preference_data_mode_off_user_abroad_roaming_disabled_off_28bbe837f4",
+      "task_id": "[mms_issue]bad_network_preference|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "turn": 1,
+      "step": 3,
+      "prompt_tokens": 30430,
+      "output_tokens": 21,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_01c93756ae2940acaccd964e",
+          "name": "get_details_by_id",
+          "arguments": {
+            "id": "L1002"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_bad_network_preference_data_mode_off_user_abroad_roaming_disabled_off_28bbe837f4",
+      "task_id": "[mms_issue]bad_network_preference|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "turn": 1,
+      "step": 4,
+      "prompt_tokens": 30557,
+      "output_tokens": 21,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_9083b50d9a8a453e97ef800b",
+          "name": "get_details_by_id",
+          "arguments": {
+            "id": "L1003"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_bad_network_preference_data_mode_off_user_abroad_roaming_disabled_off_28bbe837f4",
+      "task_id": "[mms_issue]bad_network_preference|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "turn": 1,
+      "step": 5,
+      "prompt_tokens": 30685,
+      "output_tokens": 36,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_b60e2da0292c4ab99eee0396",
+          "name": "enable_roaming",
+          "arguments": {
+            "customer_id": "C1001",
+            "line_id": "L1002"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_bad_network_preference_data_mode_off_user_abroad_roaming_disabled_off_28bbe837f4",
+      "task_id": "[mms_issue]bad_network_preference|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "turn": 1,
+      "step": 6,
+      "prompt_tokens": 30741,
+      "output_tokens": 27,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [],
+      "assistant_content_preview": "Your issue should be fixed now. Please try sending an MMS message again and let me know if you're still having trouble."
+    },
+    {
+      "sample_id": "mms_issue_bad_network_preference_data_mode_off_user_abroad_roaming_disabled_off_28bbe837f4",
+      "task_id": "[mms_issue]bad_network_preference|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "turn": 2,
+      "step": 7,
+      "prompt_tokens": 30824,
+      "output_tokens": 21,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_f0cf3d441c4f4c849636f466",
+          "name": "get_details_by_id",
+          "arguments": {
+            "id": "L1002"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_bad_network_preference_data_mode_off_user_abroad_roaming_disabled_off_28bbe837f4",
+      "task_id": "[mms_issue]bad_network_preference|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "turn": 2,
+      "step": 8,
+      "prompt_tokens": 30951,
+      "output_tokens": 21,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_d29684479be7420a999e74b1",
+          "name": "get_details_by_id",
+          "arguments": {
+            "id": "D1002"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_bad_network_preference_data_mode_off_user_abroad_roaming_disabled_off_28bbe837f4",
+      "task_id": "[mms_issue]bad_network_preference|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "turn": 2,
+      "step": 9,
+      "prompt_tokens": 31054,
+      "output_tokens": 36,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [],
+      "assistant_content_preview": "I've checked on the status of your device and account. Can you please try to reset your APN settings to see if that resolves the issue with sending MMS messages?"
+    },
+    {
+      "sample_id": "mms_issue_bad_network_preference_data_mode_off_user_abroad_roaming_disabled_off_28bbe837f4",
+      "task_id": "[mms_issue]bad_network_preference|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "turn": 3,
+      "step": 10,
+      "prompt_tokens": 31152,
+      "output_tokens": 21,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_a29ab706d0d84b698ec2a741",
+          "name": "get_details_by_id",
+          "arguments": {
+            "id": "L1002"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_bad_network_preference_data_mode_off_user_abroad_roaming_disabled_off_28bbe837f4",
+      "task_id": "[mms_issue]bad_network_preference|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "turn": 3,
+      "step": 11,
+      "prompt_tokens": 31279,
+      "output_tokens": 22,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [],
+      "assistant_content_preview": "Please check your APN and picture messaging settings and tell me what you see."
+    },
+    {
+      "sample_id": "mms_issue_bad_network_preference_data_mode_off_user_abroad_roaming_disabled_off_28bbe837f4",
+      "task_id": "[mms_issue]bad_network_preference|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "turn": 4,
+      "step": 12,
+      "prompt_tokens": 31385,
+      "output_tokens": 28,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [],
+      "assistant_content_preview": "Please check your APN and picture messaging settings and tell me what you see."
+    }
+  ]
+}

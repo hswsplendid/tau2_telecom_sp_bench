@@ -1,0 +1,454 @@
+{
+  "run_dir": "/root/tau2_telecom_sp_bench/results/real_stable_easy_agent1_n9_both_cw32000_thr30000_c12800_20260506_002_compressed",
+  "scores": {
+    "results_path": "/root/tau2_telecom_sp_bench/results/real_stable_easy_agent1_n9_both_cw32000_thr30000_c12800_20260506_002_compressed/tau2_results/results.json",
+    "num_simulations": 9,
+    "avg_reward": 0.0,
+    "pass_hat_1": 0.0,
+    "termination_reasons": {
+      "max_steps": 4,
+      "user_stop": 2,
+      "infrastructure_error": 3
+    },
+    "per_simulation": [
+      {
+        "simulation_id": "c4626fe5-dc27-4eeb-9e3e-9179fbe35f57",
+        "task_id": "[mobile_data_issue]data_mode_off|user_abroad_roaming_disabled_off[PERSONA:None]",
+        "reward": 0.0,
+        "success": false,
+        "termination_reason": "max_steps",
+        "duration_s": 66.81909121898934
+      },
+      {
+        "simulation_id": "e394c439-e0aa-47bb-acfd-8d0d944494d8",
+        "task_id": "[mobile_data_issue]airplane_mode_on|bad_network_preference|user_abroad_roaming_disabled_off[PERSONA:Easy]",
+        "reward": 0.0,
+        "success": false,
+        "termination_reason": "user_stop",
+        "duration_s": 33.754429035121575
+      },
+      {
+        "simulation_id": "d7f28daa-6382-49f4-a6e2-2b7fa261ed54",
+        "task_id": "[mobile_data_issue]bad_network_preference|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:None]",
+        "reward": 0.0,
+        "success": false,
+        "termination_reason": "max_steps",
+        "duration_s": 67.2024280349724
+      },
+      {
+        "simulation_id": "1f109aa0-5a4b-46a5-9bc0-4d545dbd28f4",
+        "task_id": "[mobile_data_issue]airplane_mode_on|bad_network_preference|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:Easy]",
+        "reward": 0.0,
+        "success": false,
+        "termination_reason": "max_steps",
+        "duration_s": 68.8716334879864
+      },
+      {
+        "simulation_id": "a7d68bdf-d5c5-4e08-b12a-8d8fbf1ab2e8",
+        "task_id": "[service_issue]overdue_bill_suspension[PERSONA:Easy]",
+        "reward": 0.0,
+        "success": false,
+        "termination_reason": "max_steps",
+        "duration_s": 193.7816079170443
+      },
+      {
+        "simulation_id": "c12ae97c-e27a-427f-a62a-32a1a1bdec20",
+        "task_id": "[mms_issue]bad_network_preference|user_abroad_roaming_disabled_off[PERSONA:None]",
+        "reward": 0.0,
+        "success": false,
+        "termination_reason": "user_stop",
+        "duration_s": 178.46988473599777
+      },
+      {
+        "simulation_id": "6e6d3561-b59b-41d6-920a-ac51dcd0753a",
+        "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|user_abroad_roaming_disabled_off[PERSONA:None]",
+        "reward": null,
+        "success": false,
+        "termination_reason": "infrastructure_error",
+        "duration_s": 0.0
+      },
+      {
+        "simulation_id": "d29f6729-85f8-4615-8a4f-e933fa173e33",
+        "task_id": "[mms_issue]bad_network_preference|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:None]",
+        "reward": null,
+        "success": false,
+        "termination_reason": "infrastructure_error",
+        "duration_s": 0.0
+      },
+      {
+        "simulation_id": "b9dcb058-1d40-4013-926b-21234f73c6e7",
+        "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:Easy]",
+        "reward": null,
+        "success": false,
+        "termination_reason": "infrastructure_error",
+        "duration_s": 0.0
+      }
+    ]
+  },
+  "workload": {
+    "summary": {
+      "n_samples_with_timing": 3,
+      "turns_per_task": {
+        "min": 1,
+        "max": 3,
+        "mean": 2,
+        "median": 2
+      },
+      "steps_per_task": {
+        "min": 3,
+        "max": 11,
+        "mean": 7.6667,
+        "median": 9
+      },
+      "tau2_messages_per_task": {
+        "min": 0,
+        "max": 37,
+        "mean": 22.3333,
+        "median": 30
+      },
+      "dialogue_messages_per_task": {
+        "min": 0,
+        "max": 22,
+        "mean": 13.3333,
+        "median": 18
+      },
+      "tool_calls_per_task": {
+        "min": 3,
+        "max": 9,
+        "mean": 6,
+        "median": 6
+      },
+      "compressions_per_task": {
+        "min": 0,
+        "max": 1,
+        "mean": 0.6667,
+        "median": 1
+      },
+      "compression_rate_P": {
+        "min": 0.0,
+        "max": 0.111111,
+        "mean": 0.0673,
+        "median": 0.0909
+      },
+      "samples_P_le_1_5": 2,
+      "samples_P_le_1_6": 2,
+      "compression_rate_P_dialogue_message": {
+        "min": 0.0,
+        "max": 0.055556,
+        "mean": 0.0337,
+        "median": 0.0455
+      },
+      "samples_P_dialogue_le_1_5": 2,
+      "samples_P_dialogue_le_1_6": 2,
+      "compression_rate_P_tau2_message": {
+        "min": 0.0,
+        "max": 0.033333,
+        "mean": 0.0201,
+        "median": 0.027
+      },
+      "samples_P_tau2_message_le_1_5": 2,
+      "samples_P_tau2_message_le_1_6": 2,
+      "samples_P_zero": 1,
+      "context_length_distribution": {
+        "min": 10375,
+        "max": 30685,
+        "mean": 21809.6957,
+        "median": 30112,
+        "p25": 10634.0,
+        "p75": 30430.0
+      },
+      "context_delta_distribution": {
+        "min": -20310,
+        "max": 520,
+        "mean": -1895.9,
+        "median": 125.0,
+        "p25": 74.25,
+        "p75": 129.5
+      },
+      "new_tokens_per_step": {
+        "min": 12,
+        "max": 102,
+        "mean": 31.087,
+        "median": 28,
+        "p25": 21.0,
+        "p75": 32.0
+      },
+      "context_churn_ratio": {
+        "min": 0.6610945209036614,
+        "max": 0.6625353762076706,
+        "mean": 0.6618,
+        "median": 0.6618
+      },
+      "semi_prefill_lengths": {
+        "min": 3529,
+        "max": 3581,
+        "mean": 3555,
+        "median": 3555.0
+      },
+      "semi_prefill_events": 2,
+      "samples_C1_lte_2000": 0,
+      "samples_C1_gt_3000_diagnostic": 2
+    },
+    "per_sample": [
+      {
+        "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_user_abroad_roaming_disabled_37fd192b01",
+        "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|user_abroad_roaming_disabled_off[PERSONA:None]",
+        "turns": 1,
+        "steps": 3,
+        "tau2_messages": 0,
+        "dialogue_messages": 0,
+        "tool_calls": 3,
+        "compressions": 0,
+        "P_compress_per_step": 0.0,
+        "P_le_1_5": false,
+        "P_le_1_6": false,
+        "P_compress_per_dialogue_message": 0.0,
+        "P_dialogue_le_1_5": false,
+        "P_dialogue_le_1_6": false,
+        "P_compress_per_tau2_message": 0.0,
+        "P_tau2_message_le_1_5": false,
+        "P_tau2_message_le_1_6": false,
+        "max_prompt_tokens": 30430,
+        "mean_new_tokens_per_step": 27,
+        "context_churn_ratio_mean": null,
+        "semi_prefill_count": 0,
+        "semi_prefill_lengths": [],
+        "min_c1": null,
+        "max_c1": null,
+        "reference_context_tokens": 23220
+      },
+      {
+        "sample_id": "mms_issue_bad_network_preference_user_abroad_roaming_disabled_off_PERSONA_None_486a8d19ea",
+        "task_id": "[mms_issue]bad_network_preference|user_abroad_roaming_disabled_off[PERSONA:None]",
+        "turns": 2,
+        "steps": 11,
+        "tau2_messages": 30,
+        "dialogue_messages": 18,
+        "tool_calls": 9,
+        "compressions": 1,
+        "P_compress_per_step": 0.090909,
+        "P_le_1_5": true,
+        "P_le_1_6": true,
+        "P_compress_per_dialogue_message": 0.055556,
+        "P_dialogue_le_1_5": true,
+        "P_dialogue_le_1_6": true,
+        "P_compress_per_tau2_message": 0.033333,
+        "P_tau2_message_le_1_5": true,
+        "P_tau2_message_le_1_6": true,
+        "max_prompt_tokens": 30685,
+        "mean_new_tokens_per_step": 27.1818,
+        "context_churn_ratio_mean": 0.662535,
+        "semi_prefill_count": 1,
+        "semi_prefill_lengths": [
+          3529
+        ],
+        "min_c1": 3259,
+        "max_c1": 3259,
+        "reference_context_tokens": 23220
+      },
+      {
+        "sample_id": "service_issue_overdue_bill_suspension_PERSONA_Easy_eebd80ec63",
+        "task_id": "[service_issue]overdue_bill_suspension[PERSONA:Easy]",
+        "turns": 3,
+        "steps": 9,
+        "tau2_messages": 37,
+        "dialogue_messages": 22,
+        "tool_calls": 6,
+        "compressions": 1,
+        "P_compress_per_step": 0.111111,
+        "P_le_1_5": true,
+        "P_le_1_6": true,
+        "P_compress_per_dialogue_message": 0.045455,
+        "P_dialogue_le_1_5": true,
+        "P_dialogue_le_1_6": true,
+        "P_compress_per_tau2_message": 0.027027,
+        "P_tau2_message_le_1_5": true,
+        "P_tau2_message_le_1_6": true,
+        "max_prompt_tokens": 30680,
+        "mean_new_tokens_per_step": 37.2222,
+        "context_churn_ratio_mean": 0.661095,
+        "semi_prefill_count": 1,
+        "semi_prefill_lengths": [
+          3581
+        ],
+        "min_c1": 3311,
+        "max_c1": 3311,
+        "reference_context_tokens": 23220
+      }
+    ]
+  },
+  "time_breakdown": {
+    "aggregate": {
+      "prefill_ms": 60221.692,
+      "semi_prefill_ms": 19565.781,
+      "summary_generation_ms": 6064.0,
+      "incremental_ms": 273703.493,
+      "decode_ms_est": 0.0,
+      "total_ms": 359554.966,
+      "pct": {
+        "prefill": 16.749,
+        "semi_prefill": 7.1282,
+        "semi_prefill_request": 5.4417,
+        "summary_generation": 1.6865,
+        "incremental": 76.1229,
+        "decode_est": 0.0
+      },
+      "timing_method": "Agent request latency is measured by non-streaming litellm total time. decode_ms_est uses --decode-ms-per-token; set it from server-side telemetry for paper-grade split."
+    },
+    "per_sample": [
+      {
+        "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_data_mode_off_user_abroad_roa_a660ab9190",
+        "prefill_ms": 0.0,
+        "semi_prefill_ms": 0.0,
+        "summary_generation_ms": 0,
+        "incremental_ms": 0.0,
+        "decode_ms_est": 0.0,
+        "total_ms": 0.0,
+        "pct": {
+          "prefill": 0.0,
+          "semi_prefill": 0.0,
+          "semi_prefill_request": 0.0,
+          "summary_generation": 0.0,
+          "incremental": 0.0,
+          "decode_est": 0.0
+        }
+      },
+      {
+        "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_user_abroad_roaming_disabled_37fd192b01",
+        "prefill_ms": 20285.635,
+        "semi_prefill_ms": 0.0,
+        "summary_generation_ms": 0,
+        "incremental_ms": 39945.314,
+        "decode_ms_est": 0.0,
+        "total_ms": 60230.949,
+        "pct": {
+          "prefill": 33.6798,
+          "semi_prefill": 0.0,
+          "semi_prefill_request": 0.0,
+          "summary_generation": 0.0,
+          "incremental": 66.3202,
+          "decode_est": 0.0
+        }
+      },
+      {
+        "sample_id": "mms_issue_bad_network_preference_data_mode_off_user_abroad_roaming_disabled_off_28bbe837f4",
+        "prefill_ms": 0.0,
+        "semi_prefill_ms": 0.0,
+        "summary_generation_ms": 0,
+        "incremental_ms": 0.0,
+        "decode_ms_est": 0.0,
+        "total_ms": 0.0,
+        "pct": {
+          "prefill": 0.0,
+          "semi_prefill": 0.0,
+          "semi_prefill_request": 0.0,
+          "summary_generation": 0.0,
+          "incremental": 0.0,
+          "decode_est": 0.0
+        }
+      },
+      {
+        "sample_id": "mms_issue_bad_network_preference_user_abroad_roaming_disabled_off_PERSONA_None_486a8d19ea",
+        "prefill_ms": 19975.199,
+        "semi_prefill_ms": 8603.328,
+        "summary_generation_ms": 2893.0,
+        "incremental_ms": 123447.137,
+        "decode_ms_est": 0.0,
+        "total_ms": 154918.664,
+        "pct": {
+          "prefill": 12.894,
+          "semi_prefill": 7.4209,
+          "semi_prefill_request": 5.5534,
+          "summary_generation": 1.8674,
+          "incremental": 79.6851,
+          "decode_est": 0.0
+        }
+      },
+      {
+        "sample_id": "mobile_data_issue_airplane_mode_on_bad_network_preference_data_mode_off_user_ab_533340f4da",
+        "prefill_ms": 0.0,
+        "semi_prefill_ms": 0.0,
+        "summary_generation_ms": 0,
+        "incremental_ms": 0.0,
+        "decode_ms_est": 0.0,
+        "total_ms": 0.0,
+        "pct": {
+          "prefill": 0.0,
+          "semi_prefill": 0.0,
+          "semi_prefill_request": 0.0,
+          "summary_generation": 0.0,
+          "incremental": 0.0,
+          "decode_est": 0.0
+        }
+      },
+      {
+        "sample_id": "mobile_data_issue_airplane_mode_on_bad_network_preference_user_abroad_roaming_d_701688eb8a",
+        "prefill_ms": 0.0,
+        "semi_prefill_ms": 0.0,
+        "summary_generation_ms": 0,
+        "incremental_ms": 0.0,
+        "decode_ms_est": 0.0,
+        "total_ms": 0.0,
+        "pct": {
+          "prefill": 0.0,
+          "semi_prefill": 0.0,
+          "semi_prefill_request": 0.0,
+          "summary_generation": 0.0,
+          "incremental": 0.0,
+          "decode_est": 0.0
+        }
+      },
+      {
+        "sample_id": "mobile_data_issue_bad_network_preference_data_mode_off_user_abroad_roaming_disa_5cd3347c06",
+        "prefill_ms": 0.0,
+        "semi_prefill_ms": 0.0,
+        "summary_generation_ms": 0,
+        "incremental_ms": 0.0,
+        "decode_ms_est": 0.0,
+        "total_ms": 0.0,
+        "pct": {
+          "prefill": 0.0,
+          "semi_prefill": 0.0,
+          "semi_prefill_request": 0.0,
+          "summary_generation": 0.0,
+          "incremental": 0.0,
+          "decode_est": 0.0
+        }
+      },
+      {
+        "sample_id": "mobile_data_issue_data_mode_off_user_abroad_roaming_disabled_off_PERSONA_None_12fa9d20be",
+        "prefill_ms": 0.0,
+        "semi_prefill_ms": 0.0,
+        "summary_generation_ms": 0,
+        "incremental_ms": 0.0,
+        "decode_ms_est": 0.0,
+        "total_ms": 0.0,
+        "pct": {
+          "prefill": 0.0,
+          "semi_prefill": 0.0,
+          "semi_prefill_request": 0.0,
+          "summary_generation": 0.0,
+          "incremental": 0.0,
+          "decode_est": 0.0
+        }
+      },
+      {
+        "sample_id": "service_issue_overdue_bill_suspension_PERSONA_Easy_eebd80ec63",
+        "prefill_ms": 19960.858,
+        "semi_prefill_ms": 10962.453,
+        "summary_generation_ms": 3171.0,
+        "incremental_ms": 110311.042,
+        "decode_ms_est": 0.0,
+        "total_ms": 144405.353,
+        "pct": {
+          "prefill": 13.8228,
+          "semi_prefill": 9.7873,
+          "semi_prefill_request": 7.5914,
+          "summary_generation": 2.1959,
+          "incremental": 76.3899,
+          "decode_est": 0.0
+        }
+      }
+    ]
+  }
+}
