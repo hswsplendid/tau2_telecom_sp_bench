@@ -1,0 +1,230 @@
+{
+  "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_user_abroad_roaming_disabled_37fd192b01",
+  "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|user_abroad_roaming_disabled_off[PERSONA:None]",
+  "mode": "compressed",
+  "completed": true,
+  "total_turns": 2,
+  "total_steps": 11,
+  "tool_calls": 9,
+  "compressions": 1,
+  "reference_context_tokens": 23220,
+  "turns": [
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_user_abroad_roaming_disabled_37fd192b01",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "turn": 1,
+      "step": 1,
+      "prompt_tokens": 30112,
+      "output_tokens": 32,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_58b5fbffd86b4ad38d9cfc4d",
+          "name": "get_customer_by_phone",
+          "arguments": {
+            "phone_number": "555-123-2002"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_user_abroad_roaming_disabled_37fd192b01",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "turn": 1,
+      "step": 2,
+      "prompt_tokens": 30305,
+      "output_tokens": 28,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_ca04475b33d3406f9afabb70",
+          "name": "get_details_by_id",
+          "arguments": {
+            "id": "L1001"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_user_abroad_roaming_disabled_37fd192b01",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "turn": 1,
+      "step": 3,
+      "prompt_tokens": 30430,
+      "output_tokens": 21,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_6739ebb0c40a41f0afe907a7",
+          "name": "get_details_by_id",
+          "arguments": {
+            "id": "L1002"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_user_abroad_roaming_disabled_37fd192b01",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "turn": 1,
+      "step": 4,
+      "prompt_tokens": 30557,
+      "output_tokens": 21,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_920843c067504b4198f54f1e",
+          "name": "get_details_by_id",
+          "arguments": {
+            "id": "L1003"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_user_abroad_roaming_disabled_37fd192b01",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "turn": 1,
+      "step": 5,
+      "prompt_tokens": 30685,
+      "output_tokens": 36,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_e2a6b6e9af034d2184df669b",
+          "name": "enable_roaming",
+          "arguments": {
+            "customer_id": "C1001",
+            "line_id": "L1002"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_user_abroad_roaming_disabled_37fd192b01",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "turn": 1,
+      "step": 6,
+      "prompt_tokens": 10375,
+      "output_tokens": 27,
+      "compressed_this_step": true,
+      "compression_index": 1,
+      "tool_calls": [
+        {
+          "id": "call_9a1f33307478498790ae8cc8",
+          "name": "get_details_by_id",
+          "arguments": {
+            "id": "L1002"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_user_abroad_roaming_disabled_37fd192b01",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "turn": 1,
+      "step": 7,
+      "prompt_tokens": 10502,
+      "output_tokens": 27,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [],
+      "assistant_content_preview": "Your line's roaming has been enabled. Please try sending an MMS message again and let me know if the issue is resolved."
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_user_abroad_roaming_disabled_37fd192b01",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "turn": 2,
+      "step": 8,
+      "prompt_tokens": 10574,
+      "output_tokens": 21,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_100791e7cb424bf0b3d268af",
+          "name": "get_details_by_id",
+          "arguments": {
+            "id": "L1002"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_user_abroad_roaming_disabled_37fd192b01",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "turn": 2,
+      "step": 9,
+      "prompt_tokens": 10701,
+      "output_tokens": 30,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_1db74e6fe8cc476387bcdd92",
+          "name": "get_data_usage",
+          "arguments": {
+            "customer_id": "C1001",
+            "line_id": "L1002"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_user_abroad_roaming_disabled_37fd192b01",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "turn": 2,
+      "step": 10,
+      "prompt_tokens": 10782,
+      "output_tokens": 37,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_8b5f50a91be14ceab019246f",
+          "name": "refuel_data",
+          "arguments": {
+            "customer_id": "C1001",
+            "line_id": "L1002",
+            "gb_amount": "2"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_user_abroad_roaming_disabled_37fd192b01",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "turn": 2,
+      "step": 11,
+      "prompt_tokens": 10851,
+      "output_tokens": 19,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [],
+      "assistant_content_preview": "I will now transfer you to a human agent who can further assist you with your issue."
+    }
+  ]
+}

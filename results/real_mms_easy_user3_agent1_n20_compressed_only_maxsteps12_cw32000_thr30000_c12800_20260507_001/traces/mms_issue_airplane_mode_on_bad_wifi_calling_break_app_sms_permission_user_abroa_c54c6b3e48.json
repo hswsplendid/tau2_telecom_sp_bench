@@ -1,0 +1,12 @@
+{
+  "sample_id": "mms_issue_airplane_mode_on_bad_wifi_calling_break_app_sms_permission_user_abroa_c54c6b3e48",
+  "task_id": "[mms_issue]airplane_mode_on|bad_wifi_calling|break_app_sms_permission|user_abroad_roaming_disabled_on[PERSONA:Easy]",
+  "mode": "compressed",
+  "completed": true,
+  "total_turns": 0,
+  "total_steps": 0,
+  "tool_calls": 0,
+  "compressions": 0,
+  "reference_context_tokens": 23220,
+  "turns": []
+}

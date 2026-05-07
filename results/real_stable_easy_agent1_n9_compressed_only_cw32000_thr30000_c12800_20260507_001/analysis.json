@@ -1,0 +1,506 @@
+{
+  "run_dir": "/root/tau2_telecom_sp_bench/results/real_stable_easy_agent1_n9_compressed_only_cw32000_thr30000_c12800_20260507_001",
+  "scores": {
+    "results_path": "/root/tau2_telecom_sp_bench/results/real_stable_easy_agent1_n9_compressed_only_cw32000_thr30000_c12800_20260507_001/tau2_results/results.json",
+    "num_simulations": 9,
+    "avg_reward": 0.0,
+    "pass_hat_1": 0.0,
+    "termination_reasons": {
+      "max_steps": 4,
+      "user_stop": 5
+    },
+    "per_simulation": [
+      {
+        "simulation_id": "f85f964f-afab-487a-858e-2382a8092c21",
+        "task_id": "[mobile_data_issue]data_mode_off|user_abroad_roaming_disabled_off[PERSONA:None]",
+        "reward": 0.0,
+        "success": false,
+        "termination_reason": "max_steps",
+        "duration_s": 68.97639879095368
+      },
+      {
+        "simulation_id": "d9fdb26d-e14d-4a05-9533-93575448750f",
+        "task_id": "[mobile_data_issue]airplane_mode_on|bad_network_preference|user_abroad_roaming_disabled_off[PERSONA:Easy]",
+        "reward": 0.0,
+        "success": false,
+        "termination_reason": "user_stop",
+        "duration_s": 33.98493454209529
+      },
+      {
+        "simulation_id": "2b2e68c2-686e-4bfa-bc0b-d03def112a7b",
+        "task_id": "[mobile_data_issue]bad_network_preference|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:None]",
+        "reward": 0.0,
+        "success": false,
+        "termination_reason": "max_steps",
+        "duration_s": 67.39409245108254
+      },
+      {
+        "simulation_id": "8635ca76-ad6d-4f34-bd2f-a12315af9624",
+        "task_id": "[mobile_data_issue]airplane_mode_on|bad_network_preference|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:Easy]",
+        "reward": 0.0,
+        "success": false,
+        "termination_reason": "max_steps",
+        "duration_s": 68.41283794003539
+      },
+      {
+        "simulation_id": "7ccec7de-364a-4970-b94f-0605a286899f",
+        "task_id": "[service_issue]overdue_bill_suspension[PERSONA:Easy]",
+        "reward": 0.0,
+        "success": false,
+        "termination_reason": "max_steps",
+        "duration_s": 190.22866953513585
+      },
+      {
+        "simulation_id": "93de9d48-465a-4e09-9236-760a486ed0ec",
+        "task_id": "[mms_issue]bad_network_preference|user_abroad_roaming_disabled_off[PERSONA:None]",
+        "reward": 0.0,
+        "success": false,
+        "termination_reason": "user_stop",
+        "duration_s": 176.00653676083311
+      },
+      {
+        "simulation_id": "426a3f22-13bc-4ed0-9b3a-022cd9690073",
+        "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|user_abroad_roaming_disabled_off[PERSONA:None]",
+        "reward": 0.0,
+        "success": false,
+        "termination_reason": "user_stop",
+        "duration_s": 175.8036554721184
+      },
+      {
+        "simulation_id": "90bada07-0aa6-4136-9b12-8980a8a6819c",
+        "task_id": "[mms_issue]bad_network_preference|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:None]",
+        "reward": 0.0,
+        "success": false,
+        "termination_reason": "user_stop",
+        "duration_s": 175.62985861720517
+      },
+      {
+        "simulation_id": "ece38b2d-0483-4d0c-b106-6bc5ce196c86",
+        "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:Easy]",
+        "reward": 0.0,
+        "success": false,
+        "termination_reason": "user_stop",
+        "duration_s": 28.828236437169835
+      }
+    ]
+  },
+  "workload": {
+    "summary": {
+      "n_samples_with_timing": 4,
+      "turns_per_task": {
+        "min": 2,
+        "max": 3,
+        "mean": 2.25,
+        "median": 2.0,
+        "p25": 2.0,
+        "p75": 2.75
+      },
+      "steps_per_task": {
+        "min": 9,
+        "max": 11,
+        "mean": 10.5,
+        "median": 11.0,
+        "p25": 9.5,
+        "p75": 11.0
+      },
+      "tau2_messages_per_task": {
+        "min": 30,
+        "max": 37,
+        "mean": 31.75,
+        "median": 30.0,
+        "p25": 30.0,
+        "p75": 35.25
+      },
+      "dialogue_messages_per_task": {
+        "min": 18,
+        "max": 22,
+        "mean": 19,
+        "median": 18.0,
+        "p25": 18.0,
+        "p75": 21.0
+      },
+      "tool_calls_per_task": {
+        "min": 6,
+        "max": 9,
+        "mean": 8.25,
+        "median": 9.0,
+        "p25": 6.75,
+        "p75": 9.0
+      },
+      "compressions_per_task": {
+        "min": 1,
+        "max": 1,
+        "mean": 1,
+        "median": 1.0,
+        "p25": 1.0,
+        "p75": 1.0
+      },
+      "compression_rate_P": {
+        "min": 0.090909,
+        "max": 0.111111,
+        "mean": 0.096,
+        "median": 0.0909,
+        "p25": 0.0909,
+        "p75": 0.1061
+      },
+      "samples_P_le_1_5": 4,
+      "samples_P_le_1_6": 4,
+      "compression_rate_P_dialogue_message": {
+        "min": 0.045455,
+        "max": 0.055556,
+        "mean": 0.053,
+        "median": 0.0556,
+        "p25": 0.048,
+        "p75": 0.0556
+      },
+      "samples_P_dialogue_le_1_5": 4,
+      "samples_P_dialogue_le_1_6": 4,
+      "compression_rate_P_tau2_message": {
+        "min": 0.027027,
+        "max": 0.033333,
+        "mean": 0.0318,
+        "median": 0.0333,
+        "p25": 0.0286,
+        "p75": 0.0333
+      },
+      "samples_P_tau2_message_le_1_5": 4,
+      "samples_P_tau2_message_le_1_6": 4,
+      "samples_P_zero": 0,
+      "context_length_distribution": {
+        "min": 10375,
+        "max": 30685,
+        "mean": 20060.0952,
+        "median": 11002.5,
+        "p25": 10574.0,
+        "p75": 30430.0
+      },
+      "context_delta_distribution": {
+        "min": -20310,
+        "max": 520,
+        "mean": -2019.9474,
+        "median": 125.0,
+        "p25": 72.0,
+        "p75": 127.25
+      },
+      "new_tokens_per_step": {
+        "min": 12,
+        "max": 102,
+        "mean": 29.3333,
+        "median": 27.0,
+        "p25": 21.0,
+        "p75": 32.0
+      },
+      "context_churn_ratio": {
+        "min": 0.6610945209036614,
+        "max": 0.6625353762076706,
+        "mean": 0.6622,
+        "median": 0.6625,
+        "p25": 0.6615,
+        "p75": 0.6625
+      },
+      "semi_prefill_lengths": {
+        "min": 3529,
+        "max": 3581,
+        "mean": 3542,
+        "median": 3529.0,
+        "p25": 3529.0,
+        "p75": 3568.0
+      },
+      "semi_prefill_events": 4,
+      "samples_C1_lte_2000": 0,
+      "samples_C1_gt_3000_diagnostic": 4
+    },
+    "per_sample": [
+      {
+        "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_user_abroad_roaming_disabled_37fd192b01",
+        "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|user_abroad_roaming_disabled_off[PERSONA:None]",
+        "turns": 2,
+        "steps": 11,
+        "tau2_messages": 30,
+        "dialogue_messages": 18,
+        "tool_calls": 9,
+        "compressions": 1,
+        "P_compress_per_step": 0.090909,
+        "P_le_1_5": true,
+        "P_le_1_6": true,
+        "P_compress_per_dialogue_message": 0.055556,
+        "P_dialogue_le_1_5": true,
+        "P_dialogue_le_1_6": true,
+        "P_compress_per_tau2_message": 0.033333,
+        "P_tau2_message_le_1_5": true,
+        "P_tau2_message_le_1_6": true,
+        "max_prompt_tokens": 30685,
+        "mean_new_tokens_per_step": 27.1818,
+        "context_churn_ratio_mean": 0.662535,
+        "semi_prefill_count": 1,
+        "semi_prefill_lengths": [
+          3529
+        ],
+        "min_c1": 3259,
+        "max_c1": 3259,
+        "reference_context_tokens": 23220
+      },
+      {
+        "sample_id": "mms_issue_bad_network_preference_data_mode_off_user_abroad_roaming_disabled_off_28bbe837f4",
+        "task_id": "[mms_issue]bad_network_preference|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:None]",
+        "turns": 2,
+        "steps": 11,
+        "tau2_messages": 30,
+        "dialogue_messages": 18,
+        "tool_calls": 9,
+        "compressions": 1,
+        "P_compress_per_step": 0.090909,
+        "P_le_1_5": true,
+        "P_le_1_6": true,
+        "P_compress_per_dialogue_message": 0.055556,
+        "P_dialogue_le_1_5": true,
+        "P_dialogue_le_1_6": true,
+        "P_compress_per_tau2_message": 0.033333,
+        "P_tau2_message_le_1_5": true,
+        "P_tau2_message_le_1_6": true,
+        "max_prompt_tokens": 30685,
+        "mean_new_tokens_per_step": 27.1818,
+        "context_churn_ratio_mean": 0.662535,
+        "semi_prefill_count": 1,
+        "semi_prefill_lengths": [
+          3529
+        ],
+        "min_c1": 3259,
+        "max_c1": 3259,
+        "reference_context_tokens": 23220
+      },
+      {
+        "sample_id": "mms_issue_bad_network_preference_user_abroad_roaming_disabled_off_PERSONA_None_486a8d19ea",
+        "task_id": "[mms_issue]bad_network_preference|user_abroad_roaming_disabled_off[PERSONA:None]",
+        "turns": 2,
+        "steps": 11,
+        "tau2_messages": 30,
+        "dialogue_messages": 18,
+        "tool_calls": 9,
+        "compressions": 1,
+        "P_compress_per_step": 0.090909,
+        "P_le_1_5": true,
+        "P_le_1_6": true,
+        "P_compress_per_dialogue_message": 0.055556,
+        "P_dialogue_le_1_5": true,
+        "P_dialogue_le_1_6": true,
+        "P_compress_per_tau2_message": 0.033333,
+        "P_tau2_message_le_1_5": true,
+        "P_tau2_message_le_1_6": true,
+        "max_prompt_tokens": 30685,
+        "mean_new_tokens_per_step": 27.1818,
+        "context_churn_ratio_mean": 0.662535,
+        "semi_prefill_count": 1,
+        "semi_prefill_lengths": [
+          3529
+        ],
+        "min_c1": 3259,
+        "max_c1": 3259,
+        "reference_context_tokens": 23220
+      },
+      {
+        "sample_id": "service_issue_overdue_bill_suspension_PERSONA_Easy_eebd80ec63",
+        "task_id": "[service_issue]overdue_bill_suspension[PERSONA:Easy]",
+        "turns": 3,
+        "steps": 9,
+        "tau2_messages": 37,
+        "dialogue_messages": 22,
+        "tool_calls": 6,
+        "compressions": 1,
+        "P_compress_per_step": 0.111111,
+        "P_le_1_5": true,
+        "P_le_1_6": true,
+        "P_compress_per_dialogue_message": 0.045455,
+        "P_dialogue_le_1_5": true,
+        "P_dialogue_le_1_6": true,
+        "P_compress_per_tau2_message": 0.027027,
+        "P_tau2_message_le_1_5": true,
+        "P_tau2_message_le_1_6": true,
+        "max_prompt_tokens": 30680,
+        "mean_new_tokens_per_step": 37.2222,
+        "context_churn_ratio_mean": 0.661095,
+        "semi_prefill_count": 1,
+        "semi_prefill_lengths": [
+          3581
+        ],
+        "min_c1": 3311,
+        "max_c1": 3311,
+        "reference_context_tokens": 23220
+      }
+    ]
+  },
+  "time_breakdown": {
+    "aggregate": {
+      "prefill_ms": 78171.82400000001,
+      "semi_prefill_ms": 36193.443,
+      "summary_generation_ms": 12577.4,
+      "incremental_ms": 472288.84899999993,
+      "decode_ms_est": 0.0,
+      "total_ms": 599231.516,
+      "pct": {
+        "prefill": 13.0453,
+        "semi_prefill": 8.1389,
+        "semi_prefill_request": 6.04,
+        "summary_generation": 2.0989,
+        "incremental": 78.8158,
+        "decode_est": 0.0
+      },
+      "timing_method": "Agent request latency is measured by non-streaming litellm total time. decode_ms_est uses --decode-ms-per-token; set it from server-side telemetry for paper-grade split."
+    },
+    "per_sample": [
+      {
+        "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_data_mode_off_user_abroad_roa_a660ab9190",
+        "prefill_ms": 0.0,
+        "semi_prefill_ms": 0.0,
+        "summary_generation_ms": 0,
+        "incremental_ms": 0.0,
+        "decode_ms_est": 0.0,
+        "total_ms": 0.0,
+        "pct": {
+          "prefill": 0.0,
+          "semi_prefill": 0.0,
+          "semi_prefill_request": 0.0,
+          "summary_generation": 0.0,
+          "incremental": 0.0,
+          "decode_est": 0.0
+        }
+      },
+      {
+        "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_user_abroad_roaming_disabled_37fd192b01",
+        "prefill_ms": 19576.58,
+        "semi_prefill_ms": 8526.442,
+        "summary_generation_ms": 3170.2,
+        "incremental_ms": 121153.236,
+        "decode_ms_est": 0.0,
+        "total_ms": 152426.458,
+        "pct": {
+          "prefill": 12.8433,
+          "semi_prefill": 7.6736,
+          "semi_prefill_request": 5.5938,
+          "summary_generation": 2.0798,
+          "incremental": 79.4831,
+          "decode_est": 0.0
+        }
+      },
+      {
+        "sample_id": "mms_issue_bad_network_preference_data_mode_off_user_abroad_roaming_disabled_off_28bbe837f4",
+        "prefill_ms": 19503.861,
+        "semi_prefill_ms": 8537.916,
+        "summary_generation_ms": 3343.5,
+        "incremental_ms": 121063.529,
+        "decode_ms_est": 0.0,
+        "total_ms": 152448.806,
+        "pct": {
+          "prefill": 12.7937,
+          "semi_prefill": 7.7937,
+          "semi_prefill_request": 5.6005,
+          "summary_generation": 2.1932,
+          "incremental": 79.4126,
+          "decode_est": 0.0
+        }
+      },
+      {
+        "sample_id": "mms_issue_bad_network_preference_user_abroad_roaming_disabled_off_PERSONA_None_486a8d19ea",
+        "prefill_ms": 19605.323,
+        "semi_prefill_ms": 8444.97,
+        "summary_generation_ms": 2892.8,
+        "incremental_ms": 121900.705,
+        "decode_ms_est": 0.0,
+        "total_ms": 152843.798,
+        "pct": {
+          "prefill": 12.827,
+          "semi_prefill": 7.4179,
+          "semi_prefill_request": 5.5252,
+          "summary_generation": 1.8927,
+          "incremental": 79.7551,
+          "decode_est": 0.0
+        }
+      },
+      {
+        "sample_id": "mobile_data_issue_airplane_mode_on_bad_network_preference_data_mode_off_user_ab_533340f4da",
+        "prefill_ms": 0.0,
+        "semi_prefill_ms": 0.0,
+        "summary_generation_ms": 0,
+        "incremental_ms": 0.0,
+        "decode_ms_est": 0.0,
+        "total_ms": 0.0,
+        "pct": {
+          "prefill": 0.0,
+          "semi_prefill": 0.0,
+          "semi_prefill_request": 0.0,
+          "summary_generation": 0.0,
+          "incremental": 0.0,
+          "decode_est": 0.0
+        }
+      },
+      {
+        "sample_id": "mobile_data_issue_airplane_mode_on_bad_network_preference_user_abroad_roaming_d_701688eb8a",
+        "prefill_ms": 0.0,
+        "semi_prefill_ms": 0.0,
+        "summary_generation_ms": 0,
+        "incremental_ms": 0.0,
+        "decode_ms_est": 0.0,
+        "total_ms": 0.0,
+        "pct": {
+          "prefill": 0.0,
+          "semi_prefill": 0.0,
+          "semi_prefill_request": 0.0,
+          "summary_generation": 0.0,
+          "incremental": 0.0,
+          "decode_est": 0.0
+        }
+      },
+      {
+        "sample_id": "mobile_data_issue_bad_network_preference_data_mode_off_user_abroad_roaming_disa_5cd3347c06",
+        "prefill_ms": 0.0,
+        "semi_prefill_ms": 0.0,
+        "summary_generation_ms": 0,
+        "incremental_ms": 0.0,
+        "decode_ms_est": 0.0,
+        "total_ms": 0.0,
+        "pct": {
+          "prefill": 0.0,
+          "semi_prefill": 0.0,
+          "semi_prefill_request": 0.0,
+          "summary_generation": 0.0,
+          "incremental": 0.0,
+          "decode_est": 0.0
+        }
+      },
+      {
+        "sample_id": "mobile_data_issue_data_mode_off_user_abroad_roaming_disabled_off_PERSONA_None_12fa9d20be",
+        "prefill_ms": 0.0,
+        "semi_prefill_ms": 0.0,
+        "summary_generation_ms": 0,
+        "incremental_ms": 0.0,
+        "decode_ms_est": 0.0,
+        "total_ms": 0.0,
+        "pct": {
+          "prefill": 0.0,
+          "semi_prefill": 0.0,
+          "semi_prefill_request": 0.0,
+          "summary_generation": 0.0,
+          "incremental": 0.0,
+          "decode_est": 0.0
+        }
+      },
+      {
+        "sample_id": "service_issue_overdue_bill_suspension_PERSONA_Easy_eebd80ec63",
+        "prefill_ms": 19486.06,
+        "semi_prefill_ms": 10684.115,
+        "summary_generation_ms": 3170.9,
+        "incremental_ms": 108171.379,
+        "decode_ms_est": 0.0,
+        "total_ms": 141512.454,
+        "pct": {
+          "prefill": 13.7699,
+          "semi_prefill": 9.7907,
+          "semi_prefill_request": 7.5499,
+          "summary_generation": 2.2407,
+          "incremental": 76.4395,
+          "decode_est": 0.0
+        }
+      }
+    ]
+  }
+}

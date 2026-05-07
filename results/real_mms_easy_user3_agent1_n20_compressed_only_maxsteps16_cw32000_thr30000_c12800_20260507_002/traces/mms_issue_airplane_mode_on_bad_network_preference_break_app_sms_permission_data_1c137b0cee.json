@@ -1,0 +1,46 @@
+{
+  "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_break_app_sms_permission_data_1c137b0cee",
+  "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|break_app_sms_permission|data_usage_exceeded[PERSONA:None]",
+  "mode": "compressed",
+  "completed": true,
+  "total_turns": 1,
+  "total_steps": 2,
+  "tool_calls": 1,
+  "compressions": 0,
+  "reference_context_tokens": 23220,
+  "turns": [
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_break_app_sms_permission_data_1c137b0cee",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|break_app_sms_permission|data_usage_exceeded[PERSONA:None]",
+      "turn": 1,
+      "step": 1,
+      "prompt_tokens": 30122,
+      "output_tokens": 32,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_764124645ab04198af25cfa6",
+          "name": "get_customer_by_phone",
+          "arguments": {
+            "phone_number": "555-123-2002"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_break_app_sms_permission_data_1c137b0cee",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|break_app_sms_permission|data_usage_exceeded[PERSONA:None]",
+      "turn": 1,
+      "step": 2,
+      "prompt_tokens": 30315,
+      "output_tokens": 57,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [],
+      "assistant_content_preview": "The customer information has been retrieved successfully. The customer's ID is C1001, and they have three lines: L1001, L1002, and L1003. I will now check the details of each line to identify the one that matches the phone number provided."
+    }
+  ]
+}

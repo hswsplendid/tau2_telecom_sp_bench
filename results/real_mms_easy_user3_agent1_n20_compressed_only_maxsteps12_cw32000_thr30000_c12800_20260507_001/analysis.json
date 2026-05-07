@@ -1,0 +1,920 @@
+{
+  "run_dir": "/root/tau2_telecom_sp_bench/results/real_mms_easy_user3_agent1_n20_compressed_only_maxsteps12_cw32000_thr30000_c12800_20260507_001",
+  "scores": {
+    "results_path": "/root/tau2_telecom_sp_bench/results/real_mms_easy_user3_agent1_n20_compressed_only_maxsteps12_cw32000_thr30000_c12800_20260507_001/tau2_results/results.json",
+    "num_simulations": 20,
+    "avg_reward": 0.0,
+    "pass_hat_1": 0.0,
+    "termination_reasons": {
+      "max_steps": 20
+    },
+    "per_simulation": [
+      {
+        "simulation_id": "58fc3dc5-b4e5-4c10-b651-6c0741eec7b5",
+        "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|user_abroad_roaming_disabled_off[PERSONA:None]",
+        "reward": 0.0,
+        "success": false,
+        "termination_reason": "max_steps",
+        "duration_s": 90.84265604102984
+      },
+      {
+        "simulation_id": "4851c145-0217-4d66-bcda-5134b1213c2c",
+        "task_id": "[mms_issue]airplane_mode_on|bad_wifi_calling|user_abroad_roaming_disabled_off[PERSONA:Easy]",
+        "reward": 0.0,
+        "success": false,
+        "termination_reason": "max_steps",
+        "duration_s": 26.088667986914515
+      },
+      {
+        "simulation_id": "199f1872-c01b-4554-8930-633899ff5fae",
+        "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|data_usage_exceeded|unseat_sim_card[PERSONA:Easy]",
+        "reward": 0.0,
+        "success": false,
+        "termination_reason": "max_steps",
+        "duration_s": 160.4876211551018
+      },
+      {
+        "simulation_id": "f8dddad2-1851-4b63-a90c-c7bab269d80d",
+        "task_id": "[mms_issue]airplane_mode_on|break_app_sms_permission|data_usage_exceeded|unseat_sim_card[PERSONA:Easy]",
+        "reward": 0.0,
+        "success": false,
+        "termination_reason": "max_steps",
+        "duration_s": 156.65191240399145
+      },
+      {
+        "simulation_id": "00c14b22-c3e4-45e0-aa3b-1050aaa5686b",
+        "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|unseat_sim_card|user_abroad_roaming_disabled_on[PERSONA:Easy]",
+        "reward": 0.0,
+        "success": false,
+        "termination_reason": "max_steps",
+        "duration_s": 22.592106223106384
+      },
+      {
+        "simulation_id": "42141585-3cd7-4aab-a395-04b9f508c805",
+        "task_id": "[mms_issue]airplane_mode_on|break_app_sms_permission|unseat_sim_card|user_abroad_roaming_disabled_on[PERSONA:Easy]",
+        "reward": 0.0,
+        "success": false,
+        "termination_reason": "max_steps",
+        "duration_s": 22.54446176509373
+      },
+      {
+        "simulation_id": "519e3506-4ef9-483e-8b40-7ee17ece774f",
+        "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|data_mode_off|data_usage_exceeded[PERSONA:Easy]",
+        "reward": 0.0,
+        "success": false,
+        "termination_reason": "max_steps",
+        "duration_s": 156.9851541130338
+      },
+      {
+        "simulation_id": "e0ee00af-b371-478a-8440-dbd5ca5668ba",
+        "task_id": "[mms_issue]airplane_mode_on|break_app_sms_permission|data_mode_off|data_usage_exceeded[PERSONA:Easy]",
+        "reward": 0.0,
+        "success": false,
+        "termination_reason": "max_steps",
+        "duration_s": 156.50313652097248
+      },
+      {
+        "simulation_id": "0f5b7cbd-129f-40fe-84ca-29b452314d4e",
+        "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|data_mode_off|user_abroad_roaming_disabled_on[PERSONA:Easy]",
+        "reward": 0.0,
+        "success": false,
+        "termination_reason": "max_steps",
+        "duration_s": 25.82779602217488
+      },
+      {
+        "simulation_id": "12128a53-1cb2-4780-bfba-2590fb975103",
+        "task_id": "[mms_issue]airplane_mode_on|break_app_sms_permission|data_mode_off|user_abroad_roaming_disabled_on[PERSONA:Easy]",
+        "reward": 0.0,
+        "success": false,
+        "termination_reason": "max_steps",
+        "duration_s": 25.864974977914244
+      },
+      {
+        "simulation_id": "a35df0b3-dafb-4a75-bfa3-9a785a3c7030",
+        "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:Easy]",
+        "reward": 0.0,
+        "success": false,
+        "termination_reason": "max_steps",
+        "duration_s": 22.481404168065637
+      },
+      {
+        "simulation_id": "d636be83-58c2-4978-a93e-e4c48d3b2611",
+        "task_id": "[mms_issue]airplane_mode_on|break_app_sms_permission|data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:Easy]",
+        "reward": 0.0,
+        "success": false,
+        "termination_reason": "max_steps",
+        "duration_s": 25.789695694111288
+      },
+      {
+        "simulation_id": "1d516eba-c301-43a8-ba81-0473b2b72960",
+        "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|data_usage_exceeded[PERSONA:Easy]",
+        "reward": 0.0,
+        "success": false,
+        "termination_reason": "max_steps",
+        "duration_s": 156.50472687697038
+      },
+      {
+        "simulation_id": "8ddb1e17-2f8f-4cfc-9ea8-7f190c566f7e",
+        "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|break_app_sms_permission|data_usage_exceeded[PERSONA:None]",
+        "reward": 0.0,
+        "success": false,
+        "termination_reason": "max_steps",
+        "duration_s": 70.67638990120031
+      },
+      {
+        "simulation_id": "4ee8c5a2-b7b2-4928-93e2-099f5a4c5fa2",
+        "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|break_app_storage_permission|data_usage_exceeded[PERSONA:Easy]",
+        "reward": 0.0,
+        "success": false,
+        "termination_reason": "max_steps",
+        "duration_s": 156.6396855681669
+      },
+      {
+        "simulation_id": "b4cff202-b1af-41e9-a06e-48eb6aa60b99",
+        "task_id": "[mms_issue]airplane_mode_on|bad_wifi_calling|break_app_sms_permission|data_usage_exceeded[PERSONA:Easy]",
+        "reward": 0.0,
+        "success": false,
+        "termination_reason": "max_steps",
+        "duration_s": 156.26489324099384
+      },
+      {
+        "simulation_id": "86066aed-dcbe-4b00-a275-45bcf9269626",
+        "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|user_abroad_roaming_disabled_on[PERSONA:Easy]",
+        "reward": 0.0,
+        "success": false,
+        "termination_reason": "max_steps",
+        "duration_s": 22.663407610030845
+      },
+      {
+        "simulation_id": "84e7fed8-d8d5-42d8-a199-94acb403a2f0",
+        "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|break_app_sms_permission|user_abroad_roaming_disabled_on[PERSONA:None]",
+        "reward": 0.0,
+        "success": false,
+        "termination_reason": "max_steps",
+        "duration_s": 107.0993803718593
+      },
+      {
+        "simulation_id": "89eac67d-2c4b-466b-b31b-f7478a7778ae",
+        "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|break_app_storage_permission|user_abroad_roaming_disabled_on[PERSONA:Easy]",
+        "reward": 0.0,
+        "success": false,
+        "termination_reason": "max_steps",
+        "duration_s": 22.588000401854515
+      },
+      {
+        "simulation_id": "a82529ef-905e-469d-8eef-33a2c45e9420",
+        "task_id": "[mms_issue]airplane_mode_on|bad_wifi_calling|break_app_sms_permission|user_abroad_roaming_disabled_on[PERSONA:Easy]",
+        "reward": 0.0,
+        "success": false,
+        "termination_reason": "max_steps",
+        "duration_s": 25.969924974022433
+      }
+    ]
+  },
+  "workload": {
+    "summary": {
+      "n_samples_with_timing": 10,
+      "turns_per_task": {
+        "min": 1,
+        "max": 4,
+        "mean": 3.2,
+        "median": 4.0,
+        "p25": 1.75,
+        "p75": 4.0
+      },
+      "steps_per_task": {
+        "min": 2,
+        "max": 5,
+        "mean": 3.7,
+        "median": 4.0,
+        "p25": 3.5,
+        "p75": 4.0
+      },
+      "tau2_messages_per_task": {
+        "min": 13,
+        "max": 14,
+        "mean": 13.1,
+        "median": 13.0,
+        "p25": 13.0,
+        "p75": 13.0
+      },
+      "dialogue_messages_per_task": {
+        "min": 8,
+        "max": 11,
+        "mean": 10.2,
+        "median": 11.0,
+        "p25": 8.75,
+        "p75": 11.0
+      },
+      "tool_calls_per_task": {
+        "min": 0,
+        "max": 5,
+        "mean": 0.6,
+        "median": 0.0,
+        "p25": 0.0,
+        "p75": 0.25
+      },
+      "compressions_per_task": {
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "median": 0.0,
+        "p25": 0.0,
+        "p75": 0.0
+      },
+      "compression_rate_P": {
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "p25": 0.0,
+        "p75": 0.0
+      },
+      "samples_P_le_1_5": 0,
+      "samples_P_le_1_6": 0,
+      "compression_rate_P_dialogue_message": {
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "p25": 0.0,
+        "p75": 0.0
+      },
+      "samples_P_dialogue_le_1_5": 0,
+      "samples_P_dialogue_le_1_6": 0,
+      "compression_rate_P_tau2_message": {
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "p25": 0.0,
+        "p75": 0.0
+      },
+      "samples_P_tau2_message_le_1_5": 0,
+      "samples_P_tau2_message_le_1_6": 0,
+      "samples_P_zero": 10,
+      "context_length_distribution": {
+        "min": 30112,
+        "max": 31022,
+        "mean": 30472.3243,
+        "median": 30305,
+        "p25": 30156.0,
+        "p75": 30621.0
+      },
+      "context_delta_distribution": {
+        "min": 92,
+        "max": 401,
+        "mean": 261.7407,
+        "median": 327,
+        "p25": 159.0,
+        "p75": 401.0
+      },
+      "new_tokens_per_step": {
+        "min": 21,
+        "max": 209,
+        "mean": 108.5946,
+        "median": 103,
+        "p25": 52.0,
+        "p75": 170.0
+      },
+      "context_churn_ratio": {},
+      "semi_prefill_lengths": {},
+      "semi_prefill_events": 0,
+      "samples_C1_lte_2000": 0,
+      "samples_C1_gt_3000_diagnostic": 0
+    },
+    "per_sample": [
+      {
+        "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_bad_wifi_calling_data_usage_e_5720a6dd27",
+        "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|bad_wifi_calling|data_usage_exceeded[PERSONA:Easy]",
+        "turns": 4,
+        "steps": 4,
+        "tau2_messages": 13,
+        "dialogue_messages": 11,
+        "tool_calls": 0,
+        "compressions": 0,
+        "P_compress_per_step": 0.0,
+        "P_le_1_5": false,
+        "P_le_1_6": false,
+        "P_compress_per_dialogue_message": 0.0,
+        "P_dialogue_le_1_5": false,
+        "P_dialogue_le_1_6": false,
+        "P_compress_per_tau2_message": 0.0,
+        "P_tau2_message_le_1_5": false,
+        "P_tau2_message_le_1_6": false,
+        "max_prompt_tokens": 31022,
+        "mean_new_tokens_per_step": 133.5,
+        "context_churn_ratio_mean": null,
+        "semi_prefill_count": 0,
+        "semi_prefill_lengths": [],
+        "min_c1": null,
+        "max_c1": null,
+        "reference_context_tokens": 23220
+      },
+      {
+        "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_break_app_sms_permission_data_1c137b0cee",
+        "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|break_app_sms_permission|data_usage_exceeded[PERSONA:None]",
+        "turns": 1,
+        "steps": 2,
+        "tau2_messages": 13,
+        "dialogue_messages": 8,
+        "tool_calls": 1,
+        "compressions": 0,
+        "P_compress_per_step": 0.0,
+        "P_le_1_5": false,
+        "P_le_1_6": false,
+        "P_compress_per_dialogue_message": 0.0,
+        "P_dialogue_le_1_5": false,
+        "P_dialogue_le_1_6": false,
+        "P_compress_per_tau2_message": 0.0,
+        "P_tau2_message_le_1_5": false,
+        "P_tau2_message_le_1_6": false,
+        "max_prompt_tokens": 30315,
+        "mean_new_tokens_per_step": 44.5,
+        "context_churn_ratio_mean": null,
+        "semi_prefill_count": 0,
+        "semi_prefill_lengths": [],
+        "min_c1": null,
+        "max_c1": null,
+        "reference_context_tokens": 23220
+      },
+      {
+        "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_break_app_sms_permission_user_0b2770ff60",
+        "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|break_app_sms_permission|user_abroad_roaming_disabled_on[PERSONA:None]",
+        "turns": 1,
+        "steps": 5,
+        "tau2_messages": 14,
+        "dialogue_messages": 8,
+        "tool_calls": 5,
+        "compressions": 0,
+        "P_compress_per_step": 0.0,
+        "P_le_1_5": false,
+        "P_le_1_6": false,
+        "P_compress_per_dialogue_message": 0.0,
+        "P_dialogue_le_1_5": false,
+        "P_dialogue_le_1_6": false,
+        "P_compress_per_tau2_message": 0.0,
+        "P_tau2_message_le_1_5": false,
+        "P_tau2_message_le_1_6": false,
+        "max_prompt_tokens": 30685,
+        "mean_new_tokens_per_step": 27.6,
+        "context_churn_ratio_mean": null,
+        "semi_prefill_count": 0,
+        "semi_prefill_lengths": [],
+        "min_c1": null,
+        "max_c1": null,
+        "reference_context_tokens": 23220
+      },
+      {
+        "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_break_app_storage_permission_b69f7bb078",
+        "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|break_app_storage_permission|data_usage_exceeded[PERSONA:Easy]",
+        "turns": 4,
+        "steps": 4,
+        "tau2_messages": 13,
+        "dialogue_messages": 11,
+        "tool_calls": 0,
+        "compressions": 0,
+        "P_compress_per_step": 0.0,
+        "P_le_1_5": false,
+        "P_le_1_6": false,
+        "P_compress_per_dialogue_message": 0.0,
+        "P_dialogue_le_1_5": false,
+        "P_dialogue_le_1_6": false,
+        "P_compress_per_tau2_message": 0.0,
+        "P_tau2_message_le_1_5": false,
+        "P_tau2_message_le_1_6": false,
+        "max_prompt_tokens": 31022,
+        "mean_new_tokens_per_step": 133.5,
+        "context_churn_ratio_mean": null,
+        "semi_prefill_count": 0,
+        "semi_prefill_lengths": [],
+        "min_c1": null,
+        "max_c1": null,
+        "reference_context_tokens": 23220
+      },
+      {
+        "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_data_mode_off_data_usage_exce_2e408e1321",
+        "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|data_mode_off|data_usage_exceeded[PERSONA:Easy]",
+        "turns": 4,
+        "steps": 4,
+        "tau2_messages": 13,
+        "dialogue_messages": 11,
+        "tool_calls": 0,
+        "compressions": 0,
+        "P_compress_per_step": 0.0,
+        "P_le_1_5": false,
+        "P_le_1_6": false,
+        "P_compress_per_dialogue_message": 0.0,
+        "P_dialogue_le_1_5": false,
+        "P_dialogue_le_1_6": false,
+        "P_compress_per_tau2_message": 0.0,
+        "P_tau2_message_le_1_5": false,
+        "P_tau2_message_le_1_6": false,
+        "max_prompt_tokens": 31022,
+        "mean_new_tokens_per_step": 133.5,
+        "context_churn_ratio_mean": null,
+        "semi_prefill_count": 0,
+        "semi_prefill_lengths": [],
+        "min_c1": null,
+        "max_c1": null,
+        "reference_context_tokens": 23220
+      },
+      {
+        "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_data_usage_exceeded_unseat_si_25efad195d",
+        "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|data_usage_exceeded|unseat_sim_card[PERSONA:Easy]",
+        "turns": 4,
+        "steps": 4,
+        "tau2_messages": 13,
+        "dialogue_messages": 11,
+        "tool_calls": 0,
+        "compressions": 0,
+        "P_compress_per_step": 0.0,
+        "P_le_1_5": false,
+        "P_le_1_6": false,
+        "P_compress_per_dialogue_message": 0.0,
+        "P_dialogue_le_1_5": false,
+        "P_dialogue_le_1_6": false,
+        "P_compress_per_tau2_message": 0.0,
+        "P_tau2_message_le_1_5": false,
+        "P_tau2_message_le_1_6": false,
+        "max_prompt_tokens": 31022,
+        "mean_new_tokens_per_step": 133.5,
+        "context_churn_ratio_mean": null,
+        "semi_prefill_count": 0,
+        "semi_prefill_lengths": [],
+        "min_c1": null,
+        "max_c1": null,
+        "reference_context_tokens": 23220
+      },
+      {
+        "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_user_abroad_roaming_disabled_37fd192b01",
+        "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|user_abroad_roaming_disabled_off[PERSONA:None]",
+        "turns": 2,
+        "steps": 2,
+        "tau2_messages": 13,
+        "dialogue_messages": 9,
+        "tool_calls": 0,
+        "compressions": 0,
+        "P_compress_per_step": 0.0,
+        "P_le_1_5": false,
+        "P_le_1_6": false,
+        "P_compress_per_dialogue_message": 0.0,
+        "P_dialogue_le_1_5": false,
+        "P_dialogue_le_1_6": false,
+        "P_compress_per_tau2_message": 0.0,
+        "P_tau2_message_le_1_5": false,
+        "P_tau2_message_le_1_6": false,
+        "max_prompt_tokens": 30269,
+        "mean_new_tokens_per_step": 26.5,
+        "context_churn_ratio_mean": null,
+        "semi_prefill_count": 0,
+        "semi_prefill_lengths": [],
+        "min_c1": null,
+        "max_c1": null,
+        "reference_context_tokens": 23220
+      },
+      {
+        "sample_id": "mms_issue_airplane_mode_on_bad_wifi_calling_break_app_sms_permission_data_usage_d4e1b6334b",
+        "task_id": "[mms_issue]airplane_mode_on|bad_wifi_calling|break_app_sms_permission|data_usage_exceeded[PERSONA:Easy]",
+        "turns": 4,
+        "steps": 4,
+        "tau2_messages": 13,
+        "dialogue_messages": 11,
+        "tool_calls": 0,
+        "compressions": 0,
+        "P_compress_per_step": 0.0,
+        "P_le_1_5": false,
+        "P_le_1_6": false,
+        "P_compress_per_dialogue_message": 0.0,
+        "P_dialogue_le_1_5": false,
+        "P_dialogue_le_1_6": false,
+        "P_compress_per_tau2_message": 0.0,
+        "P_tau2_message_le_1_5": false,
+        "P_tau2_message_le_1_6": false,
+        "max_prompt_tokens": 31022,
+        "mean_new_tokens_per_step": 133.5,
+        "context_churn_ratio_mean": null,
+        "semi_prefill_count": 0,
+        "semi_prefill_lengths": [],
+        "min_c1": null,
+        "max_c1": null,
+        "reference_context_tokens": 23220
+      },
+      {
+        "sample_id": "mms_issue_airplane_mode_on_break_app_sms_permission_data_mode_off_data_usage_ex_c73f0d2214",
+        "task_id": "[mms_issue]airplane_mode_on|break_app_sms_permission|data_mode_off|data_usage_exceeded[PERSONA:Easy]",
+        "turns": 4,
+        "steps": 4,
+        "tau2_messages": 13,
+        "dialogue_messages": 11,
+        "tool_calls": 0,
+        "compressions": 0,
+        "P_compress_per_step": 0.0,
+        "P_le_1_5": false,
+        "P_le_1_6": false,
+        "P_compress_per_dialogue_message": 0.0,
+        "P_dialogue_le_1_5": false,
+        "P_dialogue_le_1_6": false,
+        "P_compress_per_tau2_message": 0.0,
+        "P_tau2_message_le_1_5": false,
+        "P_tau2_message_le_1_6": false,
+        "max_prompt_tokens": 31022,
+        "mean_new_tokens_per_step": 133.5,
+        "context_churn_ratio_mean": null,
+        "semi_prefill_count": 0,
+        "semi_prefill_lengths": [],
+        "min_c1": null,
+        "max_c1": null,
+        "reference_context_tokens": 23220
+      },
+      {
+        "sample_id": "mms_issue_airplane_mode_on_break_app_sms_permission_data_usage_exceeded_unseat_81b8784766",
+        "task_id": "[mms_issue]airplane_mode_on|break_app_sms_permission|data_usage_exceeded|unseat_sim_card[PERSONA:Easy]",
+        "turns": 4,
+        "steps": 4,
+        "tau2_messages": 13,
+        "dialogue_messages": 11,
+        "tool_calls": 0,
+        "compressions": 0,
+        "P_compress_per_step": 0.0,
+        "P_le_1_5": false,
+        "P_le_1_6": false,
+        "P_compress_per_dialogue_message": 0.0,
+        "P_dialogue_le_1_5": false,
+        "P_dialogue_le_1_6": false,
+        "P_compress_per_tau2_message": 0.0,
+        "P_tau2_message_le_1_5": false,
+        "P_tau2_message_le_1_6": false,
+        "max_prompt_tokens": 31022,
+        "mean_new_tokens_per_step": 133.5,
+        "context_churn_ratio_mean": null,
+        "semi_prefill_count": 0,
+        "semi_prefill_lengths": [],
+        "min_c1": null,
+        "max_c1": null,
+        "reference_context_tokens": 23220
+      }
+    ]
+  },
+  "time_breakdown": {
+    "aggregate": {
+      "prefill_ms": 240823.58099999998,
+      "semi_prefill_ms": 0.0,
+      "summary_generation_ms": 0.0,
+      "incremental_ms": 748537.503,
+      "decode_ms_est": 0.0,
+      "total_ms": 989361.084,
+      "pct": {
+        "prefill": 24.3413,
+        "semi_prefill": 0.0,
+        "semi_prefill_request": 0.0,
+        "summary_generation": 0.0,
+        "incremental": 75.6587,
+        "decode_est": 0.0
+      },
+      "timing_method": "Agent request latency is measured by non-streaming litellm total time. decode_ms_est uses --decode-ms-per-token; set it from server-side telemetry for paper-grade split."
+    },
+    "per_sample": [
+      {
+        "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_bad_wifi_calling_data_usage_e_5720a6dd27",
+        "prefill_ms": 25426.074,
+        "semi_prefill_ms": 0.0,
+        "summary_generation_ms": 0,
+        "incremental_ms": 87592.328,
+        "decode_ms_est": 0.0,
+        "total_ms": 113018.402,
+        "pct": {
+          "prefill": 22.4973,
+          "semi_prefill": 0.0,
+          "semi_prefill_request": 0.0,
+          "summary_generation": 0.0,
+          "incremental": 77.5027,
+          "decode_est": 0.0
+        }
+      },
+      {
+        "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_bad_wifi_calling_user_abroad_da79be78e3",
+        "prefill_ms": 0.0,
+        "semi_prefill_ms": 0.0,
+        "summary_generation_ms": 0,
+        "incremental_ms": 0.0,
+        "decode_ms_est": 0.0,
+        "total_ms": 0.0,
+        "pct": {
+          "prefill": 0.0,
+          "semi_prefill": 0.0,
+          "semi_prefill_request": 0.0,
+          "summary_generation": 0.0,
+          "incremental": 0.0,
+          "decode_est": 0.0
+        }
+      },
+      {
+        "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_break_app_sms_permission_data_1c137b0cee",
+        "prefill_ms": 19769.356,
+        "semi_prefill_ms": 0.0,
+        "summary_generation_ms": 0,
+        "incremental_ms": 31588.14,
+        "decode_ms_est": 0.0,
+        "total_ms": 51357.496,
+        "pct": {
+          "prefill": 38.4936,
+          "semi_prefill": 0.0,
+          "semi_prefill_request": 0.0,
+          "summary_generation": 0.0,
+          "incremental": 61.5064,
+          "decode_est": 0.0
+        }
+      },
+      {
+        "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_break_app_sms_permission_user_0b2770ff60",
+        "prefill_ms": 19851.559,
+        "semi_prefill_ms": 0.0,
+        "summary_generation_ms": 0,
+        "incremental_ms": 78846.35,
+        "decode_ms_est": 0.0,
+        "total_ms": 98697.909,
+        "pct": {
+          "prefill": 20.1135,
+          "semi_prefill": 0.0,
+          "semi_prefill_request": 0.0,
+          "summary_generation": 0.0,
+          "incremental": 79.8865,
+          "decode_est": 0.0
+        }
+      },
+      {
+        "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_break_app_storage_permission_0b74f3a1d5",
+        "prefill_ms": 0.0,
+        "semi_prefill_ms": 0.0,
+        "summary_generation_ms": 0,
+        "incremental_ms": 0.0,
+        "decode_ms_est": 0.0,
+        "total_ms": 0.0,
+        "pct": {
+          "prefill": 0.0,
+          "semi_prefill": 0.0,
+          "semi_prefill_request": 0.0,
+          "summary_generation": 0.0,
+          "incremental": 0.0,
+          "decode_est": 0.0
+        }
+      },
+      {
+        "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_break_app_storage_permission_b69f7bb078",
+        "prefill_ms": 25419.746,
+        "semi_prefill_ms": 0.0,
+        "summary_generation_ms": 0,
+        "incremental_ms": 87738.123,
+        "decode_ms_est": 0.0,
+        "total_ms": 113157.869,
+        "pct": {
+          "prefill": 22.464,
+          "semi_prefill": 0.0,
+          "semi_prefill_request": 0.0,
+          "summary_generation": 0.0,
+          "incremental": 77.536,
+          "decode_est": 0.0
+        }
+      },
+      {
+        "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_data_mode_off_data_usage_exce_2e408e1321",
+        "prefill_ms": 25536.032,
+        "semi_prefill_ms": 0.0,
+        "summary_generation_ms": 0,
+        "incremental_ms": 87879.018,
+        "decode_ms_est": 0.0,
+        "total_ms": 113415.05,
+        "pct": {
+          "prefill": 22.5156,
+          "semi_prefill": 0.0,
+          "semi_prefill_request": 0.0,
+          "summary_generation": 0.0,
+          "incremental": 77.4844,
+          "decode_est": 0.0
+        }
+      },
+      {
+        "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_data_mode_off_user_abroad_roa_3db5716e57",
+        "prefill_ms": 0.0,
+        "semi_prefill_ms": 0.0,
+        "summary_generation_ms": 0,
+        "incremental_ms": 0.0,
+        "decode_ms_est": 0.0,
+        "total_ms": 0.0,
+        "pct": {
+          "prefill": 0.0,
+          "semi_prefill": 0.0,
+          "semi_prefill_request": 0.0,
+          "summary_generation": 0.0,
+          "incremental": 0.0,
+          "decode_est": 0.0
+        }
+      },
+      {
+        "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_data_usage_exceeded_unseat_si_25efad195d",
+        "prefill_ms": 25311.284,
+        "semi_prefill_ms": 0.0,
+        "summary_generation_ms": 0,
+        "incremental_ms": 87277.927,
+        "decode_ms_est": 0.0,
+        "total_ms": 112589.211,
+        "pct": {
+          "prefill": 22.4811,
+          "semi_prefill": 0.0,
+          "semi_prefill_request": 0.0,
+          "summary_generation": 0.0,
+          "incremental": 77.5189,
+          "decode_est": 0.0
+        }
+      },
+      {
+        "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_data_usage_exceeded_user_abro_a2b3ee6a9a",
+        "prefill_ms": 0.0,
+        "semi_prefill_ms": 0.0,
+        "summary_generation_ms": 0,
+        "incremental_ms": 0.0,
+        "decode_ms_est": 0.0,
+        "total_ms": 0.0,
+        "pct": {
+          "prefill": 0.0,
+          "semi_prefill": 0.0,
+          "semi_prefill_request": 0.0,
+          "summary_generation": 0.0,
+          "incremental": 0.0,
+          "decode_est": 0.0
+        }
+      },
+      {
+        "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_unseat_sim_card_user_abroad_r_3db719e879",
+        "prefill_ms": 0.0,
+        "semi_prefill_ms": 0.0,
+        "summary_generation_ms": 0,
+        "incremental_ms": 0.0,
+        "decode_ms_est": 0.0,
+        "total_ms": 0.0,
+        "pct": {
+          "prefill": 0.0,
+          "semi_prefill": 0.0,
+          "semi_prefill_request": 0.0,
+          "summary_generation": 0.0,
+          "incremental": 0.0,
+          "decode_est": 0.0
+        }
+      },
+      {
+        "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_user_abroad_roaming_disabled_37fd192b01",
+        "prefill_ms": 23366.268,
+        "semi_prefill_ms": 0.0,
+        "summary_generation_ms": 0,
+        "incremental_ms": 24785.06,
+        "decode_ms_est": 0.0,
+        "total_ms": 48151.328,
+        "pct": {
+          "prefill": 48.5267,
+          "semi_prefill": 0.0,
+          "semi_prefill_request": 0.0,
+          "summary_generation": 0.0,
+          "incremental": 51.4733,
+          "decode_est": 0.0
+        }
+      },
+      {
+        "sample_id": "mms_issue_airplane_mode_on_bad_wifi_calling_break_app_sms_permission_data_usage_d4e1b6334b",
+        "prefill_ms": 25417.965,
+        "semi_prefill_ms": 0.0,
+        "summary_generation_ms": 0,
+        "incremental_ms": 87434.442,
+        "decode_ms_est": 0.0,
+        "total_ms": 112852.407,
+        "pct": {
+          "prefill": 22.5232,
+          "semi_prefill": 0.0,
+          "semi_prefill_request": 0.0,
+          "summary_generation": 0.0,
+          "incremental": 77.4768,
+          "decode_est": 0.0
+        }
+      },
+      {
+        "sample_id": "mms_issue_airplane_mode_on_bad_wifi_calling_break_app_sms_permission_user_abroa_c54c6b3e48",
+        "prefill_ms": 0.0,
+        "semi_prefill_ms": 0.0,
+        "summary_generation_ms": 0,
+        "incremental_ms": 0.0,
+        "decode_ms_est": 0.0,
+        "total_ms": 0.0,
+        "pct": {
+          "prefill": 0.0,
+          "semi_prefill": 0.0,
+          "semi_prefill_request": 0.0,
+          "summary_generation": 0.0,
+          "incremental": 0.0,
+          "decode_est": 0.0
+        }
+      },
+      {
+        "sample_id": "mms_issue_airplane_mode_on_bad_wifi_calling_user_abroad_roaming_disabled_off_PE_1959eeb7ba",
+        "prefill_ms": 0.0,
+        "semi_prefill_ms": 0.0,
+        "summary_generation_ms": 0,
+        "incremental_ms": 0.0,
+        "decode_ms_est": 0.0,
+        "total_ms": 0.0,
+        "pct": {
+          "prefill": 0.0,
+          "semi_prefill": 0.0,
+          "semi_prefill_request": 0.0,
+          "summary_generation": 0.0,
+          "incremental": 0.0,
+          "decode_est": 0.0
+        }
+      },
+      {
+        "sample_id": "mms_issue_airplane_mode_on_break_app_sms_permission_data_mode_off_data_usage_ex_c73f0d2214",
+        "prefill_ms": 25408.186,
+        "semi_prefill_ms": 0.0,
+        "summary_generation_ms": 0,
+        "incremental_ms": 87554.287,
+        "decode_ms_est": 0.0,
+        "total_ms": 112962.473,
+        "pct": {
+          "prefill": 22.4926,
+          "semi_prefill": 0.0,
+          "semi_prefill_request": 0.0,
+          "summary_generation": 0.0,
+          "incremental": 77.5074,
+          "decode_est": 0.0
+        }
+      },
+      {
+        "sample_id": "mms_issue_airplane_mode_on_break_app_sms_permission_data_mode_off_user_abroad_r_6522721dd5",
+        "prefill_ms": 0.0,
+        "semi_prefill_ms": 0.0,
+        "summary_generation_ms": 0,
+        "incremental_ms": 0.0,
+        "decode_ms_est": 0.0,
+        "total_ms": 0.0,
+        "pct": {
+          "prefill": 0.0,
+          "semi_prefill": 0.0,
+          "semi_prefill_request": 0.0,
+          "summary_generation": 0.0,
+          "incremental": 0.0,
+          "decode_est": 0.0
+        }
+      },
+      {
+        "sample_id": "mms_issue_airplane_mode_on_break_app_sms_permission_data_usage_exceeded_unseat_81b8784766",
+        "prefill_ms": 25317.111,
+        "semi_prefill_ms": 0.0,
+        "summary_generation_ms": 0,
+        "incremental_ms": 87841.828,
+        "decode_ms_est": 0.0,
+        "total_ms": 113158.939,
+        "pct": {
+          "prefill": 22.3731,
+          "semi_prefill": 0.0,
+          "semi_prefill_request": 0.0,
+          "summary_generation": 0.0,
+          "incremental": 77.6269,
+          "decode_est": 0.0
+        }
+      },
+      {
+        "sample_id": "mms_issue_airplane_mode_on_break_app_sms_permission_data_usage_exceeded_user_ab_3e34f612fd",
+        "prefill_ms": 0.0,
+        "semi_prefill_ms": 0.0,
+        "summary_generation_ms": 0,
+        "incremental_ms": 0.0,
+        "decode_ms_est": 0.0,
+        "total_ms": 0.0,
+        "pct": {
+          "prefill": 0.0,
+          "semi_prefill": 0.0,
+          "semi_prefill_request": 0.0,
+          "summary_generation": 0.0,
+          "incremental": 0.0,
+          "decode_est": 0.0
+        }
+      },
+      {
+        "sample_id": "mms_issue_airplane_mode_on_break_app_sms_permission_unseat_sim_card_user_abroad_f916cf357b",
+        "prefill_ms": 0.0,
+        "semi_prefill_ms": 0.0,
+        "summary_generation_ms": 0,
+        "incremental_ms": 0.0,
+        "decode_ms_est": 0.0,
+        "total_ms": 0.0,
+        "pct": {
+          "prefill": 0.0,
+          "semi_prefill": 0.0,
+          "semi_prefill_request": 0.0,
+          "summary_generation": 0.0,
+          "incremental": 0.0,
+          "decode_est": 0.0
+        }
+      }
+    ]
+  }
+}

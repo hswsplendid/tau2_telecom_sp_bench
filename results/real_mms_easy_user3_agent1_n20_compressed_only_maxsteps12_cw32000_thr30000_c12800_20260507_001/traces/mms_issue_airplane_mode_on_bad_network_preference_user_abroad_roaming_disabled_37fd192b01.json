@@ -1,0 +1,37 @@
+{
+  "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_user_abroad_roaming_disabled_37fd192b01",
+  "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|user_abroad_roaming_disabled_off[PERSONA:None]",
+  "mode": "compressed",
+  "completed": true,
+  "total_turns": 2,
+  "total_steps": 2,
+  "tool_calls": 0,
+  "compressions": 0,
+  "reference_context_tokens": 23220,
+  "turns": [
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_user_abroad_roaming_disabled_37fd192b01",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "turn": 1,
+      "step": 1,
+      "prompt_tokens": 30177,
+      "output_tokens": 25,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [],
+      "assistant_content_preview": "The \"parameters\": \"get_customer_by_phone\",parameters\": {\"phone_number\": \"555-123-2002\"}}"
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_user_abroad_roaming_disabled_37fd192b01",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "turn": 2,
+      "step": 2,
+      "prompt_tokens": 30269,
+      "output_tokens": 28,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [],
+      "assistant_content_preview": "{\"type\":function\", \"name\": \"get_customer_by_phone\", \"\": {\"phone_number\": \"555-1232002\"}}"
+    }
+  ]
+}

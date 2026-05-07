@@ -1,0 +1,12 @@
+{
+  "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_unseat_sim_card_user_abroad_r_3db719e879",
+  "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|unseat_sim_card|user_abroad_roaming_disabled_on[PERSONA:Easy]",
+  "mode": "compressed",
+  "completed": true,
+  "total_turns": 0,
+  "total_steps": 0,
+  "tool_calls": 0,
+  "compressions": 0,
+  "reference_context_tokens": 23220,
+  "turns": []
+}

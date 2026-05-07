@@ -1,0 +1,12 @@
+{
+  "sample_id": "mobile_data_issue_data_mode_off_user_abroad_roaming_disabled_off_PERSONA_None_12fa9d20be",
+  "task_id": "[mobile_data_issue]data_mode_off|user_abroad_roaming_disabled_off[PERSONA:None]",
+  "mode": "compressed",
+  "completed": true,
+  "total_turns": 0,
+  "total_steps": 0,
+  "tool_calls": 0,
+  "compressions": 0,
+  "reference_context_tokens": 23220,
+  "turns": []
+}

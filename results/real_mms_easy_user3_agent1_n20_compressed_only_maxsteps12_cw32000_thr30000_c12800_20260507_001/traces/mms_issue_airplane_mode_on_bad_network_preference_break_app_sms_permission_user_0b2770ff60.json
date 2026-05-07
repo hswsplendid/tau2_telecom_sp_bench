@@ -1,0 +1,119 @@
+{
+  "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_break_app_sms_permission_user_0b2770ff60",
+  "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|break_app_sms_permission|user_abroad_roaming_disabled_on[PERSONA:None]",
+  "mode": "compressed",
+  "completed": true,
+  "total_turns": 1,
+  "total_steps": 5,
+  "tool_calls": 5,
+  "compressions": 0,
+  "reference_context_tokens": 23220,
+  "turns": [
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_break_app_sms_permission_user_0b2770ff60",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|break_app_sms_permission|user_abroad_roaming_disabled_on[PERSONA:None]",
+      "turn": 1,
+      "step": 1,
+      "prompt_tokens": 30112,
+      "output_tokens": 32,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_afd75874ef80471b82d5d8fa",
+          "name": "get_customer_by_phone",
+          "arguments": {
+            "phone_number": "555-123-2002"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_break_app_sms_permission_user_0b2770ff60",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|break_app_sms_permission|user_abroad_roaming_disabled_on[PERSONA:None]",
+      "turn": 1,
+      "step": 2,
+      "prompt_tokens": 30305,
+      "output_tokens": 28,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_fed3039924484764808580d7",
+          "name": "get_details_by_id",
+          "arguments": {
+            "id": "L1001"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_break_app_sms_permission_user_0b2770ff60",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|break_app_sms_permission|user_abroad_roaming_disabled_on[PERSONA:None]",
+      "turn": 1,
+      "step": 3,
+      "prompt_tokens": 30430,
+      "output_tokens": 21,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_0d7c4a4fe6a14cdbba43d72c",
+          "name": "get_details_by_id",
+          "arguments": {
+            "id": "L1002"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_break_app_sms_permission_user_0b2770ff60",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|break_app_sms_permission|user_abroad_roaming_disabled_on[PERSONA:None]",
+      "turn": 1,
+      "step": 4,
+      "prompt_tokens": 30557,
+      "output_tokens": 21,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_be9e37395185478fbcd7bca8",
+          "name": "get_details_by_id",
+          "arguments": {
+            "id": "L1003"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_break_app_sms_permission_user_0b2770ff60",
+      "task_id": "[mms_issue]airplane_mode_on|bad_network_preference|break_app_sms_permission|user_abroad_roaming_disabled_on[PERSONA:None]",
+      "turn": 1,
+      "step": 5,
+      "prompt_tokens": 30685,
+      "output_tokens": 36,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_3a48f69340f9488085fc8af6",
+          "name": "enable_roaming",
+          "arguments": {
+            "customer_id": "C1001",
+            "line_id": "L1002"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    }
+  ]
+}

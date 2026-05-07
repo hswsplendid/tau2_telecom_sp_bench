@@ -1,0 +1,12 @@
+{
+  "sample_id": "mms_issue_airplane_mode_on_break_app_sms_permission_data_usage_exceeded_user_ab_3e34f612fd",
+  "task_id": "[mms_issue]airplane_mode_on|break_app_sms_permission|data_usage_exceeded|user_abroad_roaming_enabled_off[PERSONA:Easy]",
+  "mode": "compressed",
+  "completed": true,
+  "total_turns": 0,
+  "total_steps": 0,
+  "tool_calls": 0,
+  "compressions": 0,
+  "reference_context_tokens": 23220,
+  "turns": []
+}

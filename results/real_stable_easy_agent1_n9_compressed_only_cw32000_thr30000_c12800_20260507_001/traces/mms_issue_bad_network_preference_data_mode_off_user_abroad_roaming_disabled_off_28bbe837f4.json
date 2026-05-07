@@ -1,0 +1,230 @@
+{
+  "sample_id": "mms_issue_bad_network_preference_data_mode_off_user_abroad_roaming_disabled_off_28bbe837f4",
+  "task_id": "[mms_issue]bad_network_preference|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:None]",
+  "mode": "compressed",
+  "completed": true,
+  "total_turns": 2,
+  "total_steps": 11,
+  "tool_calls": 9,
+  "compressions": 1,
+  "reference_context_tokens": 23220,
+  "turns": [
+    {
+      "sample_id": "mms_issue_bad_network_preference_data_mode_off_user_abroad_roaming_disabled_off_28bbe837f4",
+      "task_id": "[mms_issue]bad_network_preference|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "turn": 1,
+      "step": 1,
+      "prompt_tokens": 30112,
+      "output_tokens": 32,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_f20f53d155614d598f287869",
+          "name": "get_customer_by_phone",
+          "arguments": {
+            "phone_number": "555-123-2002"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_bad_network_preference_data_mode_off_user_abroad_roaming_disabled_off_28bbe837f4",
+      "task_id": "[mms_issue]bad_network_preference|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "turn": 1,
+      "step": 2,
+      "prompt_tokens": 30305,
+      "output_tokens": 28,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_c60b91dc62e14d85af28c0e8",
+          "name": "get_details_by_id",
+          "arguments": {
+            "id": "L1001"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_bad_network_preference_data_mode_off_user_abroad_roaming_disabled_off_28bbe837f4",
+      "task_id": "[mms_issue]bad_network_preference|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "turn": 1,
+      "step": 3,
+      "prompt_tokens": 30430,
+      "output_tokens": 21,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_c444dad8572e4ee4a4373073",
+          "name": "get_details_by_id",
+          "arguments": {
+            "id": "L1002"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_bad_network_preference_data_mode_off_user_abroad_roaming_disabled_off_28bbe837f4",
+      "task_id": "[mms_issue]bad_network_preference|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "turn": 1,
+      "step": 4,
+      "prompt_tokens": 30557,
+      "output_tokens": 21,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_74f10a49408e4264a7b638c3",
+          "name": "get_details_by_id",
+          "arguments": {
+            "id": "L1003"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_bad_network_preference_data_mode_off_user_abroad_roaming_disabled_off_28bbe837f4",
+      "task_id": "[mms_issue]bad_network_preference|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "turn": 1,
+      "step": 5,
+      "prompt_tokens": 30685,
+      "output_tokens": 36,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_c79b77a197c64031a8352d15",
+          "name": "enable_roaming",
+          "arguments": {
+            "customer_id": "C1001",
+            "line_id": "L1002"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_bad_network_preference_data_mode_off_user_abroad_roaming_disabled_off_28bbe837f4",
+      "task_id": "[mms_issue]bad_network_preference|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "turn": 1,
+      "step": 6,
+      "prompt_tokens": 10375,
+      "output_tokens": 27,
+      "compressed_this_step": true,
+      "compression_index": 1,
+      "tool_calls": [
+        {
+          "id": "call_44c0e677a4ed4608bf6ceaab",
+          "name": "get_details_by_id",
+          "arguments": {
+            "id": "L1002"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_bad_network_preference_data_mode_off_user_abroad_roaming_disabled_off_28bbe837f4",
+      "task_id": "[mms_issue]bad_network_preference|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "turn": 1,
+      "step": 7,
+      "prompt_tokens": 10502,
+      "output_tokens": 27,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [],
+      "assistant_content_preview": "Your line's roaming has been enabled. Please try sending an MMS message again and let me know if the issue is resolved."
+    },
+    {
+      "sample_id": "mms_issue_bad_network_preference_data_mode_off_user_abroad_roaming_disabled_off_28bbe837f4",
+      "task_id": "[mms_issue]bad_network_preference|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "turn": 2,
+      "step": 8,
+      "prompt_tokens": 10574,
+      "output_tokens": 21,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_7fc60fbb5ea3424fa5ab67f6",
+          "name": "get_details_by_id",
+          "arguments": {
+            "id": "L1002"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_bad_network_preference_data_mode_off_user_abroad_roaming_disabled_off_28bbe837f4",
+      "task_id": "[mms_issue]bad_network_preference|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "turn": 2,
+      "step": 9,
+      "prompt_tokens": 10701,
+      "output_tokens": 30,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_9f56cc434c9b4331a76791ea",
+          "name": "get_data_usage",
+          "arguments": {
+            "customer_id": "C1001",
+            "line_id": "L1002"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_bad_network_preference_data_mode_off_user_abroad_roaming_disabled_off_28bbe837f4",
+      "task_id": "[mms_issue]bad_network_preference|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "turn": 2,
+      "step": 10,
+      "prompt_tokens": 10782,
+      "output_tokens": 37,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [
+        {
+          "id": "call_bee31f2cbb914555b8493da8",
+          "name": "refuel_data",
+          "arguments": {
+            "customer_id": "C1001",
+            "line_id": "L1002",
+            "gb_amount": "2"
+          },
+          "requestor": "assistant"
+        }
+      ],
+      "assistant_content_preview": ""
+    },
+    {
+      "sample_id": "mms_issue_bad_network_preference_data_mode_off_user_abroad_roaming_disabled_off_28bbe837f4",
+      "task_id": "[mms_issue]bad_network_preference|data_mode_off|user_abroad_roaming_disabled_off[PERSONA:None]",
+      "turn": 2,
+      "step": 11,
+      "prompt_tokens": 10851,
+      "output_tokens": 19,
+      "compressed_this_step": false,
+      "compression_index": null,
+      "tool_calls": [],
+      "assistant_content_preview": "I will now transfer you to a human agent who can further assist you with your issue."
+    }
+  ]
+}
