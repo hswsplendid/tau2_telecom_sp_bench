@@ -1,0 +1,560 @@
+{
+  "dataset": {
+    "slug": "tau2_telecom",
+    "title": "Tau2 Telecom MMS Semi-Prefill Overhead",
+    "data_root": "/root/tau2_telecom_sp_bench/results/real_mms_easy_user3_agent1_n20_compressed_only_cw32000_thr30000_c12800_20260507_001",
+    "output_dir": "/root/tau2_telecom_sp_bench/results/real_mms_easy_user3_agent1_n20_compressed_only_cw32000_thr30000_c12800_20260507_001/analysis_20260507_cw8000_reference",
+    "kind": "flat",
+    "report_name": "Semi-Prefill_Overhead分析报告_tau2_telecom_cw8000_reference.md",
+    "caveat": "目录名声明 n20，但当前目录中只有 4 个 timing/ABC 文件，其中 3 个含有效 timing。",
+    "fallback_config": {}
+  },
+  "config": {
+    "r_pf": 0.15,
+    "r_dec": 12.0,
+    "c_fixed": 20.0
+  },
+  "aggregate": {
+    "sample_count": 4,
+    "active_sample_count": 3,
+    "compression_event_count": 3,
+    "total_rounds": 17,
+    "total_steps": 26,
+    "avg_rounds": 5.666666666666667,
+    "avg_compressions": 1,
+    "compression_rate": 0.17647058823529413,
+    "avg_accumulated_context": 190982.66666666666,
+    "avg_context_multiplier": 6.33939370409612,
+    "min_context_multiplier": 5.416127426580388,
+    "max_context_multiplier": 7.1690356004250795,
+    "avg_delta_median": 182.5,
+    "phase_async": {
+      "full_prefill_ms": 13617.3,
+      "incremental_prefill_ms": 586.6500000000001,
+      "semi_prefill_ms": 1536.0,
+      "decode_ms": 20028.0,
+      "total_ms": 35767.95
+    },
+    "phase_sync": {
+      "full_prefill_ms": 13617.3,
+      "incremental_prefill_ms": 586.6500000000001,
+      "semi_prefill_ms": 1536.0,
+      "summary_prefill_ms": 9544.95,
+      "summary_decode_ms": 9720.0,
+      "decode_ms": 20028.0,
+      "total_ms": 55032.9
+    },
+    "baseline_ms": 34231.95,
+    "async_overhead_pct": 4.487036233693962,
+    "sync_overhead_pct": 60.76472418310964,
+    "avg_b2_c1": 3280.0,
+    "min_b2_c1": 3149.0,
+    "max_b2_c1": 3529.0,
+    "avg_c1": 3010.0,
+    "avg_b2": 270.0,
+    "avg_semi_prefill_ms": 512.0,
+    "avg_sync_event_ms": 6933.65,
+    "summary_decode_share_in_sync_prefill": 27.76754111567238
+  },
+  "samples": [
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_data_usage_exceeded_unseat_si_25efad195d",
+      "sample_label": "25efad",
+      "run_name": "real_mms_easy_user3_agent1_n20_compressed_only_cw32000_thr30000_c12800_20260507_001",
+      "active": true,
+      "rounds": 9,
+      "steps": 9,
+      "n_compressions": 1,
+      "compression_rate": 0.1111111111111111,
+      "first_context": 30135.0,
+      "max_context": 31132.0,
+      "accumulated_context": 193859.0,
+      "context_multiplier": 6.433018085282893,
+      "output_tokens": 759.0,
+      "timing_total_ms": 172114.87600000002,
+      "classification_counts": {
+        "full_prefill": 1,
+        "incremental": 7,
+        "semi_prefill": 1
+      },
+      "delta_median": 122.0,
+      "delta_mean": 187.71428571428572,
+      "delta_min": 93.0,
+      "delta_max": 401.0,
+      "context_series": [
+        {
+          "turn": 1,
+          "prompt_tokens": 30135.0
+        },
+        {
+          "turn": 2,
+          "prompt_tokens": 30294.0
+        },
+        {
+          "turn": 3,
+          "prompt_tokens": 30621.0
+        },
+        {
+          "turn": 4,
+          "prompt_tokens": 31022.0
+        },
+        {
+          "turn": 5,
+          "prompt_tokens": 31132.0
+        },
+        {
+          "turn": 6,
+          "prompt_tokens": 9998.0
+        },
+        {
+          "turn": 7,
+          "prompt_tokens": 10120.0
+        },
+        {
+          "turn": 8,
+          "prompt_tokens": 10222.0
+        },
+        {
+          "turn": 9,
+          "prompt_tokens": 10315.0
+        }
+      ],
+      "churn_series": [
+        {
+          "turn": 1,
+          "churn": 1.0
+        },
+        {
+          "turn": 2,
+          "churn": 0.005248564072093484
+        },
+        {
+          "turn": 3,
+          "churn": 0.010678945821495053
+        },
+        {
+          "turn": 4,
+          "churn": 0.0129263103603894
+        },
+        {
+          "turn": 5,
+          "churn": 0.0035333418990106643
+        },
+        {
+          "turn": 6,
+          "churn": 0.31496299259851973
+        },
+        {
+          "turn": 7,
+          "churn": 0.012055335968379446
+        },
+        {
+          "turn": 8,
+          "churn": 0.0099784777929955
+        },
+        {
+          "turn": 9,
+          "churn": 0.009015996122152205
+        }
+      ],
+      "events": [
+        {
+          "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_data_usage_exceeded_unseat_si_25efad195d",
+          "sample_label": "25efad",
+          "run_name": "real_mms_easy_user3_agent1_n20_compressed_only_cw32000_thr30000_c12800_20260507_001",
+          "event": 1,
+          "turn": 6,
+          "step": 5,
+          "A": 6848.0,
+          "B1": 21498.0,
+          "B2": 270.0,
+          "C1": 2879.0,
+          "B2_C1": 3149.0,
+          "pre_prompt_tokens": 31225.0,
+          "post_prompt_tokens": 9997.0,
+          "semi_prefill_ms": 492.34999999999997,
+          "summary_prefill_ms": 3224.7,
+          "summary_decode_ms": 3240.0,
+          "summary_generation_time_s": 2.8929,
+          "token_saving_pct": 67.984
+        }
+      ],
+      "config": {
+        "model": "Llama-3.3-70B-Instruct",
+        "context_window": 32000,
+        "threshold": 30000,
+        "reserve_tokens": 2000,
+        "keep_recent_tokens": 2800,
+        "summary_max_tokens": 1024,
+        "source": "run_config.json"
+      },
+      "score_valid": null,
+      "score": null,
+      "error_type": null,
+      "phase_async": {
+        "full_prefill_ms": 4540.25,
+        "incremental_prefill_ms": 337.1,
+        "semi_prefill_ms": 492.34999999999997,
+        "decode_ms": 9108.0,
+        "total_ms": 14477.7
+      },
+      "phase_sync": {
+        "full_prefill_ms": 4540.25,
+        "incremental_prefill_ms": 337.1,
+        "semi_prefill_ms": 492.34999999999997,
+        "summary_prefill_ms": 3224.7,
+        "summary_decode_ms": 3240.0,
+        "decode_ms": 9108.0,
+        "total_ms": 20942.4
+      },
+      "baseline_ms": 13985.35,
+      "async_overhead_pct": 3.5204696342958877,
+      "sync_overhead_pct": 49.74526915665321
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_user_abroad_roaming_disabled_37fd192b01",
+      "sample_label": "37fd19",
+      "run_name": "real_mms_easy_user3_agent1_n20_compressed_only_cw32000_thr30000_c12800_20260507_001",
+      "active": true,
+      "rounds": 2,
+      "steps": 11,
+      "n_compressions": 1,
+      "compression_rate": 0.5,
+      "first_context": 30112.0,
+      "max_context": 30685.0,
+      "accumulated_context": 215874.0,
+      "context_multiplier": 7.1690356004250795,
+      "output_tokens": 299.0,
+      "timing_total_ms": 149150.51799999998,
+      "classification_counts": {
+        "full_prefill": 1,
+        "incremental": 9,
+        "semi_prefill": 1
+      },
+      "delta_median": 0.0,
+      "delta_mean": 0.0,
+      "delta_min": 0.0,
+      "delta_max": 0.0,
+      "context_series": [
+        {
+          "turn": 1,
+          "prompt_tokens": 30685.0
+        },
+        {
+          "turn": 2,
+          "prompt_tokens": 10851.0
+        }
+      ],
+      "churn_series": [
+        {
+          "turn": 1,
+          "churn": 1.0
+        },
+        {
+          "turn": 2,
+          "churn": 0.0
+        }
+      ],
+      "events": [
+        {
+          "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_user_abroad_roaming_disabled_37fd192b01",
+          "sample_label": "37fd19",
+          "run_name": "real_mms_easy_user3_agent1_n20_compressed_only_cw32000_thr30000_c12800_20260507_001",
+          "event": 1,
+          "turn": 1,
+          "step": 5,
+          "A": 6845.0,
+          "B1": 20637.0,
+          "B2": 270.0,
+          "C1": 3259.0,
+          "B2_C1": 3529.0,
+          "pre_prompt_tokens": 30741.0,
+          "post_prompt_tokens": 10374.0,
+          "semi_prefill_ms": 549.35,
+          "summary_prefill_ms": 3095.5499999999997,
+          "summary_decode_ms": 3240.0,
+          "summary_generation_time_s": 3.1709,
+          "token_saving_pct": 66.254
+        }
+      ],
+      "config": {
+        "model": "Llama-3.3-70B-Instruct",
+        "context_window": 32000,
+        "threshold": 30000,
+        "reserve_tokens": 2000,
+        "keep_recent_tokens": 2800,
+        "summary_max_tokens": 1024,
+        "source": "run_config.json"
+      },
+      "score_valid": null,
+      "score": null,
+      "error_type": null,
+      "phase_async": {
+        "full_prefill_ms": 4536.8,
+        "incremental_prefill_ms": 20.0,
+        "semi_prefill_ms": 549.35,
+        "decode_ms": 3588.0,
+        "total_ms": 8694.15
+      },
+      "phase_sync": {
+        "full_prefill_ms": 4536.8,
+        "incremental_prefill_ms": 20.0,
+        "semi_prefill_ms": 549.35,
+        "summary_prefill_ms": 3095.5499999999997,
+        "summary_decode_ms": 3240.0,
+        "decode_ms": 3588.0,
+        "total_ms": 15029.699999999999
+      },
+      "baseline_ms": 8144.8,
+      "async_overhead_pct": 6.744794224535901,
+      "sync_overhead_pct": 84.53123465278459
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_wifi_calling_user_abroad_roaming_disabled_off_PE_1959eeb7ba",
+      "sample_label": "1959ee",
+      "run_name": "real_mms_easy_user3_agent1_n20_compressed_only_cw32000_thr30000_c12800_20260507_001",
+      "active": false,
+      "rounds": 0,
+      "steps": 0,
+      "n_compressions": 0,
+      "compression_rate": 0.0,
+      "first_context": 0.0,
+      "max_context": 0.0,
+      "accumulated_context": 0,
+      "context_multiplier": 0.0,
+      "output_tokens": 0,
+      "timing_total_ms": 0.0,
+      "classification_counts": {},
+      "delta_median": 0.0,
+      "delta_mean": 0.0,
+      "delta_min": 0.0,
+      "delta_max": 0.0,
+      "context_series": [],
+      "churn_series": [],
+      "events": [],
+      "config": {
+        "model": "Llama-3.3-70B-Instruct",
+        "context_window": 32000,
+        "threshold": 30000,
+        "reserve_tokens": 2000,
+        "keep_recent_tokens": 2800,
+        "summary_max_tokens": 1024,
+        "source": "run_config.json"
+      },
+      "score_valid": null,
+      "score": null,
+      "error_type": null,
+      "phase_async": {
+        "full_prefill_ms": 0.0,
+        "incremental_prefill_ms": 0.0,
+        "semi_prefill_ms": 0,
+        "decode_ms": 0.0,
+        "total_ms": 0.0
+      },
+      "phase_sync": {
+        "full_prefill_ms": 0.0,
+        "incremental_prefill_ms": 0.0,
+        "semi_prefill_ms": 0,
+        "summary_prefill_ms": 0,
+        "summary_decode_ms": 0,
+        "decode_ms": 0.0,
+        "total_ms": 0.0
+      },
+      "baseline_ms": 0.0,
+      "async_overhead_pct": 0.0,
+      "sync_overhead_pct": 0.0
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_break_app_sms_permission_data_usage_exceeded_unseat_81b8784766",
+      "sample_label": "81b878",
+      "run_name": "real_mms_easy_user3_agent1_n20_compressed_only_cw32000_thr30000_c12800_20260507_001",
+      "active": true,
+      "rounds": 6,
+      "steps": 6,
+      "n_compressions": 1,
+      "compression_rate": 0.16666666666666666,
+      "first_context": 30135.0,
+      "max_context": 31132.0,
+      "accumulated_context": 163215.0,
+      "context_multiplier": 5.416127426580388,
+      "output_tokens": 611.0,
+      "timing_total_ms": 156638.407,
+      "classification_counts": {
+        "full_prefill": 1,
+        "incremental": 4,
+        "semi_prefill": 1
+      },
+      "delta_median": 243.0,
+      "delta_mean": 249.25,
+      "delta_min": 110.0,
+      "delta_max": 401.0,
+      "context_series": [
+        {
+          "turn": 1,
+          "prompt_tokens": 30135.0
+        },
+        {
+          "turn": 2,
+          "prompt_tokens": 30294.0
+        },
+        {
+          "turn": 3,
+          "prompt_tokens": 30621.0
+        },
+        {
+          "turn": 4,
+          "prompt_tokens": 31022.0
+        },
+        {
+          "turn": 5,
+          "prompt_tokens": 31132.0
+        },
+        {
+          "turn": 6,
+          "prompt_tokens": 10011.0
+        }
+      ],
+      "churn_series": [
+        {
+          "turn": 1,
+          "churn": 1.0
+        },
+        {
+          "turn": 2,
+          "churn": 0.005248564072093484
+        },
+        {
+          "turn": 3,
+          "churn": 0.010678945821495053
+        },
+        {
+          "turn": 4,
+          "churn": 0.0129263103603894
+        },
+        {
+          "turn": 5,
+          "churn": 0.0035333418990106643
+        },
+        {
+          "turn": 6,
+          "churn": 0.31585256218160024
+        }
+      ],
+      "events": [
+        {
+          "sample_id": "mms_issue_airplane_mode_on_break_app_sms_permission_data_usage_exceeded_unseat_81b8784766",
+          "sample_label": "81b878",
+          "run_name": "real_mms_easy_user3_agent1_n20_compressed_only_cw32000_thr30000_c12800_20260507_001",
+          "event": 1,
+          "turn": 6,
+          "step": 5,
+          "A": 6848.0,
+          "B1": 21498.0,
+          "B2": 270.0,
+          "C1": 2892.0,
+          "B2_C1": 3162.0,
+          "pre_prompt_tokens": 31238.0,
+          "post_prompt_tokens": 10010.0,
+          "semi_prefill_ms": 494.29999999999995,
+          "summary_prefill_ms": 3224.7,
+          "summary_decode_ms": 3240.0,
+          "summary_generation_time_s": 3.1702,
+          "token_saving_pct": 67.956
+        }
+      ],
+      "config": {
+        "model": "Llama-3.3-70B-Instruct",
+        "context_window": 32000,
+        "threshold": 30000,
+        "reserve_tokens": 2000,
+        "keep_recent_tokens": 2800,
+        "summary_max_tokens": 1024,
+        "source": "run_config.json"
+      },
+      "score_valid": null,
+      "score": null,
+      "error_type": null,
+      "phase_async": {
+        "full_prefill_ms": 4540.25,
+        "incremental_prefill_ms": 229.55,
+        "semi_prefill_ms": 494.29999999999995,
+        "decode_ms": 7332.0,
+        "total_ms": 12596.099999999999
+      },
+      "phase_sync": {
+        "full_prefill_ms": 4540.25,
+        "incremental_prefill_ms": 229.55,
+        "semi_prefill_ms": 494.29999999999995,
+        "summary_prefill_ms": 3224.7,
+        "summary_decode_ms": 3240.0,
+        "decode_ms": 7332.0,
+        "total_ms": 19060.8
+      },
+      "baseline_ms": 12101.8,
+      "async_overhead_pct": 4.084516352939231,
+      "sync_overhead_pct": 57.50384240360938
+    }
+  ],
+  "events": [
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_data_usage_exceeded_unseat_si_25efad195d",
+      "sample_label": "25efad",
+      "run_name": "real_mms_easy_user3_agent1_n20_compressed_only_cw32000_thr30000_c12800_20260507_001",
+      "event": 1,
+      "turn": 6,
+      "step": 5,
+      "A": 6848.0,
+      "B1": 21498.0,
+      "B2": 270.0,
+      "C1": 2879.0,
+      "B2_C1": 3149.0,
+      "pre_prompt_tokens": 31225.0,
+      "post_prompt_tokens": 9997.0,
+      "semi_prefill_ms": 492.34999999999997,
+      "summary_prefill_ms": 3224.7,
+      "summary_decode_ms": 3240.0,
+      "summary_generation_time_s": 2.8929,
+      "token_saving_pct": 67.984
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_user_abroad_roaming_disabled_37fd192b01",
+      "sample_label": "37fd19",
+      "run_name": "real_mms_easy_user3_agent1_n20_compressed_only_cw32000_thr30000_c12800_20260507_001",
+      "event": 1,
+      "turn": 1,
+      "step": 5,
+      "A": 6845.0,
+      "B1": 20637.0,
+      "B2": 270.0,
+      "C1": 3259.0,
+      "B2_C1": 3529.0,
+      "pre_prompt_tokens": 30741.0,
+      "post_prompt_tokens": 10374.0,
+      "semi_prefill_ms": 549.35,
+      "summary_prefill_ms": 3095.5499999999997,
+      "summary_decode_ms": 3240.0,
+      "summary_generation_time_s": 3.1709,
+      "token_saving_pct": 66.254
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_break_app_sms_permission_data_usage_exceeded_unseat_81b8784766",
+      "sample_label": "81b878",
+      "run_name": "real_mms_easy_user3_agent1_n20_compressed_only_cw32000_thr30000_c12800_20260507_001",
+      "event": 1,
+      "turn": 6,
+      "step": 5,
+      "A": 6848.0,
+      "B1": 21498.0,
+      "B2": 270.0,
+      "C1": 2892.0,
+      "B2_C1": 3162.0,
+      "pre_prompt_tokens": 31238.0,
+      "post_prompt_tokens": 10010.0,
+      "semi_prefill_ms": 494.29999999999995,
+      "summary_prefill_ms": 3224.7,
+      "summary_decode_ms": 3240.0,
+      "summary_generation_time_s": 3.1702,
+      "token_saving_pct": 67.956
+    }
+  ]
+}

@@ -1,22 +1,34 @@
 # tau2 telecom semi-prefill compression benchmark
 
-这个目录是针对 `tau2-bench` 的 `telecom` 类别新增的压缩与 semi-prefill 测试方案。它参考了 `/root/agentbench_semi_prefill_bench` 的 prompt/ABC/timing 保存形式，以及 `/root/bfcl_long_context_sp_bench` 的 run-name 隔离、样本筛选和分析指标。
+这个目录是针对 `tau2-bench` 的 `telecom` 类别新增的压缩与 semi-prefill 测试方案。它现在采用 **zero-rewrite 数据集筛选 + reference 初始上下文塑形** 的方式：不改 tau2 原始 `tasks.json`，只生成不同实验子集的 task id 文件；需要长上下文时，只在 agent 内部历史中注入中性 telecom reference context，用来制造可压缩的 B1 段。
 
-## 目标
+它参考了 `/root/agentbench_semi_prefill_bench` 的 prompt/ABC/timing 保存形式，以及 `/root/bfcl_long_context_sp_bench` 的 run-name 隔离、样本筛选和分析指标。
 
-- 数据集：`/root/tau2-bench/data/tau2/domains/telecom/tasks.json`
-- 默认样本选择：`evaluation_criteria.actions >= 6`
+## 当前目标
+
+- 原始数据集：`/root/tau2-bench/data/tau2/domains/telecom/tasks.json`
+- 数据集改造方式：`zero_rewrite_id_filter_only`，只筛选 task IDs，不修改 task JSON
+- 当前优先子集：`data/telecom_mms_easy_none_user3_agent1_actions_4_6_ids.json`
+- 当前推荐运行模式：`--task-split full --initial-context-mode reference --target-initial-tokens 29800`
 - 默认压缩参数：`cw=32000`，`reserve=2000`，阈值 `thr=30000`
 - C1 最近保留段：默认 `2800` tokens，目标范围 `2000-3000`，允许诊断中看到 `>3000`
-- 目标触发率：默认同时报告三种口径：`compressions / agent LLM steps`、`compressions / dialogue messages`、`compressions / tau2 messages`。真实 tau2 turn 口径优先看后两者，目标 `P <= 1/5` 或 `P <= 1/6`。
+- 目标触发率：同时报告 `compressions / agent LLM steps`、`compressions / dialogue messages`、`compressions / tau2 messages`。真实 tau2 turn 口径优先看后两者，目标 `P <= 1/5` 或 `P <= 1/6`。
 - 输出：完整 prompt、trace、timing、checkpoint、压缩前后 ABC 段和逐 message token 记录
+
+当前已经验证的代表 run：
+
+```text
+results/real_mms_easy_user3_agent1_n20_compressed_only_cw32000_thr30000_c12800_20260507_001
+```
+
+该目录名中的 `n20` 表示样本 id 文件声明 20 个候选样本；实际已完成/可读样本数需要以 `timing/`、`abc_segments/` 和 `tau2_results/results.json` 为准。
 
 ## 目录结构
 
 ```text
 tau2_telecom_sp_bench/
   sp_config.py          # 路径、模型、压缩参数、输出目录
-  dataset_rewrite.py    # actions>=6 的 zero-rewrite 样本 ID 选择
+  dataset_rewrite.py    # 多条件 zero-rewrite task-id 筛选
   agent.py              # tau2 agent 注册、压缩、ABC/prompt/timing/checkpoint 记录
   run.py                # prepare-data / run / analyze 入口
   analyze.py            # workload、semi-prefill、score 分析
@@ -26,14 +38,16 @@ tau2_telecom_sp_bench/
 
 ## 数据集改造策略
 
-第一阶段采用 **0 改造**：不修改 tau2 原始任务 JSON，只筛选 actions 数量足够多的 telecom 样本。当前统计结果是：
+本项目不直接改写 tau2 原始任务。所有子集均由 `dataset_rewrite.py` 根据 `evaluation_criteria.actions`、task family、persona、requestor action 数、ticket 是否包含 phone number、ID 关键词等条件筛选生成。
+
+基础全集统计：
 
 ```text
 telecom total tasks: 2285
 actions >= 6: 1275
 ```
 
-生成筛选文件：
+基础筛选命令：
 
 ```bash
 cd /root/tau2_telecom_sp_bench
@@ -45,7 +59,66 @@ cd /root/tau2_telecom_sp_bench
 - `data/telecom_actions_ge6_ids.json`
 - `data/telecom_actions_ge6_summary.json`
 
-如果 0 改造样本在 `cw32000/thr30000` 下触发率太低，可以使用 runner 的 `--initial-context-mode reference`。它只向 agent 内部历史注入中性的 telecom 背景参考消息，不改 task JSON，也不暴露给 user simulator。这个模式用于制造接近真实长上下文 agent workload 的可压缩 B1 段。
+### 最新推荐子集
+
+当前更推荐用更稳定、动作数适中、容易控制 user/agent 行为的 telecom 子集，而不是直接跑全量 `actions>=6`。已有子集如下：
+
+| ID 文件 | 样本数 | 主要筛选条件 | 用途 |
+|---|---:|---|---|
+| `data/telecom_actions_ge6_ids.json` | 1275 | actions >= 6 | 最大 zero-rewrite 候选池 |
+| `data/telecom_long_actions_ge10_ids.json` | 57 | actions >= 10，user actions >= 8，ticket 有 phone，按 actions 降序 | 长动作链压力测试 |
+| `data/telecom_medium_actions_6_8_ids.json` | 20 | actions 6-8，user actions >= 4，assistant actions >= 1，mms/mobile，各 family 最多 10 | 中等长度混合子集 |
+| `data/telecom_medium_mobile_easy_none_actions_6_8_ids.json` | 10 | mobile_data_issue，persona Easy/None，actions 6-8 | mobile data 专项 |
+| `data/telecom_mms_easy_none_actions_4_6_ids.json` | 20 | mms_issue，persona Easy/None，actions 4-6，user actions >= 3 | MMS 简化稳定子集 |
+| `data/telecom_mms_easy_none_user3_agent1_actions_4_6_ids.json` | 20 | mms_issue，persona Easy/None，actions 4-6，user actions >= 3，assistant actions >= 1 | 当前优先分析子集 |
+| `data/telecom_service_overdue_easy_none_actions_4_ids.json` | 1 | service_issue，overdue_bill_suspension，actions=4 | service overdue 单样本 smoke |
+| `data/telecom_stable_easy_none_agent1_actions_3_5_ids.json` | 10 | mms/mobile/service，persona Easy/None，actions 3-5，排除不稳定故障关键词 | stable easy baseline/compressed 对比 |
+
+这些文件对应的 summary 都在 `data/*_summary.json`。如果重新生成同名文件，会覆盖筛选摘要；需要保护旧筛选记录时，请指定新的 `--output` 和 `--summary-out`。
+
+### 推荐生成命令
+
+当前优先 MMS 子集：
+
+```bash
+cd /root/tau2_telecom_sp_bench
+./run_tau2.sh prepare-data \
+  --min-actions 4 \
+  --max-actions 6 \
+  --min-user-actions 3 \
+  --min-assistant-actions 1 \
+  --families mms_issue \
+  --personas Easy None \
+  --require-ticket-phone \
+  --sort-by-actions-asc \
+  --limit-per-family 20 \
+  --output data/telecom_mms_easy_none_user3_agent1_actions_4_6_ids.json \
+  --summary-out data/telecom_mms_easy_none_user3_agent1_actions_4_6_summary.json
+```
+
+stable easy 对比子集：
+
+```bash
+./run_tau2.sh prepare-data \
+  --min-actions 3 \
+  --max-actions 5 \
+  --min-user-actions 2 \
+  --min-assistant-actions 1 \
+  --families mms_issue mobile_data_issue service_issue \
+  --personas Easy None \
+  --exclude-id-terms \
+    bad_vpn bad_wifi_calling break_apn_mms_setting break_apn_settings \
+    break_app_both_permissions break_app_sms_permission break_app_storage_permission \
+    data_saver_mode_on data_usage_exceeded unseat_sim_card \
+    user_abroad_roaming_disabled_on user_abroad_roaming_enabled_off \
+  --require-ticket-phone \
+  --sort-by-actions-asc \
+  --limit-per-family 20 \
+  --output data/telecom_stable_easy_none_agent1_actions_3_5_ids.json \
+  --summary-out data/telecom_stable_easy_none_agent1_actions_3_5_summary.json
+```
+
+如果 zero-rewrite 子集在 `cw32000/thr30000` 下触发率太低，可以使用 runner 的 `--initial-context-mode reference`。它只向 agent 内部历史注入中性的 telecom 背景参考消息，不改 task JSON，也不暴露给 user simulator。这个模式用于制造接近真实长上下文 agent workload 的可压缩 B1 段。
 
 注意 tau2 默认 `telecom` 的 `base` split 只有 114 个任务；actions>=6 筛选文件来自完整 `tasks.json`。运行筛选样本时通常需要加 `--task-split full`，否则不在 `base` split 的任务会被 tau2 runner 拒绝。
 
@@ -111,7 +184,7 @@ cd /root/vllm
 
 ## 运行示例
 
-轻量 smoke test，先验证 0 改造 actions>=6 子集：
+轻量 smoke test，先验证 zero-rewrite 子集和代理是否可用：
 
 ```bash
 cd /root/tau2_telecom_sp_bench
@@ -125,24 +198,47 @@ cd /root/tau2_telecom_sp_bench
   --health-check
 ```
 
-如果需要让样本更稳定地进入 `thr=30000` 附近，使用 reference 初始上下文：
+当前推荐的 MMS reference 长上下文运行方式：
 
 ```bash
 ./run_tau2.sh run \
   --mode compressed \
   --model Llama-3.3-70B-Instruct \
   --task-split full \
-  --limit 3 \
+  --sample-ids-file data/telecom_mms_easy_none_user3_agent1_actions_4_6_ids.json \
+  --limit 20 \
   --initial-context-mode reference \
-  --target-initial-tokens 26000 \
+  --target-initial-tokens 29800 \
+  --context-window 32000 \
+  --reserve-tokens 2000 \
+  --keep-recent-tokens 2800 \
+  --summary-max-tokens 1024 \
+  --max-steps 40 \
+  --auto-resume \
+  --health-check \
+  --run-name real_mms_easy_user3_agent1_n20_compressed_only_cw32000_thr30000_c12800_20260507_001
+```
+
+同一 run-name 下再次运行并带 `--auto-resume` 时，tau2 的 `results.json` 会跳过已完成样本。agent 侧还会在每个 step 写 `checkpoints/<sample>.json`，用于定位样本内部中断点和恢复调查。
+
+如果只想做短验证，不要复用正式 run-name；另建一个新的结果目录名，例如：
+
+```bash
+./run_tau2.sh run \
+  --mode compressed \
+  --model Llama-3.3-70B-Instruct \
+  --task-split full \
+  --sample-ids-file data/telecom_mms_easy_none_user3_agent1_actions_4_6_ids.json \
+  --limit 3 \
+  --max-steps 12 \
+  --initial-context-mode reference \
+  --target-initial-tokens 29800 \
   --context-window 32000 \
   --reserve-tokens 2000 \
   --keep-recent-tokens 2800 \
   --auto-resume \
-  --run-name telecom_llama_reference_turn40_smoke
+  --run-name real_mms_easy_user3_agent1_n3_short_cw32000_thr30000_c12800_$(date +%Y%m%d)_001
 ```
-
-同一 run-name 下再次运行并带 `--auto-resume` 时，tau2 的 `results.json` 会跳过已完成样本。agent 侧还会在每个 step 写 `checkpoints/<sample>.json`，用于定位样本内部中断点和恢复调查。
 
 ## 输出格式
 
@@ -188,6 +284,13 @@ cd /root/tau2_telecom_sp_bench
 ./run_tau2.sh analyze results/telecom_llama_reference_turn40_smoke
 ```
 
+当前推荐 run 的分析命令：
+
+```bash
+./run_tau2.sh analyze \
+  results/real_mms_easy_user3_agent1_n20_compressed_only_cw32000_thr30000_c12800_20260507_001
+```
+
 分析输出包括：
 
 - 每个任务轮数与 agent LLM 调用步数
@@ -216,9 +319,24 @@ prefill / semi-prefill / incremental / decode_est / summary_generation
 
 ## 推荐验证顺序
 
-1. `prepare-data`，确认 actions>=6 样本数量。
+1. `prepare-data`，确认目标子集的 `selected_tasks`、family/persona/action histogram。
 2. `py_compile` 静态检查。
-3. `--limit 1 --initial-context-mode zero-rewrite` smoke test。
-4. 如果 0 改造不触发压缩，改用 `--initial-context-mode reference --target-initial-tokens 26000`。
-5. `--limit 3` 验证 P、C1 和分数文件。
-6. 再扩大到完整 actions>=6 子集。
+3. `--limit 1 --initial-context-mode zero-rewrite` smoke test，确认 tau2 runner、proxy、tool path 可用。
+4. 如果 zero-rewrite 不触发压缩，改用 `--initial-context-mode reference --target-initial-tokens 29800`。
+5. `--limit 3 --max-steps 12/16` 短验证，检查 `[COMPRESS]`、ABC、timing、checkpoint 是否写入。
+6. 对优先子集跑 `--limit 20 --max-steps 40` 或继续 `--auto-resume`。
+7. 使用 `analyze` 和独立 analysis 目录检查 P、C1、semi-prefill、context accumulation 和 score。
+
+## 已有分析产物
+
+针对当前 MMS 子集，已有两套派生分析目录：
+
+```text
+results/real_mms_easy_user3_agent1_n20_compressed_only_cw32000_thr30000_c12800_20260507_001/analysis_20260507_unified
+results/real_mms_easy_user3_agent1_n20_compressed_only_cw32000_thr30000_c12800_20260507_001/analysis_20260507_cw8000_reference
+```
+
+- `analysis_20260507_unified`：侧重三数据集统一口径，包含 per-sample workload、compression events、context accumulation、ABC composition。
+- `analysis_20260507_cw8000_reference`：参考 `/root/semi_prefill_bench/results/cw8000_cw8000_rs500/analysis` 的报告结构，包含 `async_prefill_only_pie.png`、`context_length_over_turns.png`、sync/async 理论模型和 prefill-only 分解。
+
+注意：这些目录是已有结果的离线派生分析，不是新的 benchmark run。不要删除旧结果目录；需要重跑时使用新的 run-name。

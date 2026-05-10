@@ -1,0 +1,5 @@
+phase,count,prompt_tokens,output_tokens,total_ms,ttft_ms,decode_ms,total_s
+full_prefill,3,90382.0,238.0,70021.701,0.0,0.0,70.02170100000001
+incremental,20,452182.0,1318.0,369871.21499999997,0.0,0.0,369.87121499999995
+semi_prefill,3,30384.0,113.0,38010.884999999995,0.0,0.0,38.010884999999995
+summary_generation,3,0.0,0.0,9234.0,0.0,0.0,9.234

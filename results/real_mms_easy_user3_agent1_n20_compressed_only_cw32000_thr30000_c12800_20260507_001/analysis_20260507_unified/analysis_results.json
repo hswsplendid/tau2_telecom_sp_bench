@@ -1,0 +1,385 @@
+{
+  "dataset": {
+    "slug": "tau2_telecom",
+    "title": "Tau2 Telecom MMS Semi-Prefill Compression",
+    "description": "Tau2 telecom MMS task set with compression-only semi-prefill traces.",
+    "data_root": "/root/tau2_telecom_sp_bench/results/real_mms_easy_user3_agent1_n20_compressed_only_cw32000_thr30000_c12800_20260507_001",
+    "output_dir": "/root/tau2_telecom_sp_bench/results/real_mms_easy_user3_agent1_n20_compressed_only_cw32000_thr30000_c12800_20260507_001/analysis_20260507_unified",
+    "caveat": "目录名包含 n20，但当前结果目录中实际可读 timing/ABC 样本数以文件系统为准。"
+  },
+  "source_file_counts": {
+    "timing_files": 4,
+    "abc_files": 4,
+    "trace_files": 4,
+    "checkpoint_files": 4,
+    "prompt_log_files": 4,
+    "declared_sample_ids": 20
+  },
+  "aggregate": {
+    "sample_count": 4,
+    "active_sample_count": 3,
+    "samples_with_nonzero_first_context": 3,
+    "compression_event_count": 3,
+    "total_rounds": 17.0,
+    "total_steps": 26.0,
+    "total_compressions": 3.0,
+    "avg_rounds_per_request": 5.666666666666667,
+    "median_rounds_per_request": 6.0,
+    "avg_steps_per_request": 8.666666666666666,
+    "avg_compressions_per_request": 1.0,
+    "median_compressions_per_request": 1.0,
+    "compression_per_round": 0.17647058823529413,
+    "avg_first_context_tokens": 30127.333333333332,
+    "avg_max_context_tokens": 30983.0,
+    "avg_accumulated_context_tokens": 190982.66666666666,
+    "total_accumulated_context_tokens": 572948.0,
+    "avg_context_vs_single_round": 6.33939370409612,
+    "min_context_vs_single_round": 5.416127426580388,
+    "max_context_vs_single_round": 7.1690356004250795,
+    "total_additional_prefill_tokens": 9840.0,
+    "additional_prefill_share_pct": 1.7174333447363461,
+    "avg_additional_prefill_tokens_per_request": 3280.0,
+    "avg_B2_plus_C1_tokens_per_compression": 3280.0,
+    "avg_C1_tokens_per_compression": 3010.0,
+    "avg_token_saving_pct": 67.398,
+    "avg_summary_generation_time_s": 3.078,
+    "total_summary_generation_time_s": 9.234
+  },
+  "samples": [
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_data_usage_exceeded_unseat_si_25efad195d",
+      "sample_label": "25efad",
+      "run_name": "real_mms_easy_user3_agent1_n20_compressed_only_cw32000_thr30000_c12800_20260507_001",
+      "rounds": 9,
+      "steps": 9,
+      "compressions": 1,
+      "compression_per_round": 0.1111111111111111,
+      "first_context_tokens": 30135.0,
+      "max_context_tokens": 31132.0,
+      "accumulated_context_tokens": 193859.0,
+      "context_vs_single_round": 6.433018085282893,
+      "additional_prefill_tokens": 3149.0,
+      "additional_prefill_share_pct": 1.6243764798126472,
+      "timing_total_s": 172.114876,
+      "summary_generation_s": 2.8929,
+      "classification_counts": {
+        "full_prefill": 1,
+        "incremental": 7,
+        "semi_prefill": 1
+      },
+      "turn_context_series": [
+        {
+          "turn": 1,
+          "prompt_tokens": 30135.0
+        },
+        {
+          "turn": 2,
+          "prompt_tokens": 30294.0
+        },
+        {
+          "turn": 3,
+          "prompt_tokens": 30621.0
+        },
+        {
+          "turn": 4,
+          "prompt_tokens": 31022.0
+        },
+        {
+          "turn": 5,
+          "prompt_tokens": 31132.0
+        },
+        {
+          "turn": 6,
+          "prompt_tokens": 9998.0
+        },
+        {
+          "turn": 7,
+          "prompt_tokens": 10120.0
+        },
+        {
+          "turn": 8,
+          "prompt_tokens": 10222.0
+        },
+        {
+          "turn": 9,
+          "prompt_tokens": 10315.0
+        }
+      ],
+      "score_valid": null,
+      "score": null,
+      "error_type": null,
+      "tool_calls": null,
+      "has_trace": true,
+      "has_prompt_log": true,
+      "has_checkpoint": true
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_user_abroad_roaming_disabled_37fd192b01",
+      "sample_label": "37fd19",
+      "run_name": "real_mms_easy_user3_agent1_n20_compressed_only_cw32000_thr30000_c12800_20260507_001",
+      "rounds": 2,
+      "steps": 11,
+      "compressions": 1,
+      "compression_per_round": 0.5,
+      "first_context_tokens": 30112.0,
+      "max_context_tokens": 30685.0,
+      "accumulated_context_tokens": 215874.0,
+      "context_vs_single_round": 7.1690356004250795,
+      "additional_prefill_tokens": 3529.0,
+      "additional_prefill_share_pct": 1.6347499004048658,
+      "timing_total_s": 149.15051799999998,
+      "summary_generation_s": 3.1709,
+      "classification_counts": {
+        "full_prefill": 1,
+        "incremental": 9,
+        "semi_prefill": 1
+      },
+      "turn_context_series": [
+        {
+          "turn": 1,
+          "prompt_tokens": 30685.0
+        },
+        {
+          "turn": 2,
+          "prompt_tokens": 10851.0
+        }
+      ],
+      "score_valid": null,
+      "score": null,
+      "error_type": null,
+      "tool_calls": null,
+      "has_trace": true,
+      "has_prompt_log": true,
+      "has_checkpoint": true
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_wifi_calling_user_abroad_roaming_disabled_off_PE_1959eeb7ba",
+      "sample_label": "1959ee",
+      "run_name": "real_mms_easy_user3_agent1_n20_compressed_only_cw32000_thr30000_c12800_20260507_001",
+      "rounds": 0,
+      "steps": 0,
+      "compressions": 0,
+      "compression_per_round": null,
+      "first_context_tokens": 0.0,
+      "max_context_tokens": 0.0,
+      "accumulated_context_tokens": 0,
+      "context_vs_single_round": null,
+      "additional_prefill_tokens": 0.0,
+      "additional_prefill_share_pct": null,
+      "timing_total_s": 0.0,
+      "summary_generation_s": 0,
+      "classification_counts": {},
+      "turn_context_series": [],
+      "score_valid": null,
+      "score": null,
+      "error_type": null,
+      "tool_calls": null,
+      "has_trace": true,
+      "has_prompt_log": true,
+      "has_checkpoint": true
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_break_app_sms_permission_data_usage_exceeded_unseat_81b8784766",
+      "sample_label": "81b878",
+      "run_name": "real_mms_easy_user3_agent1_n20_compressed_only_cw32000_thr30000_c12800_20260507_001",
+      "rounds": 6,
+      "steps": 6,
+      "compressions": 1,
+      "compression_per_round": 0.16666666666666666,
+      "first_context_tokens": 30135.0,
+      "max_context_tokens": 31132.0,
+      "accumulated_context_tokens": 163215.0,
+      "context_vs_single_round": 5.416127426580388,
+      "additional_prefill_tokens": 3162.0,
+      "additional_prefill_share_pct": 1.9373219373219372,
+      "timing_total_s": 156.638407,
+      "summary_generation_s": 3.1702,
+      "classification_counts": {
+        "full_prefill": 1,
+        "incremental": 4,
+        "semi_prefill": 1
+      },
+      "turn_context_series": [
+        {
+          "turn": 1,
+          "prompt_tokens": 30135.0
+        },
+        {
+          "turn": 2,
+          "prompt_tokens": 30294.0
+        },
+        {
+          "turn": 3,
+          "prompt_tokens": 30621.0
+        },
+        {
+          "turn": 4,
+          "prompt_tokens": 31022.0
+        },
+        {
+          "turn": 5,
+          "prompt_tokens": 31132.0
+        },
+        {
+          "turn": 6,
+          "prompt_tokens": 10011.0
+        }
+      ],
+      "score_valid": null,
+      "score": null,
+      "error_type": null,
+      "tool_calls": null,
+      "has_trace": true,
+      "has_prompt_log": true,
+      "has_checkpoint": true
+    }
+  ],
+  "compression_events": [
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_data_usage_exceeded_unseat_si_25efad195d",
+      "sample_label": "25efad",
+      "run_name": "real_mms_easy_user3_agent1_n20_compressed_only_cw32000_thr30000_c12800_20260507_001",
+      "compression_index": 1,
+      "turn": 6,
+      "step": 5,
+      "pre_prompt_tokens": 31225.0,
+      "post_prompt_tokens": 9997.0,
+      "A_tokens": 6848.0,
+      "B1_tokens": 21498.0,
+      "B2_tokens": 270.0,
+      "C1_tokens": 2879.0,
+      "B2_plus_C1_tokens": 3149.0,
+      "B2_over_B1": 0.012559307842590009,
+      "token_saving_pct": 67.984,
+      "summary_generation_time_s": 2.8929
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_bad_network_preference_user_abroad_roaming_disabled_37fd192b01",
+      "sample_label": "37fd19",
+      "run_name": "real_mms_easy_user3_agent1_n20_compressed_only_cw32000_thr30000_c12800_20260507_001",
+      "compression_index": 1,
+      "turn": 1,
+      "step": 5,
+      "pre_prompt_tokens": 30741.0,
+      "post_prompt_tokens": 10374.0,
+      "A_tokens": 6845.0,
+      "B1_tokens": 20637.0,
+      "B2_tokens": 270.0,
+      "C1_tokens": 3259.0,
+      "B2_plus_C1_tokens": 3529.0,
+      "B2_over_B1": 0.013083296990841693,
+      "token_saving_pct": 66.254,
+      "summary_generation_time_s": 3.1709
+    },
+    {
+      "sample_id": "mms_issue_airplane_mode_on_break_app_sms_permission_data_usage_exceeded_unseat_81b8784766",
+      "sample_label": "81b878",
+      "run_name": "real_mms_easy_user3_agent1_n20_compressed_only_cw32000_thr30000_c12800_20260507_001",
+      "compression_index": 1,
+      "turn": 6,
+      "step": 5,
+      "pre_prompt_tokens": 31238.0,
+      "post_prompt_tokens": 10010.0,
+      "A_tokens": 6848.0,
+      "B1_tokens": 21498.0,
+      "B2_tokens": 270.0,
+      "C1_tokens": 2892.0,
+      "B2_plus_C1_tokens": 3162.0,
+      "B2_over_B1": 0.012559307842590009,
+      "token_saving_pct": 67.956,
+      "summary_generation_time_s": 3.1702
+    }
+  ],
+  "phase_breakdown": [
+    {
+      "phase": "full_prefill",
+      "count": 3,
+      "prompt_tokens": 90382.0,
+      "output_tokens": 238.0,
+      "total_ms": 70021.701,
+      "ttft_ms": 0.0,
+      "decode_ms": 0.0,
+      "total_s": 70.02170100000001
+    },
+    {
+      "phase": "incremental",
+      "count": 20,
+      "prompt_tokens": 452182.0,
+      "output_tokens": 1318.0,
+      "total_ms": 369871.21499999997,
+      "ttft_ms": 0.0,
+      "decode_ms": 0.0,
+      "total_s": 369.87121499999995
+    },
+    {
+      "phase": "semi_prefill",
+      "count": 3,
+      "prompt_tokens": 30384.0,
+      "output_tokens": 113.0,
+      "total_ms": 38010.884999999995,
+      "ttft_ms": 0.0,
+      "decode_ms": 0.0,
+      "total_s": 38.010884999999995
+    },
+    {
+      "phase": "summary_generation",
+      "count": 3,
+      "prompt_tokens": 0.0,
+      "output_tokens": 0.0,
+      "total_ms": 9234.0,
+      "ttft_ms": 0.0,
+      "decode_ms": 0.0,
+      "total_s": 9.234
+    }
+  ],
+  "run_configs": {
+    "real_mms_easy_user3_agent1_n20_compressed_only_cw32000_thr30000_c12800_20260507_001": {
+      "run_name": "real_mms_easy_user3_agent1_n20_compressed_only_cw32000_thr30000_c12800_20260507_001",
+      "created_at": "2026-05-07T03:22:50.681328",
+      "domain": "telecom",
+      "mode": "compressed",
+      "model": "Llama-3.3-70B-Instruct",
+      "model_path": "/root/share/models/Llama-3.3-70B-Instruct",
+      "proxy_url": "http://localhost:6003/v1",
+      "vllm_backend_url": "http://10.10.111.43:8005",
+      "sample_ids_file": "data/telecom_mms_easy_none_user3_agent1_actions_4_6_ids.json",
+      "num_sample_ids": 20,
+      "task_split_name": "full",
+      "context": {
+        "context_window": 32000,
+        "reserve_tokens": 2000,
+        "threshold_tokens": 30000,
+        "keep_recent_tokens": 2800,
+        "summary_max_tokens": 1024,
+        "initial_context_mode": "reference",
+        "target_initial_tokens": 29800,
+        "include_task_ticket": true,
+        "stepwise_tech_support": true
+      },
+      "targets": {
+        "P_max_1_5": 0.2,
+        "P_max_1_6": 0.16666666666666666,
+        "C1_min_tokens": 2000,
+        "C1_diagnostic_max_tokens": 3000
+      },
+      "health_at_start": {
+        "proxy": true,
+        "swap": {
+          "total_mb": 8191,
+          "used_mb": 7758,
+          "free_mb": 433
+        },
+        "python": {
+          "executable": "/root/tau2-bench/.venv/bin/python",
+          "version": "3.12.12",
+          "ok": true,
+          "missing_packages": []
+        },
+        "models": [
+          "/root/share/models/Llama-3.3-70B-Instruct"
+        ]
+      }
+    }
+  },
+  "score_rows": []
+}
